@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO META - HOME (dynamic per page via JS) -->
+<title>Elite Clean Pro | #1 Professional Cleaning Service Calgary AB</title>
+<meta name="description" content="Elite Clean Pro delivers premium residential and commercial cleaning in Calgary, AB. Trusted by 200+ Calgary homes and businesses. Book online today — same-week availability.">
+<meta name="keywords" content="cleaning service Calgary, commercial cleaning Calgary, residential cleaning Calgary AB, house cleaning Calgary, office cleaning Calgary, Elite Clean Pro">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="CA-AB">
+<meta name="geo.placename" content="Calgary">
+<link rel="canonical" href="https://elitecleanpro.ca/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Elite Clean Pro | Calgary's Premium Cleaning Service">
+<meta property="og:description" content="Premium residential & commercial cleaning in Calgary. Insured, background-checked, and 5-star rated.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elitecleanpro.ca">
+
+<!-- Schema Markup: Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Elite Clean Pro",
+  "description": "Calgary's premium residential and commercial cleaning service",
+  "url": "https://elitecleanpro.ca",
+  "telephone": "+1-403-555-0100",
+  "email": "hello@elitecleanpro.ca",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Calgary",
+    "addressRegion": "AB",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.0447,
+    "longitude": -114.0719
+  },
+  "areaServed": ["Calgary", "Airdrie", "Cochrane", "Chestermere", "Okotoks"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 07:00-20:00",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "247"
+  }
+}
+</script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #080c0f;
+  --off-black: #0e1419;
+  --deep: #111820;
+  --card: #151d24;
+  --border: rgba(255,255,255,0.07);
+  --border-hover: rgba(255,255,255,0.15);
+  --white: #ffffff;
+  --off-white: #e8edf2;
+  --muted: #6b7f8e;
+  --accent: #00d4aa;
+  --accent-dim: rgba(0,212,170,0.12);
+  --accent-border: rgba(0,212,170,0.3);
+  --gold: #f0c060;
+  --gold-dim: rgba(240,192,96,0.1);
+  --red: #ff4d6d;
+  --grad: linear-gradient(135deg, #00d4aa 0%, #0099cc 100%);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+
+body{
+  background:var(--black);
+  color:var(--off-white);
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before{
+  content:'';
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:0.4;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:0 2.5rem;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,12,15,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:all 0.3s;
+}
+.nav-logo{
+  font-family:'Cormorant',serif;
+  font-weight:600;font-size:1.25rem;
+  letter-spacing:0.04em;
+  color:var(--white);
+  cursor:pointer;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.nav-logo span{color:var(--accent)}
+.nav-dot{
+  width:7px;height:7px;
+  background:var(--accent);
+  border-radius:50%;
+  display:inline-block;
+  box-shadow:0 0 8px var(--accent);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.8)}}
+
+.nav-links{
+  display:flex;align-items:center;gap:0.25rem;
+  list-style:none;
+}
+.nav-links a{
+  font-size:0.82rem;font-weight:500;
+  letter-spacing:0.04em;
+  color:var(--muted);
+  text-decoration:none;padding:0.4rem 0.9rem;
+  border-radius:6px;
+  transition:all 0.2s;cursor:pointer;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.06)}
+.nav-cta{
+  background:var(--accent);
+  color:var(--black)!important;
+  font-weight:600!important;
+  padding:0.45rem 1.1rem!important;
+  border-radius:8px!important;
+  transition:all 0.2s!important;
+}
+.nav-cta:hover{background:#00efbf!important;transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,212,170,0.3)!important}
+
+/* ── PAGES ── */
+.page{display:none;padding-top:64px;min-height:100vh}
+.page.active{display:block}
+
+/* ── SECTION BASE ── */
+section{padding:6rem 0;position:relative}
+.container{max-width:1120px;margin:0 auto;padding:0 2.5rem}
+.container-sm{max-width:760px;margin:0 auto;padding:0 2.5rem}
+
+/* ── LABELS ── */
+.label{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.7rem;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1rem;
+}
+.label::before{content:'';width:20px;height:1.5px;background:var(--accent);display:block}
+
+/* ── HEADINGS ── */
+h1,h2,h3{font-family:'Cormorant',serif;letter-spacing:-0.01em;line-height:1.05;font-weight:600}
+h1{font-size:clamp(3.5rem,8vw,7rem);font-weight:500;letter-spacing:-0.02em}
+h2{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:500}
+h3{font-size:1.5rem;font-weight:500}
+
+.accent-text{color:var(--accent)}
+.muted{color:var(--muted)}
+
+p{color:var(--muted);line-height:1.75}
+p.large{font-size:1.05rem;color:#99aab8}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.85rem 2rem;
+  font-family:'Cormorant',serif;
+  font-size:1rem;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  border-radius:10px;
+  transition:all 0.25s;
+  text-decoration:none;
+}
+.btn-primary{
+  background:var(--accent);color:var(--black);
+}
+.btn-primary:hover{background:#00efbf;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,212,170,0.35)}
+.btn-outline{
+  background:transparent;color:var(--white);
+  border:1px solid var(--border-hover);
+}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:#ffd060;transform:translateY(-2px);box-shadow:0 8px 30px rgba(240,192,96,0.3)}
+
+/* ── CARDS ── */
+.glass-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem;
+  transition:all 0.3s;
+}
+.glass-card:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+
+/* ── DIVIDER ── */
+hr{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ─────────────────────────────────────────
+   HOME PAGE
+───────────────────────────────────────── */
+.hero{
+  min-height:calc(100vh - 64px);
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:4rem;
+  padding:4rem 2.5rem;
+  max-width:1120px;margin:0 auto;
+  position:relative;
+}
+.hero::before{
+  content:'';
+  position:absolute;top:-20%;right:-10%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(0,212,170,0.06) 0%,transparent 70%);
+  pointer-events:none;border-radius:50%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--accent-dim);
+  border:1px solid var(--accent-border);
+  border-radius:100px;
+  padding:0.35rem 1rem;
+  font-size:0.75rem;font-weight:500;
+  color:var(--accent);margin-bottom:1.5rem;
+  letter-spacing:0.02em;
+}
+.hero-badge-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+.hero h1{margin-bottom:1.25rem}
+.hero h1 em{
+  font-style:normal;
+  background:var(--grad);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-desc{font-size:1.1rem;color:#99aab8;margin-bottom:2rem;max-width:480px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.hero-trust{
+  display:flex;align-items:center;gap:1.5rem;
+  padding-top:2rem;border-top:1px solid var(--border);
+}
+.trust-item{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--muted)}
+.trust-item strong{color:var(--off-white)}
+.trust-sep{width:1px;height:20px;background:var(--border)}
+
+.hero-right{position:relative}
+.hero-card-main{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+}
+.hero-card-top{
+  background:linear-gradient(135deg,#0a1f1a 0%,#0d2620 100%);
+  padding:2rem;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.hero-card-top::before{
+  content:'✦';
+  position:absolute;right:1.5rem;top:1rem;
+  font-size:4rem;opacity:0.06;color:var(--accent);
+}
+.hero-card-label{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem}
+.hero-card-price{
+  font-family:'Cormorant',serif;
+  font-size:4rem;font-weight:600;
+  color:var(--white);line-height:1;
+  margin-bottom:0.25rem;
+}
+.hero-card-price sup{font-size:1.5rem;vertical-align:super}
+.hero-card-price span{font-size:1rem;color:var(--muted);font-weight:400}
+.hero-card-sub{font-size:0.82rem;color:var(--muted)}
+.hero-card-body{padding:1.5rem}
+.hero-feature{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.6rem 0;
+  border-bottom:1px solid var(--border);
+  font-size:0.85rem;color:#99aab8;
+}
+.hero-feature:last-child{border-bottom:none}
+.hero-feature::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+
+.floating-badge{
+  position:absolute;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:0.75rem 1rem;
+  display:flex;align-items:center;gap:0.6rem;
+}
+.floating-badge.top{top:-1.5rem;right:2rem}
+.floating-badge.bottom{bottom:-1.5rem;left:1.5rem}
+.badge-icon{font-size:1.2rem}
+.badge-text{font-size:0.75rem}
+.badge-text strong{display:block;color:var(--white);font-size:0.82rem}
+.badge-text span{color:var(--muted)}
+
+/* STATS */
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  background:var(--card);
+}
+.stat-item{
+  padding:2.5rem 2rem;
+  border-right:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:background 0.2s;
+}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:rgba(0,212,170,0.03)}
+.stat-item::before{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--grad);transform:scaleX(0);
+  transition:transform 0.3s;transform-origin:left;
+}
+.stat-item:hover::before{transform:scaleX(1)}
+.stat-num{
+  font-family:'Cormorant',serif;
+  font-size:3.2rem;font-weight:600;
+  color:var(--white);line-height:1;
+  margin-bottom:0.35rem;
+}
+.stat-num span{color:var(--accent)}
+.stat-label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em}
+
+/* SERVICES PREVIEW */
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+}
+.service-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem;
+  cursor:pointer;
+  transition:all 0.3s;
+  position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--grad);
+  transform:scaleX(0);transition:transform 0.3s;
+}
+.service-card:hover{border-color:var(--accent-border);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{
+  width:48px;height:48px;
+  background:var(--accent-dim);
+  border:1px solid var(--accent-border);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin-bottom:1.25rem;
+}
+.service-card h3{font-size:1.1rem;margin-bottom:0.5rem;color:var(--white)}
+.service-card p{font-size:0.85rem;margin:0}
+.service-card .price{
+  margin-top:1.25rem;padding-top:1.25rem;
+  border-top:1px solid var(--border);
+  font-family:'Cormorant',serif;
+  font-size:0.88rem;font-weight:600;
+  color:var(--accent);
+}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.process-step{text-align:center;position:relative}
+.process-step:not(:last-child)::after{
+  content:'→';
+  position:absolute;top:1.5rem;right:-0.75rem;
+  color:var(--muted);font-size:1rem;
+}
+.process-num{
+  width:48px;height:48px;
+  border:1px solid var(--accent-border);
+  background:var(--accent-dim);
+  border-radius:12px;
+  font-family:'Cormorant',serif;
+  font-size:1.2rem;font-weight:600;
+  color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1rem;
+}
+.process-step h3{font-size:0.95rem;color:var(--white);margin-bottom:0.35rem}
+.process-step p{font-size:0.82rem}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.review-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:1.75rem;
+}
+.review-stars{color:var(--gold);font-size:0.85rem;margin-bottom:1rem;letter-spacing:2px}
+.review-text{font-size:0.88rem;color:#99aab8;margin-bottom:1.25rem;line-height:1.7;font-style:italic}
+.review-author{display:flex;align-items:center;gap:0.75rem}
+.review-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--accent-dim);border:1px solid var(--accent-border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant',serif;font-weight:700;font-size:0.85rem;color:var(--accent);
+}
+.review-name{font-size:0.85rem;font-weight:500;color:var(--white)}
+.review-loc{font-size:0.75rem;color:var(--muted)}
+
+/* ─────────────────────────────────────────
+   SERVICES PAGE
+───────────────────────────────────────── */
+.page-hero{
+  padding:5rem 2.5rem 4rem;
+  max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+}
+.services-full-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+}
+.service-full-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;
+  transition:all 0.3s;
+}
+.service-full-card:hover{border-color:var(--accent-border);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.sfc-header{
+  padding:2rem;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(135deg,#0a1f1a,#0d2620);
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.sfc-badge{
+  background:var(--accent);color:var(--black);
+  font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;
+}
+.sfc-body{padding:2rem}
+.sfc-body h3{color:var(--white);margin-bottom:0.75rem}
+.sfc-price{
+  font-family:'Cormorant',serif;font-size:1.8rem;font-weight:600;
+  color:var(--accent);margin-bottom:0.25rem;
+}
+.sfc-includes{list-style:none;margin-top:1.25rem}
+.sfc-includes li{
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.83rem;color:#99aab8;
+  padding:0.4rem 0;border-bottom:1px solid var(--border);
+}
+.sfc-includes li:last-child{border:none}
+.sfc-includes li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+
+/* ─────────────────────────────────────────
+   PRICING PAGE — SEO POWERHOUSE
+───────────────────────────────────────── */
+.pricing-hero{
+  padding:5rem 2.5rem 3rem;
+  max-width:1120px;margin:0 auto;
+  text-align:center;
+}
+.pricing-tabs{
+  display:flex;justify-content:center;gap:0.5rem;
+  margin-bottom:3rem;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:0.35rem;
+  width:fit-content;margin-left:auto;margin-right:auto;
+}
+.ptab{
+  padding:0.6rem 1.5rem;border-radius:8px;
+  font-size:0.83rem;font-weight:500;
+  cursor:pointer;transition:all 0.2s;
+  border:none;background:transparent;color:var(--muted);
+}
+.ptab.active{background:var(--accent);color:var(--black);font-weight:600}
+
+.pricing-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;max-width:1000px;margin:0 auto;
+}
+.pricing-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;
+  transition:all 0.3s;position:relative;
+}
+.pricing-card.featured{border-color:var(--accent-border);box-shadow:0 0 0 1px var(--accent-border)}
+.pricing-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,0.35)}
+.pc-top{
+  padding:2rem;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.pricing-card.featured .pc-top{background:linear-gradient(135deg,#0a2820,#0e3028)}
+.pc-popular{
+  position:absolute;top:-1px;right:1.5rem;
+  background:var(--accent);color:var(--black);
+  font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  padding:3px 12px;border-radius:0 0 8px 8px;
+}
+.pc-name{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem}
+.pc-price{
+  font-family:'Cormorant',serif;font-size:3.5rem;font-weight:600;
+  color:var(--white);line-height:1;margin-bottom:0.5rem;
+}
+.pc-price sup{font-size:1.4rem;vertical-align:super;color:var(--accent)}
+.pc-price sub{font-size:1rem;color:var(--muted);font-weight:400}
+.pc-desc{font-size:0.82rem;color:var(--muted)}
+.pc-body{padding:1.75rem}
+.pc-feature{
+  display:flex;align-items:center;gap:0.65rem;
+  font-size:0.83rem;color:#99aab8;
+  padding:0.55rem 0;border-bottom:1px solid var(--border);
+}
+.pc-feature:last-of-type{border:none;margin-bottom:1.25rem}
+.pc-feature::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+.pc-feature.no::before{content:'✗';color:var(--muted)}
+.pc-feature.no{color:var(--muted)}
+
+.pricing-table-wrap{overflow-x:auto;margin-top:4rem}
+.pricing-table{
+  width:100%;border-collapse:collapse;
+  font-size:0.85rem;
+}
+.pricing-table th{
+  text-align:left;padding:1rem 1.25rem;
+  font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid var(--border);
+  font-weight:500;
+}
+.pricing-table td{
+  padding:1rem 1.25rem;
+  border-bottom:1px solid var(--border);
+  color:#99aab8;
+}
+.pricing-table tr:hover td{background:rgba(0,212,170,0.02)}
+.pricing-table td:first-child{color:var(--white);font-weight:500}
+.pricing-table td.price{color:var(--accent);font-family:'Cormorant',serif;font-weight:600}
+.pricing-table tr.section-row td{
+  background:var(--off-black);
+  color:var(--accent);
+  font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.6rem 1.25rem;
+}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+.faq-q{
+  padding:1.25rem 0;
+  display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;color:var(--white);
+  font-size:0.95rem;font-weight:500;
+}
+.faq-q:hover{color:var(--accent)}
+.faq-icon{color:var(--accent);font-size:1.2rem;transition:transform 0.3s;flex-shrink:0}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height 0.4s ease;
+  font-size:0.88rem;color:var(--muted);line-height:1.75;
+}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1.25rem}
+
+/* ─────────────────────────────────────────
+   AREAS PAGE (SEO NEIGHBOURHOOD PAGES)
+───────────────────────────────────────── */
+.areas-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+}
+.area-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.25rem;
+  cursor:pointer;transition:all 0.25s;
+  text-align:center;
+}
+.area-card:hover{border-color:var(--accent-border);background:var(--accent-dim);transform:translateY(-2px)}
+.area-card h4{font-size:0.92rem;color:var(--white);margin-bottom:0.25rem}
+.area-card p{font-size:0.75rem;margin:0}
+
+/* ─────────────────────────────────────────
+   CONTACT PAGE
+───────────────────────────────────────── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
+.contact-info-item{
+  display:flex;gap:1rem;padding:1.25rem 0;
+  border-bottom:1px solid var(--border);
+}
+.contact-info-item:last-child{border:none}
+.ci-icon{
+  width:42px;height:42px;flex-shrink:0;
+  background:var(--accent-dim);border:1px solid var(--accent-border);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:1rem;
+}
+.ci-label{font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem}
+.ci-value{font-size:0.92rem;color:var(--white)}
+
+/* BOOKING FORM */
+.booking-form{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;padding:2.5rem;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{margin-bottom:1.25rem}
+.form-group label{
+  display:block;font-size:0.75rem;font-weight:500;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:0.5rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  background:var(--off-black);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:0.85rem 1rem;
+  color:var(--white);
+  font-family:'Jost',sans-serif;
+  font-size:0.9rem;
+  transition:border-color 0.2s;
+  outline:none;
+  appearance:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,170,0.1)}
+.form-group select option{background:var(--off-black)}
+.form-group textarea{height:120px;resize:vertical}
+
+/* ─────────────────────────────────────────
+   ABOUT PAGE
+───────────────────────────────────────── */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.value-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:2rem;
+  transition:all 0.3s;
+}
+.value-card:hover{border-color:var(--accent-border);transform:translateY(-3px)}
+.value-icon{font-size:2rem;margin-bottom:1rem}
+.value-card h3{color:var(--white);font-size:1rem;margin-bottom:0.5rem}
+.value-card p{font-size:0.83rem}
+
+/* ─────────────────────────────────────────
+   CTA BANNER
+───────────────────────────────────────── */
+.cta-banner{
+  background:linear-gradient(135deg,#0a2820 0%,#061a14 100%);
+  border:1px solid var(--accent-border);
+  border-radius:24px;
+  padding:4rem;
+  text-align:center;
+  position:relative;overflow:hidden;
+  margin:0 2.5rem;
+}
+.cta-banner::before{
+  content:'';
+  position:absolute;top:-50%;left:50%;transform:translateX(-50%);
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(0,212,170,0.08) 0%,transparent 70%);
+  border-radius:50%;
+}
+.cta-banner h2{color:var(--white);margin-bottom:1rem}
+.cta-banner p{margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer{
+  background:var(--off-black);
+  border-top:1px solid var(--border);
+  padding:4rem 2.5rem 2rem;
+}
+.footer-grid{
+  max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;margin-bottom:3rem;
+}
+.footer-brand{font-family:'Cormorant',serif;font-weight:800;font-size:1.1rem;color:var(--white);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem}
+.footer-brand span{color:var(--accent)}
+.footer-desc{font-size:0.83rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7}
+.footer-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--accent-dim);border:1px solid var(--accent-border);
+  border-radius:8px;padding:0.5rem 1rem;
+  font-size:0.75rem;color:var(--accent);font-weight:500;
+}
+.footer-col h4{
+  font-family:'Cormorant',serif;font-size:0.75rem;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--white);margin-bottom:1.25rem;
+}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:0.6rem}
+.footer-links a{
+  font-size:0.83rem;color:var(--muted);
+  text-decoration:none;cursor:pointer;
+  transition:color 0.2s;
+}
+.footer-links a:hover{color:var(--accent)}
+.footer-bottom{
+  max-width:1120px;margin:0 auto;
+  padding-top:2rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.78rem;color:var(--muted);
+}
+.footer-schema{color:var(--accent);font-weight:500}
+
+/* ─────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+
+.fade-up{opacity:0;animation:fadeUp 0.7s ease forwards}
+.fade-in{opacity:0;animation:fadeIn 0.7s ease forwards}
+
+[data-delay="1"]{animation-delay:0.1s}
+[data-delay="2"]{animation-delay:0.2s}
+[data-delay="3"]{animation-delay:0.3s}
+[data-delay="4"]{animation-delay:0.4s}
+[data-delay="5"]{animation-delay:0.5s}
+[data-delay="6"]{animation-delay:0.6s}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media(max-width:900px){
+  .hero,.page-hero,.contact-grid,.footer-grid{grid-template-columns:1fr}
+  .hero-right,.page-hero > div:last-child{display:none}
+  .stats-grid,.services-grid,.services-full-grid,.pricing-grid,.process-grid,.reviews-grid,.values-grid{grid-template-columns:1fr 1fr}
+  .areas-grid{grid-template-columns:repeat(3,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .stats-grid,.services-grid,.services-full-grid,.pricing-grid,.process-grid,.reviews-grid,.values-grid,.areas-grid{grid-template-columns:1fr}
+  h1{font-size:2.5rem}
+  .hero,section{padding:3rem 1.5rem}
+  .container,.container-sm{padding:0 1.5rem}
+  .cta-banner{padding:2.5rem 1.5rem;margin:0 1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-dot"></div>
+    Elite<span>Clean</span> Pro
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a onclick="showPage('pricing')" id="nav-pricing">Pricing</a></li>
+    <li><a onclick="showPage('areas')" id="nav-areas">Calgary Areas</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="hero-badge fade-up" data-delay="1">
+        <span class="hero-badge-dot"></span>
+        Calgary's #1 Rated Cleaning Service · 4.9★ (247 Reviews)
+      </div>
+      <h1 class="fade-up" data-delay="2">
+        The<br><em>Elite</em><br>Standard of<br>Clean
+      </h1>
+      <p class="hero-desc fade-up" data-delay="3">
+        Premium residential and commercial cleaning across Calgary, AB. 
+        Insured, background-checked, and trusted by 200+ homes and businesses.
+      </p>
+      <div class="hero-actions fade-up" data-delay="4">
+        <button class="btn btn-primary" onclick="showPage('contact')">Book a Clean ↗</button>
+        <button class="btn btn-outline" onclick="showPage('pricing')">View Pricing</button>
+      </div>
+      <div class="hero-trust fade-up" data-delay="5">
+        <div class="trust-item"><strong>✓</strong> Fully Insured</div>
+        <div class="trust-sep"></div>
+        <div class="trust-item"><strong>✓</strong> Background Checked</div>
+        <div class="trust-sep"></div>
+        <div class="trust-item"><strong>✓</strong> Satisfaction Guaranteed</div>
+      </div>
+    </div>
+    <div class="hero-right fade-in" data-delay="3">
+      <div class="floating-badge top">
+        <span class="badge-icon">⭐</span>
+        <div class="badge-text"><strong>4.9/5 Rating</strong><span>247 Google reviews</span></div>
+      </div>
+      <div class="hero-card-main">
+        <div class="hero-card-top">
+          <div class="hero-card-label">Standard Residential Clean</div>
+          <div class="hero-card-price"><sup>$</sup>139<span>/visit</span></div>
+          <div class="hero-card-sub">Most popular · Book online in 60 seconds</div>
+        </div>
+        <div class="hero-card-body">
+          <div class="hero-feature">Kitchen deep clean & sanitize</div>
+          <div class="hero-feature">All bathrooms scrubbed & disinfected</div>
+          <div class="hero-feature">Vacuum & mop all floors</div>
+          <div class="hero-feature">Dusting throughout</div>
+          <div class="hero-feature">Eco-friendly products</div>
+          <div class="hero-feature">100% satisfaction guarantee</div>
+        </div>
+      </div>
+      <div class="floating-badge bottom">
+        <span class="badge-icon">🛡️</span>
+        <div class="badge-text"><strong>Fully Insured & Bonded</strong><span>Calgary, AB</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section style="padding:0 0 5rem">
+    <div class="container">
+      <div class="stats-grid fade-up">
+        <div class="stat-item">
+          <div class="stat-num">200<span>+</span></div>
+          <div class="stat-label">Calgary Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.<span>9</span></div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98<span>%</span></div>
+          <div class="stat-label">Rebooking Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24<span>h</span></div>
+          <div class="stat-label">Response Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- SERVICES PREVIEW -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="label" style="justify-content:center">What We Do</div>
+        <h2>Cleaning Services in <span class="accent-text">Calgary, AB</span></h2>
+        <p class="large" style="margin-top:1rem;max-width:520px;margin-left:auto;margin-right:auto">
+          From Beltline condos to Seton commercial spaces — we cover all of Calgary with the same elite standard.
+        </p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+        <div class="service-full-card" onclick="showPage('services')" style="cursor:pointer">
+          <div class="sfc-header">
+            <div>
+              <div style="font-size:2.5rem;margin-bottom:0.75rem">🏠</div>
+              <h3 style="color:var(--white);font-size:1.6rem">Residential Cleaning<br><em style="color:var(--accent);font-style:italic;font-weight:300">Calgary, AB</em></h3>
+            </div>
+            <div class="sfc-badge">Most Popular</div>
+          </div>
+          <div class="sfc-body">
+            <p style="font-size:0.88rem;margin-bottom:1.25rem;line-height:1.8">Weekly, bi-weekly, or monthly cleaning for Calgary homes and condos. Consistent assigned cleaners who learn your space — so every visit gets better, not just adequate.</p>
+            <ul class="sfc-includes">
+              <li>Full kitchen cleaning & sanitization</li>
+              <li>All bathrooms scrubbed & disinfected</li>
+              <li>Vacuuming & mopping all floors</li>
+              <li>Dusting surfaces, fixtures & vents</li>
+              <li>Eco-friendly, non-toxic products</li>
+              <li>Same cleaner every visit</li>
+            </ul>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+              <div><div class="sfc-price">From $139</div><div style="font-size:0.75rem;color:var(--muted)">Per visit · No contracts</div></div>
+              <span style="color:var(--accent);font-size:0.85rem;font-weight:500">View Details →</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-full-card" onclick="showPage('services')" style="cursor:pointer">
+          <div class="sfc-header">
+            <div>
+              <div style="font-size:2.5rem;margin-bottom:0.75rem">🏢</div>
+              <h3 style="color:var(--white);font-size:1.6rem">Commercial Cleaning<br><em style="color:var(--gold);font-style:italic;font-weight:300">Calgary Businesses</em></h3>
+            </div>
+            <div class="sfc-badge" style="background:var(--gold);color:var(--black)">Highest ROI</div>
+          </div>
+          <div class="sfc-body">
+            <p style="font-size:0.88rem;margin-bottom:1.25rem;line-height:1.8">Recurring contracts for offices, medical clinics, gyms, and retail spaces across Calgary. Predictable pricing, professional results — so your team walks into a clean space every single morning.</p>
+            <ul class="sfc-includes">
+              <li>Office & common area cleaning</li>
+              <li>Washroom sanitization & restocking</li>
+              <li>Floor care — vacuum, mop, buff</li>
+              <li>Kitchen & break room cleaning</li>
+              <li>Custom schedule around your hours</li>
+              <li>Dedicated team & supervisor</li>
+            </ul>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+              <div><div class="sfc-price" style="color:var(--gold)">From $800/mo</div><div style="font-size:0.75rem;color:var(--muted)">Monthly · Priority scheduling</div></div>
+              <span style="color:var(--gold);font-size:0.85rem;font-weight:500">Get Quote →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="label" style="justify-content:center">Simple Process</div>
+        <h2>Book in <span class="accent-text">60 Seconds</span></h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <h3>Book Online</h3>
+          <p>Choose your service, pick a date, and pay securely — all in under a minute.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <h3>We Confirm</h3>
+          <p>You'll get an instant confirmation and a reminder 24 hours before your clean.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <h3>We Clean</h3>
+          <p>Our trained, insured team arrives on time and works to our Elite standard checklist.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">04</div>
+          <h3>You Relax</h3>
+          <p>Come home to a spotless space. 100% satisfaction guaranteed or we return for free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- REVIEWS -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="label" style="justify-content:center">Social Proof</div>
+        <h2>What Calgary Clients <span class="accent-text">Say</span></h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Elite Clean Pro is hands down the best cleaning service I've used in Calgary. My condo in the Beltline looks immaculate after every visit. Worth every penny."</p>
+          <div class="review-author">
+            <div class="review-avatar">SC</div>
+            <div>
+              <div class="review-name">Sarah C.</div>
+              <div class="review-loc">Beltline, Calgary</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"We switched from another commercial cleaning company to Elite Clean Pro for our NW office and the difference is night and day. Professional, consistent, and no surprises."</p>
+          <div class="review-author">
+            <div class="review-avatar">MR</div>
+            <div>
+              <div class="review-name">Mark R.</div>
+              <div class="review-loc">Office Manager, NW Calgary</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I manage 3 Airbnb properties in Kensington and Elite Clean Pro handles all my turnovers. Guests consistently comment on how clean everything is. 5 stars every time."</p>
+          <div class="review-author">
+            <div class="review-avatar">TL</div>
+            <div>
+              <div class="review-name">Tara L.</div>
+              <div class="review-loc">Airbnb Host, Kensington</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <div class="label" style="justify-content:center">Ready to Start?</div>
+        <h2>Get a <span class="accent-text">Free Quote</span> Today</h2>
+        <p>Same-week availability across Calgary. No contracts, no surprises — just exceptional cleaning.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="showPage('contact')">Book Online Now ↗</button>
+          <button class="btn btn-outline" onclick="showPage('pricing')">See Pricing First</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══════════════════════════════════════
+     SERVICES PAGE
+══════════════════════════════════════ -->
+<div class="page" id="page-services">
+  <div class="page-hero">
+    <div>
+      <div class="label">Our Services</div>
+      <h1>Professional <span class="accent-text">Cleaning Services</span> in Calgary, AB</h1>
+      <p class="large" style="margin-top:1rem">Every service includes our Elite standard checklist, eco-friendly products, insured professionals, and a 100% satisfaction guarantee.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="showPage('contact')">Get Free Quote ↗</button>
+        <button class="btn btn-outline" onclick="showPage('pricing')">View All Pricing</button>
+      </div>
+    </div>
+    <div>
+      <div class="glass-card">
+        <div class="label">Why Elite Clean Pro?</div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem">
+          <div class="hero-feature">Fully insured & bonded in Alberta</div>
+          <div class="hero-feature">Background-checked professionals</div>
+          <div class="hero-feature">Eco-friendly, non-toxic products</div>
+          <div class="hero-feature">Consistent assigned teams</div>
+          <div class="hero-feature">Online booking & real-time updates</div>
+          <div class="hero-feature">100% satisfaction guarantee</div>
+          <div class="hero-feature">Same-week availability in Calgary</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <section>
+    <div class="container">
+      <div class="services-full-grid">
+        <div class="service-full-card">
+          <div class="sfc-header">
+            <div>
+              <div style="font-size:2rem;margin-bottom:0.5rem">🏠</div>
+              <h3 style="color:var(--white)">Residential Cleaning Calgary</h3>
+            </div>
+            <div class="sfc-badge">Most Popular</div>
+          </div>
+          <div class="sfc-body">
+            <p style="font-size:0.85rem;margin-bottom:1.25rem;line-height:1.8">Calgary's top-rated home cleaning service. We send the same professional cleaner every visit so they know your home, your preferences, and your standard. No strangers in your space, ever.</p>
+            <div class="sfc-price">From $139</div>
+            <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1.25rem">Per visit · Weekly, bi-weekly, or monthly · No contracts</div>
+            <ul class="sfc-includes">
+              <li>Full kitchen cleaning & sanitization</li>
+              <li>Bathrooms scrubbed & disinfected</li>
+              <li>All floors vacuumed & mopped</li>
+              <li>Dusting surfaces, fixtures & vents</li>
+              <li>Bedroom tidying & linen change (optional +$25)</li>
+              <li>Eco-friendly, non-toxic products</li>
+              <li>Same assigned cleaner every visit</li>
+              <li>100% satisfaction guarantee</li>
+            </ul>
+            <div style="margin-top:1.5rem;padding:1rem;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:10px;font-size:0.8rem;color:#99aab8">
+              <strong style="color:var(--accent)">Recurring discount:</strong> Save 15% weekly · 10% bi-weekly · 5% monthly
+            </div>
+            <button class="btn btn-primary" onclick="showPage('contact')" style="width:100%;justify-content:center;margin-top:1.5rem">Book Residential Clean ↗</button>
+          </div>
+        </div>
+        <div class="service-full-card">
+          <div class="sfc-header">
+            <div>
+              <div style="font-size:2rem;margin-bottom:0.5rem">🏢</div>
+              <h3 style="color:var(--white)">Commercial Cleaning Calgary</h3>
+            </div>
+            <div class="sfc-badge" style="background:var(--gold);color:var(--black)">Highest ROI</div>
+          </div>
+          <div class="sfc-body">
+            <p style="font-size:0.85rem;margin-bottom:1.25rem;line-height:1.8">Recurring commercial cleaning contracts for Calgary offices, medical clinics, gyms, and retail spaces. Month-to-month, no lock-in — we earn your business every single visit.</p>
+            <div class="sfc-price" style="color:var(--gold)">From $800/mo</div>
+            <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1.25rem">Monthly contract · After-hours available · Priority scheduling</div>
+            <ul class="sfc-includes">
+              <li>Office & workstation cleaning</li>
+              <li>Washroom sanitization & restocking</li>
+              <li>Floor care — vacuum, mop, buff</li>
+              <li>Kitchen & break room cleaning</li>
+              <li>Glass, windows & surface cleaning</li>
+              <li>Trash & recycling removal</li>
+              <li>Dedicated team & supervisor</li>
+              <li>Monthly quality inspection report</li>
+            </ul>
+            <div style="margin-top:1.5rem;padding:1rem;background:var(--gold-dim);border:1px solid rgba(240,192,96,0.2);border-radius:10px;font-size:0.8rem;color:#99aab8">
+              <strong style="color:var(--gold)">Commercial clients:</strong> Medical, legal, fitness, retail & property management welcome
+            </div>
+            <button class="btn btn-gold" onclick="showPage('contact')" style="width:100%;justify-content:center;margin-top:1.5rem">Get Commercial Quote ↗</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <div class="label" style="justify-content:center">Calgary's Best Cleaning</div>
+        <h2>Not Sure Which <span class="accent-text">Service You Need?</span></h2>
+        <p>Tell us about your space and we'll recommend the right clean for your budget.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="showPage('contact')">Get a Free Recommendation ↗</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PRICING PAGE
+══════════════════════════════════════ -->
+<div class="page" id="page-pricing">
+  <div class="pricing-hero">
+    <div class="label" style="justify-content:center">Transparent Pricing</div>
+    <h1>Clear, Fair <span class="accent-text">Pricing</span><br>No Surprises</h1>
+    <p class="large" style="margin-top:1rem;max-width:540px;margin-left:auto;margin-right:auto">
+      Every price includes insured professionals, eco-friendly products, and our 100% satisfaction guarantee. What you see is what you pay.
+    </p>
+  </div>
+
+  <!-- TABS -->
+  <div class="container" style="text-align:center;margin-bottom:3rem">
+    <div class="pricing-tabs">
+      <button class="ptab active" id="tab-res" onclick="switchPricing('residential')">Residential</button>
+      <button class="ptab" id="tab-com" onclick="switchPricing('commercial')">Commercial</button>
+    </div>
+  </div>
+
+  <!-- RESIDENTIAL PRICING -->
+  <div class="container" id="pricing-residential">
+    <div class="pricing-grid" style="grid-template-columns:1fr 1fr;max-width:720px">
+      <div class="pricing-card">
+        <div class="pc-top">
+          <div class="pc-name">Standard Clean</div>
+          <div class="pc-price"><sup>$</sup>139<sub>/visit</sub></div>
+          <p class="pc-desc">1–2 bed home · All essentials covered</p>
+        </div>
+        <div class="pc-body">
+          <div class="pc-feature">Full kitchen cleaning & sanitize</div>
+          <div class="pc-feature">Bathrooms scrubbed & disinfected</div>
+          <div class="pc-feature">Vacuuming all floors</div>
+          <div class="pc-feature">Mopping hard floors</div>
+          <div class="pc-feature">Dusting surfaces & fixtures</div>
+          <div class="pc-feature">Eco-friendly products</div>
+          <div class="pc-feature">Same cleaner every visit</div>
+          <button class="btn btn-outline" onclick="showPage('contact')" style="width:100%;justify-content:center">Book Standard ↗</button>
+        </div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pc-top">
+          <div class="pc-popular">Best Value</div>
+          <div class="pc-name">Recurring Plan</div>
+          <div class="pc-price"><sup>$</sup>118<sub>/visit</sub></div>
+          <p class="pc-desc">Weekly plan · Save 15% automatically</p>
+        </div>
+        <div class="pc-body">
+          <div class="pc-feature">Everything in Standard</div>
+          <div class="pc-feature">Priority scheduling</div>
+          <div class="pc-feature">Locked-in rate guarantee</div>
+          <div class="pc-feature">Free re-clean if not satisfied</div>
+          <div class="pc-feature">Dedicated cleaner assigned</div>
+          <div class="pc-feature">Skip or pause anytime</div>
+          <div class="pc-feature">No contracts — ever</div>
+          <button class="btn btn-primary" onclick="showPage('contact')" style="width:100%;justify-content:center">Start Recurring Plan ↗</button>
+        </div>
+      </div>
+    </div>
+          <div class="pc-feature">Certificate of clean</div>
+          <div class="pc-feature">Priority scheduling</div>
+          <button class="btn btn-outline" onclick="showPage('contact')" style="width:100%;justify-content:center">Book Move Clean ↗</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILED PRICE TABLE -->
+    <section style="padding:4rem 0 0">
+      <div class="label">Full Price List</div>
+      <h2 style="margin-bottom:2rem">Every Service, <span class="accent-text">Every Price</span></h2>
+      <div class="pricing-table-wrap">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>What's Included</th>
+              <th>Home Size</th>
+              <th class="price">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="section-row"><td colspan="4">🏠 Residential Cleaning — Calgary AB</td></tr>
+            <tr><td>Standard Clean</td><td>Kitchen, bathrooms, floors, dusting</td><td>1–2 bed</td><td class="price">$139</td></tr>
+            <tr><td>Standard Clean</td><td>Kitchen, bathrooms, floors, dusting</td><td>3–4 bed</td><td class="price">$179</td></tr>
+            <tr><td>Standard Clean</td><td>Kitchen, bathrooms, floors, dusting</td><td>5+ bed</td><td class="price">$219+</td></tr>
+            <tr><td>Recurring Weekly</td><td>Standard clean · 15% discount applied</td><td>1–2 bed</td><td class="price">$118</td></tr>
+            <tr><td>Recurring Bi-Weekly</td><td>Standard clean · 10% discount applied</td><td>1–2 bed</td><td class="price">$125</td></tr>
+            <tr><td>Recurring Monthly</td><td>Standard clean · 5% discount applied</td><td>1–2 bed</td><td class="price">$132</td></tr>
+            <tr class="section-row"><td colspan="4">➕ Add-Ons</td></tr>
+            <tr><td>Inside Oven</td><td>Deep oven clean & degrease</td><td>—</td><td class="price">+$45</td></tr>
+            <tr><td>Inside Fridge</td><td>Full fridge clean & sanitize</td><td>—</td><td class="price">+$35</td></tr>
+            <tr><td>Linen Change</td><td>Strip & remake beds with fresh linens</td><td>—</td><td class="price">+$25</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- COMMERCIAL PRICING -->
+  <div class="container" id="pricing-commercial" style="display:none">
+    <div class="pricing-grid" style="grid-template-columns:1fr 1fr;max-width:720px">
+      <div class="pricing-card">
+        <div class="pc-top">
+          <div class="pc-name">Small Office</div>
+          <div class="pc-price"><sup>$</sup>800<sub>/mo</sub></div>
+          <p class="pc-desc">Up to 2,000 sqft · 3× per week</p>
+        </div>
+        <div class="pc-body">
+          <div class="pc-feature">Office & desk area cleaning</div>
+          <div class="pc-feature">Washroom sanitization</div>
+          <div class="pc-feature">Vacuuming & mopping</div>
+          <div class="pc-feature">Kitchen / break room</div>
+          <div class="pc-feature">Trash & recycling removal</div>
+          <div class="pc-feature">After-hours scheduling</div>
+          <div class="pc-feature">Month-to-month · No lock-in</div>
+          <button class="btn btn-outline" onclick="showPage('contact')" style="width:100%;justify-content:center">Get Quote ↗</button>
+        </div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pc-top">
+          <div class="pc-popular">Most Popular</div>
+          <div class="pc-name">Mid-Size Office</div>
+          <div class="pc-price"><sup>$</sup>1,800<sub>/mo</sub></div>
+          <p class="pc-desc">2,000–5,000 sqft · 5× per week · Full service</p>
+        </div>
+        <div class="pc-body">
+          <div class="pc-feature">Everything in Small Office</div>
+          <div class="pc-feature">Interior window cleaning</div>
+          <div class="pc-feature">Conference rooms</div>
+          <div class="pc-feature">Supply restocking</div>
+          <div class="pc-feature">Dedicated assigned team</div>
+          <div class="pc-feature">Monthly quality report</div>
+          <div class="pc-feature">Priority emergency response</div>
+          <button class="btn btn-primary" onclick="showPage('contact')" style="width:100%;justify-content:center">Get Quote ↗</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;padding:2rem;background:var(--gold-dim);border:1px solid rgba(240,192,96,0.2);border-radius:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+      <div>
+        <div style="font-family:'Cormorant',serif;font-size:1.3rem;font-weight:600;color:var(--white);margin-bottom:0.4rem">Large Facility or Custom Space?</div>
+        <p style="font-size:0.85rem;margin:0">Medical clinics, gyms, retail, property management — we build a fully custom scope and price for your space.</p>
+      </div>
+      <button class="btn btn-gold" onclick="showPage('contact')" style="flex-shrink:0">Request Custom Quote ↗</button>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="label" style="justify-content:center">Common Questions</div>
+        <h2>Pricing <span class="accent-text">FAQ</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do you charge extra for pets or large homes? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Homes with pets may have an additional $15–25 fee for extra hair and dander removal. Large homes over 3,000 sqft are quoted individually — contact us for a custom quote.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Is there a discount for recurring bookings? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Yes. Weekly cleans get 15% off, bi-weekly cleans get 10% off, and monthly cleans get 5% off. Discounts are applied automatically at booking.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What if I'm not happy with my clean? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">We offer a 100% satisfaction guarantee. If you're not happy, contact us within 24 hours and we'll return to re-clean the areas in question at no charge.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do you bring your own supplies and equipment? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Yes, we bring everything. All our products are eco-friendly, non-toxic, and safe for children and pets. If you have specific product preferences, just let us know.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How do commercial cleaning contracts work? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Commercial contracts are month-to-month with no lock-in. We'll assess your space, provide a custom quote, and set up a cleaning schedule that works around your business hours.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Are you insured and what areas do you cover? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Yes, Elite Clean Pro is fully insured and bonded in Alberta. We cover all of Calgary including NW, NE, SW, SE, Beltline, Kensington, Bridgeland, and surrounding areas like Airdrie, Cochrane, and Chestermere.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <div class="label" style="justify-content:center">Get Started Today</div>
+        <h2>Ready to Experience the <span class="accent-text">Elite Standard?</span></h2>
+        <p>Book online in 60 seconds. Same-week availability across Calgary.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="showPage('contact')">Book Now ↗</button>
+          <a href="tel:+14035550100" class="btn btn-outline">📞 Call Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     CALGARY AREAS PAGE (LOCAL SEO)
+══════════════════════════════════════ -->
+<div class="page" id="page-areas">
+  <section>
+    <div class="container">
+      <div style="max-width:680px;margin-bottom:4rem">
+        <div class="label">Service Areas</div>
+        <h1>Cleaning Services Across <span class="accent-text">Calgary, Alberta</span></h1>
+        <p class="large" style="margin-top:1rem">Elite Clean Pro serves every neighbourhood in Calgary and surrounding communities. Same elite standard, wherever you are in the city.</p>
+      </div>
+
+      <h2 style="margin-bottom:2rem">NW Calgary</h2>
+      <div class="areas-grid" style="margin-bottom:3rem">
+        <div class="area-card"><h4>Tuscany</h4><p>Cleaning services in Tuscany, Calgary</p></div>
+        <div class="area-card"><h4>Royal Oak</h4><p>House cleaning Royal Oak Calgary</p></div>
+        <div class="area-card"><h4>Sage Hill</h4><p>Cleaning services Sage Hill</p></div>
+        <div class="area-card"><h4>Kincora</h4><p>Home cleaning Kincora NW</p></div>
+        <div class="area-card"><h4>Sherwood</h4><p>Cleaning Sherwood Calgary NW</p></div>
+        <div class="area-card"><h4>Hamptons</h4><p>Cleaning services The Hamptons</p></div>
+        <div class="area-card"><h4>Edgemont</h4><p>House cleaning Edgemont Calgary</p></div>
+        <div class="area-card"><h4>Varsity</h4><p>Cleaning Varsity NW Calgary</p></div>
+      </div>
+
+      <h2 style="margin-bottom:2rem">SW Calgary</h2>
+      <div class="areas-grid" style="margin-bottom:3rem">
+        <div class="area-card"><h4>Aspen Woods</h4><p>Premium cleaning Aspen Woods</p></div>
+        <div class="area-card"><h4>Signal Hill</h4><p>Cleaning services Signal Hill</p></div>
+        <div class="area-card"><h4>Coach Hill</h4><p>Home cleaning Coach Hill Calgary</p></div>
+        <div class="area-card"><h4>Springbank Hill</h4><p>Cleaning Springbank Hill SW</p></div>
+        <div class="area-card"><h4>Lakeview</h4><p>House cleaning Lakeview Calgary</p></div>
+        <div class="area-card"><h4>Altadore</h4><p>Cleaning services Altadore SW</p></div>
+        <div class="area-card"><h4>Mission</h4><p>Cleaning Mission Calgary SW</p></div>
+        <div class="area-card"><h4>Beltline</h4><p>Condo cleaning Beltline Calgary</p></div>
+      </div>
+
+      <h2 style="margin-bottom:2rem">SE & NE Calgary</h2>
+      <div class="areas-grid" style="margin-bottom:3rem">
+        <div class="area-card"><h4>Mahogany</h4><p>Cleaning services Mahogany SE</p></div>
+        <div class="area-card"><h4>Auburn Bay</h4><p>House cleaning Auburn Bay Calgary</p></div>
+        <div class="area-card"><h4>Seton</h4><p>Commercial cleaning Seton SE</p></div>
+        <div class="area-card"><h4>McKenzie Towne</h4><p>Cleaning McKenzie Towne</p></div>
+        <div class="area-card"><h4>Bridgeland</h4><p>Cleaning Bridgeland NE Calgary</p></div>
+        <div class="area-card"><h4>Kensington</h4><p>Cleaning services Kensington</p></div>
+        <div class="area-card"><h4>Renfrew</h4><p>House cleaning Renfrew Calgary</p></div>
+        <div class="area-card"><h4>Panorama Hills</h4><p>Cleaning Panorama Hills NE</p></div>
+      </div>
+
+      <h2 style="margin-bottom:2rem">Surrounding Communities</h2>
+      <div class="areas-grid" style="margin-bottom:3rem">
+        <div class="area-card"><h4>Airdrie</h4><p>Cleaning services Airdrie AB</p></div>
+        <div class="area-card"><h4>Cochrane</h4><p>House cleaning Cochrane Alberta</p></div>
+        <div class="area-card"><h4>Chestermere</h4><p>Cleaning Chestermere AB</p></div>
+        <div class="area-card"><h4>Okotoks</h4><p>Cleaning services Okotoks Alberta</p></div>
+      </div>
+
+      <div class="cta-banner">
+        <div class="label" style="justify-content:center">Your Neighbourhood</div>
+        <h2>Don't See Your Area? <span class="accent-text">We Likely Cover It.</span></h2>
+        <p>Contact us with your postal code and we'll confirm availability. We're expanding across Calgary every month.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary" onclick="showPage('contact')">Check Your Area ↗</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     ABOUT PAGE
+══════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <section>
+    <div class="container-sm" style="text-align:center;margin-bottom:4rem">
+      <div class="label" style="justify-content:center">Our Story</div>
+      <h1>Calgary's <span class="accent-text">Elite</span> Cleaning Standard</h1>
+      <p class="large" style="margin-top:1.25rem">Elite Clean Pro was built on one belief: that every Calgary home and business deserves a level of clean that actually feels elite — not just adequate.</p>
+    </div>
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:5rem">
+        <div>
+          <div class="label">Our Mission</div>
+          <h2>We Don't Clean.<br>We <span class="accent-text">Transform.</span></h2>
+          <p style="margin-top:1rem">Most cleaning companies show up, do the minimum, and move on. We built Elite Clean Pro to be different — a company where every cleaner takes ownership of the space they're in, and every client feels the difference the moment they walk through the door.</p>
+          <p>Based in Calgary, AB, we serve residential and commercial clients across the city with a consistent, professional, and genuinely caring approach to cleanliness.</p>
+          <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
+            <button class="btn btn-primary" onclick="showPage('contact')">Work With Us ↗</button>
+            <button class="btn btn-outline" onclick="showPage('services')">Our Services</button>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1.25rem">
+          <div class="glass-card">
+            <div style="font-size:1.5rem;margin-bottom:0.75rem">🎯</div>
+            <h3 style="color:var(--white);margin-bottom:0.5rem;font-size:1rem">Why We Started</h3>
+            <p style="font-size:0.85rem">Calgary's cleaning market was full of companies that were either overpriced national franchises or solo operators with no systems. We saw a gap for a local business with professional standards — and built it.</p>
+          </div>
+          <div class="glass-card">
+            <div style="font-size:1.5rem;margin-bottom:0.75rem">🌿</div>
+            <h3 style="color:var(--white);margin-bottom:0.5rem;font-size:1rem">Eco-First Approach</h3>
+            <p style="font-size:0.85rem">Every product we use is non-toxic, eco-friendly, and safe for children and pets. We believe a clean home shouldn't come at the expense of a clean environment.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="label">Our Values</div>
+      <h2 style="margin-bottom:2rem">Built on <span class="accent-text">Three Principles</span></h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3>Reliability First</h3>
+          <p>We show up on time, every time. If anything changes, we communicate proactively — never leave you guessing.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔬</div>
+          <h3>Elite Attention to Detail</h3>
+          <p>We clean what you can see and what you can't. Every surface, every corner, every time — to a standard you'll notice.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Total Transparency</h3>
+          <p>Clear pricing, no hidden fees, no lock-in contracts. We earn your trust through consistency, not fine print.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     CONTACT / BOOKING PAGE
+══════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="label">Book a Clean</div>
+          <h1>Get Your <span class="accent-text">Free Quote</span></h1>
+          <p class="large" style="margin-top:1rem">Same-week availability across Calgary. Fill out the form and we'll respond within 2 hours.</p>
+
+          <div style="margin-top:2.5rem">
+            <div class="contact-info-item">
+              <div class="ci-icon">📞</div>
+              <div>
+                <div class="ci-label">Phone</div>
+                <div class="ci-value">(403) 555-0100</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📧</div>
+              <div>
+                <div class="ci-label">Email</div>
+                <div class="ci-value">hello@elitecleanpro.ca</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📍</div>
+              <div>
+                <div class="ci-label">Service Area</div>
+                <div class="ci-value">Calgary, AB & Surrounding Areas</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">🕐</div>
+              <div>
+                <div class="ci-label">Hours</div>
+                <div class="ci-value">Mon–Sun, 7:00 AM – 8:00 PM</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;padding:1.5rem;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:12px">
+            <div style="font-size:0.8rem;font-weight:600;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.5rem">Response Guarantee</div>
+            <p style="font-size:0.85rem;color:#99aab8;margin:0">We respond to every inquiry within 2 hours during business hours. Same-day bookings available for urgent cleans.</p>
+          </div>
+        </div>
+
+        <div class="booking-form">
+          <h3 style="color:var(--white);margin-bottom:0.5rem;font-size:1.1rem">Request a Quote</h3>
+          <p style="font-size:0.83rem;margin-bottom:1.75rem">Free, no-obligation quote for any service in Calgary.</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="(403) 555-0000">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="jane@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service Type</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Residential — Standard Clean (from $139)</option>
+              <option>Residential — Recurring Weekly Plan (from $118)</option>
+              <option>Residential — Recurring Bi-Weekly Plan (from $125)</option>
+              <option>Commercial — Small Office (from $800/mo)</option>
+              <option>Commercial — Mid-Size Office (from $1,800/mo)</option>
+              <option>Commercial — Large Facility / Custom Quote</option>
+              <option>Not sure — I need a recommendation</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Calgary Neighbourhood</label>
+              <input type="text" placeholder="e.g. Beltline, Tuscany, Seton...">
+            </div>
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Home / Space Size</label>
+            <select>
+              <option value="">Select size...</option>
+              <option>Studio / 1 Bed</option>
+              <option>2 Bedrooms</option>
+              <option>3 Bedrooms</option>
+              <option>4+ Bedrooms</option>
+              <option>Commercial Space</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea placeholder="Anything we should know — pets, parking, access, special requests..."></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="handleSubmit()" style="width:100%;justify-content:center;padding:1rem">
+            Request Free Quote ↗
+          </button>
+          <p style="font-size:0.75rem;text-align:center;margin-top:1rem;margin-bottom:0">
+            We respond within 2 hours · No spam · No commitment
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="nav-dot" style="width:6px;height:6px"></span>Elite<span>Clean</span> Pro</div>
+      <p class="footer-desc">Calgary's premium residential and commercial cleaning service. Insured, background-checked, and trusted by 200+ Calgary homes and businesses.</p>
+      <div class="footer-badge">✓ Insured & Bonded in Alberta</div>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a onclick="showPage('services')">Residential Cleaning Calgary</a></li>
+        <li><a onclick="showPage('services')">Commercial Cleaning Calgary</a></li>
+        <li><a onclick="showPage('pricing')">Residential Pricing</a></li>
+        <li><a onclick="showPage('pricing')">Commercial Pricing</a></li>
+        <li><a onclick="showPage('contact')">Get a Free Quote</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Calgary Areas</h4>
+      <ul class="footer-links">
+        <li><a onclick="showPage('areas')">NW Calgary</a></li>
+        <li><a onclick="showPage('areas')">SW Calgary</a></li>
+        <li><a onclick="showPage('areas')">SE Calgary</a></li>
+        <li><a onclick="showPage('areas')">NE Calgary</a></li>
+        <li><a onclick="showPage('areas')">Airdrie & Cochrane</a></li>
+        <li><a onclick="showPage('areas')">Chestermere & Okotoks</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a onclick="showPage('about')">About Us</a></li>
+        <li><a onclick="showPage('pricing')">Pricing</a></li>
+        <li><a onclick="showPage('contact')">Book a Clean</a></li>
+        <li><a href="tel:+14035550100">(403) 555-0100</a></li>
+        <li><a href="mailto:hello@elitecleanpro.ca">hello@elitecleanpro.ca</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 <span class="footer-schema">Elite Clean Pro Calgary</span> · All rights reserved</div>
+    <div>Serving Calgary, Airdrie, Cochrane, Chestermere & Okotoks, AB</div>
+  </div>
+</footer>
+
+<script>
+// ── PAGE ROUTER ──
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  const navEl = document.getElementById('nav-' + name);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  // Update SEO meta per page
+  updateMeta(name);
+}
+
+function updateMeta(page) {
+  const metas = {
+    home: {title:'Elite Clean Pro | #1 Professional Cleaning Service Calgary AB', desc:'Elite Clean Pro delivers premium residential and commercial cleaning in Calgary, AB. Trusted by 200+ Calgary homes and businesses. Book online today.'},
+    services: {title:'Cleaning Services Calgary AB | Elite Clean Pro', desc:'Residential, commercial, deep clean, Airbnb, move-in/out, and post-construction cleaning in Calgary. Insured professionals. Book online.'},
+    pricing: {title:'Cleaning Service Prices Calgary | Elite Clean Pro Pricing', desc:'Transparent pricing for all cleaning services in Calgary AB. Standard from $139, deep clean from $249, commercial from $800/mo. No hidden fees.'},
+    areas: {title:'Cleaning Services Near Me Calgary | All Calgary Neighbourhoods', desc:'Elite Clean Pro serves every Calgary neighbourhood: NW, SW, SE, NE, Beltline, Kensington, Tuscany, Airdrie, Cochrane and more.'},
+    about: {title:'About Elite Clean Pro | Calgary\'s Premium Cleaning Company', desc:'Learn about Elite Clean Pro — Calgary\'s trusted residential and commercial cleaning company. Insured, eco-friendly, and built on quality.'},
+    contact: {title:'Book a Cleaning Service Calgary | Elite Clean Pro', desc:'Book your Calgary cleaning service online. Free quote, same-week availability. Residential, commercial, and Airbnb cleaning across Calgary AB.'}
+  };
+  if (metas[page]) {
+    document.title = metas[page].title;
+    document.querySelector('meta[name="description"]').content = metas[page].desc;
+  }
+}
+
+// ── PRICING TABS ──
+function switchPricing(type) {
+  document.getElementById('pricing-residential').style.display = type === 'residential' ? 'block' : 'none';
+  document.getElementById('pricing-commercial').style.display = type === 'commercial' ? 'block' : 'none';
+  document.getElementById('tab-res').classList.toggle('active', type === 'residential');
+  document.getElementById('tab-com').classList.toggle('active', type === 'commercial');
+}
+
+// ── FAQ ──
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+
+// ── FORM SUBMIT ──
+function handleSubmit() {
+  const btn = event.target;
+  btn.textContent = '✓ Quote Request Sent!';
+  btn.style.background = '#00efbf';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Request Free Quote ↗';
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3000);
+}
+
+// ── SCROLL ANIMATIONS ──
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.glass-card,.service-card,.stat-item,.review-card,.value-card,.area-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
