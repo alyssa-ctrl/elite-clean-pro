@@ -963,27 +963,13 @@ footer {
 }
 </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
-    {"@type": "ListItem", "position": 2, "name": "Residential Cleaning Calgary", "item": "https://elitecleanpro.ca/residential"}
-  ]
-}
-</script>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://elitecleanpro.ca/"},
+  {"@type":"ListItem","position":2,"name":"Residential Cleaning","item":"https://elitecleanpro.ca/residential"}
+]}</script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Residential Cleaning Calgary | Elite Clean Pro Calgary",
-  "url": "https://elitecleanpro.ca/residential",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
-  }
-}
-</script>
+{"@context":"https://schema.org","@type":"WebPage","url":"https://elitecleanpro.ca/residential",
+"speakable":{"@type":"SpeakableSpecification","cssSelector":[".hero-lede",".faq-a",".faq-a-inner"]}}</script>
 </head>
 <body>
 
@@ -991,7 +977,7 @@ footer {
 <div class="status-top">
   <span class="teal">Residential cleaning · Calgary, AB</span>
   <div class="right">
-    <span>47s · From $139 / visit</span>
+    <span>100 checkpoints · From $139 / visit</span>
   </div>
 </div>
 
@@ -1001,12 +987,6 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
-  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential" class="active">Residential</a></li>
@@ -1016,6 +996,22 @@ footer {
     <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
+  <button class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-drawer">Menu</button>
+</nav>
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+  <button class="mobile-drawer-close" type="button" aria-label="Close menu">×</button>
+  <a href="/#quote">Quote</a>
+  <a href="/residential" class="active">Residential</a>
+  <a href="/commercial">Commercial</a>
+  <a href="/the-standard">The Standard</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/quality-reporting">Reports</a>
+  <a href="/move-out-cleaning">Move-Out</a>
+  <a href="/biosmart">BioSmart</a>
+  <a href="/faq">FAQ</a>
+  <a href="/about">About</a>
+  <a href="/#book" class="drawer-book">Book Now →</a>
 </nav>
 
 <!-- ════════ HERO ════════ -->
@@ -1023,7 +1019,7 @@ footer {
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="teal">Residential cleaning</span> · Calgary, AB</div>
     <h1 class="hero-title">Cleaning, <em>itemized.</em></h1>
-    <p class="hero-lede">47s per visit, room by room, the same way every time. From $139 per visit. Weekly, bi-weekly, monthly, or one-time. Post-clean quality report in your inbox before you're home.</p>
+    <p class="hero-lede">100 checkpoints per visit, room by room, the same way every time. From $139 per visit. Weekly, bi-weekly, monthly, or one-time. Post-clean quality report in your inbox before you're home.</p>
     <div class="hero-actions">
       <a href="/#quote" class="btn btn-primary">Get instant quote →</a>
       <a href="#checklist" class="btn btn-ghost">See the checklist ↓</a>
@@ -1442,7 +1438,7 @@ footer {
 
 <!-- ════════ CTA ════════ -->
 <section class="cta">
-  <div class="cta-eyebrow">47s · 1 report · <span style="color:var(--teal)">$0</span> cancellation</div>
+  <div class="cta-eyebrow">100 checkpoints · 1 report · <span style="color:var(--teal)">$0</span> cancellation</div>
   <h2 class="cta-title">Book the clean. <em>Read the report.</em></h2>
   <p class="cta-sub">Get an instant quote in 30 seconds. Same-week availability across most of Calgary. Your first report lands in your inbox within an hour of the team leaving.</p>
   <div class="cta-actions">
@@ -1456,7 +1452,7 @@ footer {
   <div class="footer-top">
     <div>
       <div class="footer-mark">Elite<em>Clean</em> Pro</div>
-      <p class="footer-bio">Calgary's system-driven residential cleaning. 47s, named A+ team, post-clean quality report. The Standard is what we do. The Promise is what we owe you.</p>
+      <p class="footer-bio">Calgary's system-driven residential cleaning. 100 checkpoints, named A+ team, post-clean quality report. The Standard is what we do. The Promise is what we owe you.</p>
       <p style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal)">Mon–Sun · 7am–8pm</p>
     </div>
     <div class="footer-col">
@@ -1494,5 +1490,26 @@ footer {
   </div>
 </footer>
 
+<script>
+(function(){
+  var ham=document.querySelector('.hamburger');
+  var drawer=document.getElementById('mobile-drawer');
+  var overlay=document.getElementById('mobile-overlay');
+  var close=document.querySelector('.mobile-drawer-close');
+  if(!ham||!drawer)return;
+  function openMenu(){drawer.classList.add('open');overlay&&overlay.classList.add('open');document.body.classList.add('nav-open');ham.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false')}
+  function closeMenu(){drawer.classList.remove('open');overlay&&overlay.classList.remove('open');document.body.classList.remove('nav-open');ham.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true')}
+  ham.addEventListener('click',openMenu);
+  close&&close.addEventListener('click',closeMenu);
+  overlay&&overlay.addEventListener('click',closeMenu);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+})();
+(function(){
+  var nav=document.querySelector('nav.main');
+  if(!nav)return;
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+})();
+</script>
 </body>
 </html>

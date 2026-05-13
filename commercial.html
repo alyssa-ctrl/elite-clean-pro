@@ -32,7 +32,7 @@
       "@id": "https://elitecleanpro.ca/commercial#service",
       "serviceType": "Commercial Cleaning",
       "name": "Commercial Cleaning Calgary",
-      "description": "Calgary commercial cleaning services with documented quality control,  General Liability insurance, WCB Alberta compliance, named account contacts, and 24-hour response SLA. Office buildings, medical and dental clinics, retail spaces, gyms, post-construction sites, and multi-tenant residential.",
+      "description": "Calgary commercial cleaning services with documented quality control, Commercial General Liability insurance, WCB Alberta compliance, named account contacts, and 24-hour response SLA. Office buildings, medical and dental clinics, retail spaces, gyms, post-construction sites, and multi-tenant residential.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Elite Clean Pro",
@@ -890,27 +890,13 @@ footer {
 }
 </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
-    {"@type": "ListItem", "position": 2, "name": "Commercial Cleaning Calgary", "item": "https://elitecleanpro.ca/commercial"}
-  ]
-}
-</script>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://elitecleanpro.ca/"},
+  {"@type":"ListItem","position":2,"name":"Commercial Cleaning","item":"https://elitecleanpro.ca/commercial"}
+]}</script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Commercial Cleaning Calgary | Elite Clean Pro Calgary",
-  "url": "https://elitecleanpro.ca/commercial",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
-  }
-}
-</script>
+{"@context":"https://schema.org","@type":"WebPage","url":"https://elitecleanpro.ca/commercial",
+"speakable":{"@type":"SpeakableSpecification","cssSelector":[".hero-lede",".faq-a",".faq-a-inner"]}}</script>
 </head>
 <body>
 
@@ -928,12 +914,6 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
-  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
@@ -943,6 +923,22 @@ footer {
     <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
+  <button class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-drawer">Menu</button>
+</nav>
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+  <button class="mobile-drawer-close" type="button" aria-label="Close menu">×</button>
+  <a href="/#quote">Quote</a>
+  <a href="/residential">Residential</a>
+  <a href="/commercial" class="active">Commercial</a>
+  <a href="/the-standard">The Standard</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/quality-reporting">Reports</a>
+  <a href="/move-out-cleaning">Move-Out</a>
+  <a href="/biosmart">BioSmart</a>
+  <a href="/faq">FAQ</a>
+  <a href="/about">About</a>
+  <a href="/#book" class="drawer-book">Book Now →</a>
 </nav>
 
 <!-- ════════ HERO ════════ -->
@@ -950,7 +946,7 @@ footer {
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="teal">Commercial cleaning</span> · Calgary, AB</div>
     <h1 class="hero-title">Cleaning, <em>audited.</em></h1>
-    <p class="hero-lede">Documented quality control. Named account contact.  General Liability. 24-hour response SLA. The same A+ team every shift. For Calgary offices, clinics, retail, gyms, and post-construction sites.</p>
+    <p class="hero-lede">Documented quality control. Named account contact. Commercial General Liability. 24-hour response SLA. The same A+ team every shift. For Calgary offices, clinics, retail, gyms, and post-construction sites.</p>
     <div class="hero-actions">
       <a href="#walkthrough" class="btn btn-primary">Book a walkthrough →</a>
       <a href="#verticals" class="btn btn-ghost">See industries we serve ↓</a>
@@ -1400,5 +1396,26 @@ footer {
   </div>
 </footer>
 
+<script>
+(function(){
+  var ham=document.querySelector('.hamburger');
+  var drawer=document.getElementById('mobile-drawer');
+  var overlay=document.getElementById('mobile-overlay');
+  var close=document.querySelector('.mobile-drawer-close');
+  if(!ham||!drawer)return;
+  function openMenu(){drawer.classList.add('open');overlay&&overlay.classList.add('open');document.body.classList.add('nav-open');ham.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false')}
+  function closeMenu(){drawer.classList.remove('open');overlay&&overlay.classList.remove('open');document.body.classList.remove('nav-open');ham.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true')}
+  ham.addEventListener('click',openMenu);
+  close&&close.addEventListener('click',closeMenu);
+  overlay&&overlay.addEventListener('click',closeMenu);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+})();
+(function(){
+  var nav=document.querySelector('nav.main');
+  if(!nav)return;
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+})();
+</script>
 </body>
 </html>

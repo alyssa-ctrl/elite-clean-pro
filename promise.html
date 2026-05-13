@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Promise | Cleaning Guarantee · Elite Clean Pro Calgary</title>
 <meta name="description" content="Five written commitments behind every Elite Clean Pro visit in Calgary: re-clean guarantee, , damage process, $0 cancellation, named contact.">
-<meta name="keywords" content="cleaning service guarantee Calgary, cleaning damage policy, cleaning service cancellation policy, cleaning service refund Calgary, 24 hour re-clean guarantee">
+<meta name="keywords" content="cleaning service guarantee Calgary, cleaning service insurance Calgary, cleaning damage policy, cleaning service cancellation policy, cleaning service refund Calgary, 24 hour re-clean guarantee">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Elite Clean Pro">
 <meta name="theme-color" content="#F1F1F1">
@@ -801,27 +801,13 @@ footer {
 }
 </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
-    {"@type": "ListItem", "position": 2, "name": "The Promise — Cleaning Guarantee", "item": "https://elitecleanpro.ca/promise"}
-  ]
-}
-</script>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://elitecleanpro.ca/"},
+  {"@type":"ListItem","position":2,"name":"Our Promise","item":"https://elitecleanpro.ca/promise"}
+]}</script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "The Promise — Cleaning Guarantee | Elite Clean Pro Calgary",
-  "url": "https://elitecleanpro.ca/promise",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
-  }
-}
-</script>
+{"@context":"https://schema.org","@type":"WebPage","url":"https://elitecleanpro.ca/promise",
+"speakable":{"@type":"SpeakableSpecification","cssSelector":[".hero-lede",".faq-a",".faq-a-inner"]}}</script>
 </head>
 <body>
 
@@ -839,12 +825,6 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
-  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
@@ -854,6 +834,22 @@ footer {
     <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
+  <button class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-drawer">Menu</button>
+</nav>
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+  <button class="mobile-drawer-close" type="button" aria-label="Close menu">×</button>
+  <a href="/#quote">Quote</a>
+  <a href="/residential">Residential</a>
+  <a href="/commercial">Commercial</a>
+  <a href="/the-standard">The Standard</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/quality-reporting">Reports</a>
+  <a href="/move-out-cleaning">Move-Out</a>
+  <a href="/biosmart">BioSmart</a>
+  <a href="/faq">FAQ</a>
+  <a href="/about">About</a>
+  <a href="/#book" class="drawer-book">Book Now →</a>
 </nav>
 
 <!-- ════════ HERO ════════ -->
@@ -1086,7 +1082,7 @@ footer {
   <div class="faq-list">
     <div class="faq-item">
       <h3 class="faq-q">Is Elite Clean Pro background-checked?</h3>
-      <p class="faq-a">Yes.  General Liability,  against theft, WCB Alberta coverage on every team member, and  auto liability. Certificate of Insurance available on request for commercial accounts within one business day.</p>
+      <p class="faq-a">Yes. Commercial General Liability,  against theft, WCB Alberta coverage on every team member, and commercial auto liability. Certificate of Insurance available on request for commercial accounts within one business day.</p>
     </div>
     <div class="faq-item">
       <h3 class="faq-q">What if your team damages something in my home?</h3>
@@ -1165,5 +1161,26 @@ footer {
   </div>
 </footer>
 
+<script>
+(function(){
+  var ham=document.querySelector('.hamburger');
+  var drawer=document.getElementById('mobile-drawer');
+  var overlay=document.getElementById('mobile-overlay');
+  var close=document.querySelector('.mobile-drawer-close');
+  if(!ham||!drawer)return;
+  function openMenu(){drawer.classList.add('open');overlay&&overlay.classList.add('open');document.body.classList.add('nav-open');ham.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false')}
+  function closeMenu(){drawer.classList.remove('open');overlay&&overlay.classList.remove('open');document.body.classList.remove('nav-open');ham.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true')}
+  ham.addEventListener('click',openMenu);
+  close&&close.addEventListener('click',closeMenu);
+  overlay&&overlay.addEventListener('click',closeMenu);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+})();
+(function(){
+  var nav=document.querySelector('nav.main');
+  if(!nav)return;
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+})();
+</script>
 </body>
 </html>

@@ -987,27 +987,13 @@ footer {
 }
 </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
-    {"@type": "ListItem", "position": 2, "name": "Move-Out Cleaning Calgary", "item": "https://elitecleanpro.ca/move-out-cleaning"}
-  ]
-}
-</script>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://elitecleanpro.ca/"},
+  {"@type":"ListItem","position":2,"name":"Move-Out Cleaning","item":"https://elitecleanpro.ca/move-out-cleaning"}
+]}</script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Move-Out Cleaning Calgary | Elite Clean Pro Calgary",
-  "url": "https://elitecleanpro.ca/move-out-cleaning",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
-  }
-}
-</script>
+{"@context":"https://schema.org","@type":"WebPage","url":"https://elitecleanpro.ca/move-out-cleaning",
+"speakable":{"@type":"SpeakableSpecification","cssSelector":[".hero-lede",".faq-a",".faq-a-inner"]}}</script>
 </head>
 <body>
 
@@ -1015,7 +1001,7 @@ footer {
 <div class="status-top">
   <span class="teal">Move-out cleaning · Calgary, AB</span>
   <div class="right">
-    <span>47s · Photo report · From $279</span>
+    <span>150 checkpoints · Photo report · From $279</span>
   </div>
 </div>
 
@@ -1025,12 +1011,6 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
-  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
@@ -1040,6 +1020,22 @@ footer {
     <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
+  <button class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-drawer">Menu</button>
+</nav>
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+  <button class="mobile-drawer-close" type="button" aria-label="Close menu">×</button>
+  <a href="/#quote">Quote</a>
+  <a href="/residential">Residential</a>
+  <a href="/commercial">Commercial</a>
+  <a href="/the-standard">The Standard</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/quality-reporting">Reports</a>
+  <a href="/move-out-cleaning" class="active">Move-Out</a>
+  <a href="/biosmart">BioSmart</a>
+  <a href="/faq">FAQ</a>
+  <a href="/about">About</a>
+  <a href="/#book" class="drawer-book">Book Now →</a>
 </nav>
 
 <!-- ════════ HERO ════════ -->
@@ -1047,7 +1043,7 @@ footer {
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="teal">Move-out cleaning</span> · Calgary, AB</div>
     <h1 class="hero-title">Move-out, <em>measured.</em></h1>
-    <p class="hero-lede">47s. Photo evidence of every room. A written report you can forward to your landlord, condo board, or property manager. Same-week availability across Calgary, from $279.</p>
+    <p class="hero-lede">150 checkpoints. Photo evidence of every room. A written report you can forward to your landlord, condo board, or property manager. Same-week availability across Calgary, from $279.</p>
     <div class="hero-actions">
       <a href="/#quote" class="btn btn-primary">Get instant quote →</a>
       <a href="#checklist" class="btn btn-ghost">See what's included ↓</a>
@@ -1093,7 +1089,7 @@ footer {
   <div class="section-head-2col">
     <div class="section-num">01 / <span class="teal">The checklist</span></div>
     <div>
-      <h2 class="section-title">100 + 50 = <em>47s.</em></h2>
+      <h2 class="section-title">100 + 50 = <em>150 checkpoints.</em></h2>
       <p class="section-lede">A move-out isn't a deeper version of a regular clean. It's a different scope. The recurring 47-point checklist system still applies — but vacant units need fifty more items that aren't part of a maintenance clean. Inside appliances. Inside cabinets. Wall and trim detail. We publish both lists.</p>
     </div>
   </div>
@@ -1416,7 +1412,7 @@ footer {
 
 <!-- ════════ CTA ════════ -->
 <section class="cta">
-  <div class="cta-eyebrow">47s · 40+ photos · <span style="color:var(--teal)">same week</span></div>
+  <div class="cta-eyebrow">150 checkpoints · 40+ photos · <span style="color:var(--teal)">same week</span></div>
   <h2 class="cta-title">Book the move-out. <em>Forward the report.</em></h2>
   <p class="cta-sub">Get an instant quote in 30 seconds. Same-week availability across most of Calgary. The full report — checklist, photos, score — lands in your inbox within an hour of the team leaving.</p>
   <div class="cta-actions">
@@ -1468,5 +1464,26 @@ footer {
   </div>
 </footer>
 
+<script>
+(function(){
+  var ham=document.querySelector('.hamburger');
+  var drawer=document.getElementById('mobile-drawer');
+  var overlay=document.getElementById('mobile-overlay');
+  var close=document.querySelector('.mobile-drawer-close');
+  if(!ham||!drawer)return;
+  function openMenu(){drawer.classList.add('open');overlay&&overlay.classList.add('open');document.body.classList.add('nav-open');ham.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false')}
+  function closeMenu(){drawer.classList.remove('open');overlay&&overlay.classList.remove('open');document.body.classList.remove('nav-open');ham.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true')}
+  ham.addEventListener('click',openMenu);
+  close&&close.addEventListener('click',closeMenu);
+  overlay&&overlay.addEventListener('click',closeMenu);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+})();
+(function(){
+  var nav=document.querySelector('nav.main');
+  if(!nav)return;
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+})();
+</script>
 </body>
 </html>

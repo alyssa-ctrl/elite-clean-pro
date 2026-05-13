@@ -867,27 +867,13 @@ footer {
 }
 </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
-    {"@type": "ListItem", "position": 2, "name": "Quality Reporting Calgary", "item": "https://elitecleanpro.ca/quality-reporting"}
-  ]
-}
-</script>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://elitecleanpro.ca/"},
+  {"@type":"ListItem","position":2,"name":"Quality Reporting","item":"https://elitecleanpro.ca/quality-reporting"}
+]}</script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Quality Reporting Calgary | Elite Clean Pro Calgary",
-  "url": "https://elitecleanpro.ca/quality-reporting",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
-  }
-}
-</script>
+{"@context":"https://schema.org","@type":"WebPage","url":"https://elitecleanpro.ca/quality-reporting",
+"speakable":{"@type":"SpeakableSpecification","cssSelector":[".hero-lede",".faq-a",".faq-a-inner"]}}</script>
 </head>
 <body>
 
@@ -905,12 +891,6 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
-  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
@@ -920,6 +900,22 @@ footer {
     <li><a href="/quality-reporting" class="active">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
+  <button class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-drawer">Menu</button>
+</nav>
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+  <button class="mobile-drawer-close" type="button" aria-label="Close menu">×</button>
+  <a href="/#quote">Quote</a>
+  <a href="/residential">Residential</a>
+  <a href="/commercial">Commercial</a>
+  <a href="/the-standard">The Standard</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/quality-reporting" class="active">Reports</a>
+  <a href="/move-out-cleaning">Move-Out</a>
+  <a href="/biosmart">BioSmart</a>
+  <a href="/faq">FAQ</a>
+  <a href="/about">About</a>
+  <a href="/#book" class="drawer-book">Book Now →</a>
 </nav>
 
 <!-- ════════ HERO ════════ -->
@@ -944,7 +940,7 @@ footer {
         <div class="report-brand">Elite<em>Clean</em> Pro</div>
         <div class="report-title">Post-Clean Quality Report</div>
       </div>
-      <a href="#" class="report-download" onclick="event.preventDefault();">Download PDF <span class="arrow">↓</span></a>
+      <a href="/" class="report-download" onclick="event.preventDefault();">Download PDF <span class="arrow">↓</span></a>
     </div>
 
     <div class="report-meta-strip">
@@ -982,7 +978,7 @@ footer {
     </div>
 
     <div class="report-rooms">
-      <div class="report-section-label">Room-by-room · 47s each</div>
+      <div class="report-section-label">Room-by-room · 100 checkpoints each</div>
 
       <div class="report-room-row">
         <div class="report-room-name">Kitchen</div>
@@ -1234,5 +1230,26 @@ footer {
   </div>
 </footer>
 
+<script>
+(function(){
+  var ham=document.querySelector('.hamburger');
+  var drawer=document.getElementById('mobile-drawer');
+  var overlay=document.getElementById('mobile-overlay');
+  var close=document.querySelector('.mobile-drawer-close');
+  if(!ham||!drawer)return;
+  function openMenu(){drawer.classList.add('open');overlay&&overlay.classList.add('open');document.body.classList.add('nav-open');ham.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false')}
+  function closeMenu(){drawer.classList.remove('open');overlay&&overlay.classList.remove('open');document.body.classList.remove('nav-open');ham.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true')}
+  ham.addEventListener('click',openMenu);
+  close&&close.addEventListener('click',closeMenu);
+  overlay&&overlay.addEventListener('click',closeMenu);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+})();
+(function(){
+  var nav=document.querySelector('nav.main');
+  if(!nav)return;
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+})();
+</script>
 </body>
 </html>
