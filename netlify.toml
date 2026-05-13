@@ -1,0 +1,44 @@
+[[redirects]]
+  from = "/residential"
+  to = "/residential.html"
+  status = 200
+
+[[redirects]]
+  from = "/commercial"
+  to = "/commercial.html"
+  status = 200
+
+[[redirects]]
+  from = "/biosmart"
+  to = "/biosmart.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/move-out-cleaning"
+  to = "/move-out-cleaning.html"
+  status = 200
+
+[[redirects]]
+  from = "/promise"
+  to = "/promise.html"
+  status = 200
+
+[[redirects]]
+  from = "/quality-reporting"
+  to = "/quality-reporting.html"
+  status = 200
+
+[[redirects]]
+  from = "/the-standard"
+  to = "/the-standard.html"
+  status = 200
