@@ -596,6 +596,28 @@ footer {
 
 ::selection { background: var(--teal); color: var(--ink); }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "The Elite Standard Calgary", "item": "https://elitecleanpro.ca/the-standard"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The Elite Standard Calgary | Elite Clean Pro Calgary",
+  "url": "https://elitecleanpro.ca/the-standard",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -624,8 +646,9 @@ footer {
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
+    <li><a href="/the-standard" class="active">The Standard</a></li>
     <li><a href="/pricing">Pricing</a></li>
-    <li><a href="/quality-reporting">Quality Reporting</a></li>
+    <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
 </nav>

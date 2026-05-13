@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Promise | Cleaning Guarantee · Elite Clean Pro Calgary</title>
-<meta name="description" content="Five written commitments behind every Elite Clean Pro visit in Calgary: re-clean guarantee, $2M insurance, damage process, $0 cancellation, named contact.">
-<meta name="keywords" content="cleaning service guarantee Calgary, cleaning service insurance Calgary, cleaning damage policy, cleaning service cancellation policy, cleaning service refund Calgary, 24 hour re-clean guarantee">
+<meta name="description" content="Five written commitments behind every Elite Clean Pro visit in Calgary: re-clean guarantee, , damage process, $0 cancellation, named contact.">
+<meta name="keywords" content="cleaning service guarantee Calgary, cleaning damage policy, cleaning service cancellation policy, cleaning service refund Calgary, 24 hour re-clean guarantee">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Elite Clean Pro">
 <meta name="theme-color" content="#F1F1F1">
@@ -41,7 +41,7 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Is Elite Clean Pro insured and bonded in Calgary?",
+          "name": "Is Elite Clean Pro background-checked in Calgary?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. Elite Clean Pro carries Commercial General Liability insurance, bonding against theft, and WCB Alberta coverage on every team member. Certificate of Insurance available on request for commercial accounts."
@@ -68,7 +68,7 @@
           "name": "What is Elite Clean Pro's satisfaction guarantee?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every clean is scored against the 100-point system. If any room scores under 95, we return the next day at no charge to re-clean. No questions, no negotiation. The booking link arrives with your quality report automatically."
+            "text": "Every clean is scored against the 47-point checklist system. If any room scores under 95, we return the next day at no charge to re-clean. No questions, no negotiation. The booking link arrives with your quality report automatically."
           }
         },
         {
@@ -706,8 +706,69 @@ footer {
 }
 
 /* ════════ MOBILE ════════ */
+/* Mobile nav hamburger — hidden on desktop, shown <=1024px */
+.nav-toggle-input { display: none; }
+.nav-toggle { display: none; }
+
 @media (max-width: 1024px) {
-  .nav-list { display: none; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-toggle-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 0 auto;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(241,241,241,0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1.75rem 1.25rem;
+    margin-right: 0;
+    gap: 0;
+  }
+  .nav-list li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+  }
+  .nav-toggle-input:checked ~ .nav-list {
+    display: flex;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
   .section-head-2col, .detail-grid { grid-template-columns: 1fr; gap: 1rem; }
   .section-num { padding-top: 0; }
   .commit-grid { grid-template-columns: 1fr 1fr; }
@@ -739,6 +800,28 @@ footer {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "The Promise — Cleaning Guarantee", "item": "https://elitecleanpro.ca/promise"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The Promise — Cleaning Guarantee | Elite Clean Pro Calgary",
+  "url": "https://elitecleanpro.ca/promise",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -756,12 +839,19 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
     <li><a href="/the-standard">The Standard</a></li>
     <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
 </nav>
@@ -777,7 +867,7 @@ footer {
 <div class="stamp-strip">
   <div class="stamp">
     <div class="stamp-label">Coverage</div>
-    <div class="stamp-value"><span class="num">$2M</span><span class="stamp-value-sub">CGL</span></div>
+    <div class="stamp-value"><span class="num"></span><span class="stamp-value-sub">CGL</span></div>
   </div>
   <div class="stamp">
     <div class="stamp-label">Re-clean SLA</div>
@@ -814,7 +904,7 @@ footer {
       <h3 class="commit-card-title">Re-clean <em>guarantee.</em></h3>
       <div class="commit-card-rule"></div>
       <div class="commit-card-key">95<span>threshold</span></div>
-      <p class="commit-card-body">If any room scores under 95 on the 100-point system, we return the next day at no charge. The booking link arrives with the quality report — no phone calls, no escalation.</p>
+      <p class="commit-card-body">If any room scores under 95 on the 47-point checklist system, we return the next day at no charge. The booking link arrives with the quality report — no phone calls, no escalation.</p>
       <a href="#guarantee" class="commit-card-anchor">Details ↓</a>
     </div>
 
@@ -822,7 +912,7 @@ footer {
       <div class="commit-card-num">Commitment 02</div>
       <h3 class="commit-card-title">Damage <em>protection.</em></h3>
       <div class="commit-card-rule"></div>
-      <div class="commit-card-key">$2M<span>CGL</span></div>
+      <div class="commit-card-key"><span>CGL</span></div>
       <p class="commit-card-body">Commercial General Liability insurance, bonded against theft, WCB Alberta coverage on every team member. We manage the claim — you never call adjusters.</p>
       <a href="#insurance" class="commit-card-anchor">Details ↓</a>
     </div>
@@ -869,12 +959,12 @@ footer {
       <div class="insurance-list">
         <div class="insurance-item">
           <div class="insurance-label">Commercial General Liability</div>
-          <div class="insurance-amount">$2,000,000</div>
+          <div class="insurance-amount">comprehensive coverage</div>
           <p class="insurance-detail">Bodily injury and property damage coverage on every visit — residential and commercial.</p>
         </div>
         <div class="insurance-item">
           <div class="insurance-label">Bonding (theft)</div>
-          <div class="insurance-amount">$25,000</div>
+          <div class="insurance-amount"></div>
           <p class="insurance-detail">Surety bond against employee theft. Claim process documented; resolution within 30 days.</p>
         </div>
         <div class="insurance-item">
@@ -884,7 +974,7 @@ footer {
         </div>
         <div class="insurance-item">
           <div class="insurance-label">Auto liability</div>
-          <div class="insurance-amount">$2,000,000</div>
+          <div class="insurance-amount">comprehensive coverage</div>
           <p class="insurance-detail">Commercial auto coverage on every vehicle that arrives at your property.</p>
         </div>
       </div>
@@ -995,8 +1085,8 @@ footer {
 
   <div class="faq-list">
     <div class="faq-item">
-      <h3 class="faq-q">Is Elite Clean Pro insured and bonded?</h3>
-      <p class="faq-a">Yes. $2M Commercial General Liability, $25,000 surety bond against theft, WCB Alberta coverage on every team member, and $2M commercial auto liability. Certificate of Insurance available on request for commercial accounts within one business day.</p>
+      <h3 class="faq-q">Is Elite Clean Pro background-checked?</h3>
+      <p class="faq-a">Yes.  General Liability,  against theft, WCB Alberta coverage on every team member, and  auto liability. Certificate of Insurance available on request for commercial accounts within one business day.</p>
     </div>
     <div class="faq-item">
       <h3 class="faq-q">What if your team damages something in my home?</h3>
@@ -1008,7 +1098,7 @@ footer {
     </div>
     <div class="faq-item">
       <h3 class="faq-q">What is the satisfaction guarantee?</h3>
-      <p class="faq-a">Every clean is scored room-by-room against the 100-point system. If any room scores under 95, we return the next day at no charge to re-clean. No questions, no negotiation, no escalation required. The booking link arrives with your quality report.</p>
+      <p class="faq-a">Every clean is scored room-by-room against the 47-point checklist system. If any room scores under 95, we return the next day at no charge to re-clean. No questions, no negotiation, no escalation required. The booking link arrives with your quality report.</p>
     </div>
     <div class="faq-item">
       <h3 class="faq-q">How quickly do you respond to complaints?</h3>
@@ -1048,7 +1138,6 @@ footer {
         <li><a href="/the-standard">The Standard</a></li>
         <li><a href="/quality-reporting">Quality Reporting</a></li>
         <li><a href="/promise">The Promise</a></li>
-        <li><a href="/customers">Customers</a></li>
         <li><a href="/biosmart">BioSmart</a></li>
         <li><a href="/move-out-cleaning">Move-Out</a></li>
         <li><a href="/about">About</a></li>

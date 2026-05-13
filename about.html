@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Elite Clean Pro · Calgary</title>
+<title>About Elite Clean Pro | Calgary's System-Driven Cleaning Service</title>
 <meta name="description" content="Why Elite Clean Pro exists — the founding story of Calgary's system-driven cleaning company built on SaaS-style operations and published commitments.">
 <meta name="keywords" content="Elite Clean Pro Calgary, about Elite Clean Pro, Calgary cleaning company founder, system-driven cleaning Calgary, engineered cleaning service">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -650,8 +650,69 @@ footer {
 }
 
 /* ════════ MOBILE ════════ */
+/* Mobile nav hamburger — hidden on desktop, shown <=1024px */
+.nav-toggle-input { display: none; }
+.nav-toggle { display: none; }
+
 @media (max-width: 1024px) {
-  .nav-list { display: none; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-toggle-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 0 auto;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(241,241,241,0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1.75rem 1.25rem;
+    margin-right: 0;
+    gap: 0;
+  }
+  .nav-list li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+  }
+  .nav-toggle-input:checked ~ .nav-list {
+    display: flex;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
   .section-head-2col { grid-template-columns: 1fr; gap: 1rem; }
   .section-num { padding-top: 0; }
   .obs-list { grid-template-columns: 1fr; }
@@ -684,6 +745,28 @@ footer {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "About Elite Clean Pro", "item": "https://elitecleanpro.ca/about"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About Elite Clean Pro | Elite Clean Pro Calgary",
+  "url": "https://elitecleanpro.ca/about",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -701,12 +784,19 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
     <li><a href="/the-standard">The Standard</a></li>
     <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
 </nav>
@@ -739,7 +829,7 @@ footer {
   </p>
 
   <p class="story-text">
-    Elite Clean Pro is what those notes became. The 100-point checklist exists because nobody publishes one. The post-clean quality report exists because every other "report" is verbal and self-serving. The named account contact exists because I've spent my career being the named account contact in software — and I know exactly how much difference that makes versus a shared inbox.
+    Elite Clean Pro is what those notes became. The 47-point checklist exists because nobody publishes one. The post-clean quality report exists because every other "report" is verbal and self-serving. The named account contact exists because I've spent my career being the named account contact in software — and I know exactly how much difference that makes versus a shared inbox.
   </p>
 
   <p class="story-text">
@@ -899,7 +989,7 @@ footer {
         <div class="belief-num">Principle 04</div>
         <h3 class="belief-name">Measure the <em>output.</em></h3>
       </div>
-      <p class="belief-body">Every clean gets scored against the 100-point system. Photo evidence per room. Written report within an hour. <strong>If we can't measure the work, we can't tell you whether we did it.</strong></p>
+      <p class="belief-body">Every clean gets scored against the 47-point checklist system. Photo evidence per room. Written report within an hour. <strong>If we can't measure the work, we can't tell you whether we did it.</strong></p>
     </div>
 
     <div class="belief">

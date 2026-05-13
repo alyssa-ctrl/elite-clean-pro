@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Residential Cleaning Calgary | Elite Clean Pro</title>
-<meta name="description" content="Calgary residential cleaning with a published 100-point checklist, named A+ team, post-clean quality report. From $139/visit. Weekly, bi-weekly, monthly.">
+<meta name="description" content="Calgary residential cleaning with a published 47-point checklist, named A+ team, post-clean quality report. From $139/visit. Weekly, bi-weekly, monthly.">
 <meta name="keywords" content="residential cleaning Calgary, house cleaning Calgary, maid service Calgary, weekly cleaning Calgary, bi-weekly cleaning Calgary, deep cleaning Calgary, recurring house cleaning Calgary">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Elite Clean Pro">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://elitecleanpro.ca/residential">
 <meta property="og:title" content="Residential Cleaning Calgary | Elite Clean Pro">
-<meta property="og:description" content="Calgary house cleaning with a published 100-point checklist, named A+ team, post-clean quality report. From $139 per visit.">
+<meta property="og:description" content="Calgary house cleaning with a published 47-point checklist, named A+ team, post-clean quality report. From $139 per visit.">
 <meta property="og:locale" content="en_CA">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
       "@id": "https://elitecleanpro.ca/residential#service",
       "serviceType": "Residential House Cleaning",
       "name": "Residential Cleaning Calgary",
-      "description": "Calgary residential house cleaning with a published 100-point checklist, A+ trained teams assigned consistently, BioSmart enzyme-based cleaners, and a post-clean quality report delivered within an hour of the team's departure. Weekly, bi-weekly, monthly, and one-time visits from $139.",
+      "description": "Calgary residential house cleaning with a published 47-point checklist, A+ trained teams assigned consistently, BioSmart enzyme-based cleaners, and a post-clean quality report delivered within an hour of the team's departure. Weekly, bi-weekly, monthly, and one-time visits from $139.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Elite Clean Pro",
@@ -863,8 +863,69 @@ footer {
 }
 
 /* ════════ MOBILE ════════ */
+/* Mobile nav hamburger — hidden on desktop, shown <=1024px */
+.nav-toggle-input { display: none; }
+.nav-toggle { display: none; }
+
 @media (max-width: 1024px) {
-  .nav-list { display: none; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-toggle-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 0 auto;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(241,241,241,0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1.75rem 1.25rem;
+    margin-right: 0;
+    gap: 0;
+  }
+  .nav-list li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+  }
+  .nav-toggle-input:checked ~ .nav-list {
+    display: flex;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
   .hero { grid-template-columns: 1fr; gap: 3rem; }
   .hero-content { padding-right: 0; }
   .section-head-2col { grid-template-columns: 1fr; gap: 1rem; }
@@ -901,6 +962,28 @@ footer {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "Residential Cleaning Calgary", "item": "https://elitecleanpro.ca/residential"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Residential Cleaning Calgary | Elite Clean Pro Calgary",
+  "url": "https://elitecleanpro.ca/residential",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -908,7 +991,7 @@ footer {
 <div class="status-top">
   <span class="teal">Residential cleaning · Calgary, AB</span>
   <div class="right">
-    <span>100 checkpoints · From $139 / visit</span>
+    <span>47s · From $139 / visit</span>
   </div>
 </div>
 
@@ -918,12 +1001,19 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential" class="active">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
     <li><a href="/the-standard">The Standard</a></li>
     <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
 </nav>
@@ -933,7 +1023,7 @@ footer {
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="teal">Residential cleaning</span> · Calgary, AB</div>
     <h1 class="hero-title">Cleaning, <em>itemized.</em></h1>
-    <p class="hero-lede">100 checkpoints per visit, room by room, the same way every time. From $139 per visit. Weekly, bi-weekly, monthly, or one-time. Post-clean quality report in your inbox before you're home.</p>
+    <p class="hero-lede">47s per visit, room by room, the same way every time. From $139 per visit. Weekly, bi-weekly, monthly, or one-time. Post-clean quality report in your inbox before you're home.</p>
     <div class="hero-actions">
       <a href="/#quote" class="btn btn-primary">Get instant quote →</a>
       <a href="#checklist" class="btn btn-ghost">See the checklist ↓</a>
@@ -952,9 +1042,9 @@ footer {
       <p class="hero-stat-sub">1–2 bedroom standard clean. Recurring rates lower.</p>
     </div>
     <div>
-      <div class="hero-stat-label">Elite Score avg</div>
-      <div class="hero-stat-value"><span class="num">97.3%</span></div>
-      <p class="hero-stat-sub">Across audited cleans. Below 95, we return.</p>
+      <div class="hero-stat-label">Re-clean threshold</div>
+      <div class="hero-stat-value"><span class="num">95</span><span>/ 100</span></div>
+      <p class="hero-stat-sub">Any room under 95, we return the next day at no charge.</p>
     </div>
     <div>
       <div class="hero-stat-label">Same team</div>
@@ -970,7 +1060,7 @@ footer {
     <div class="section-num">01 / <span class="teal">The checklist</span></div>
     <div>
       <h2 class="section-title">Every line item, <em>named.</em></h2>
-      <p class="section-lede">Most Calgary cleaning services tell you they do "deep cleaning" without showing what that means. We publish the 100-point checklist, room by room. If it's not on this page, it doesn't happen on a standard visit — and you'll know in advance.</p>
+      <p class="section-lede">Most Calgary cleaning services tell you they do "deep cleaning" without showing what that means. We publish the 47-point checklist, room by room. If it's not on this page, it doesn't happen on a standard visit — and you'll know in advance.</p>
     </div>
   </div>
 
@@ -1162,7 +1252,7 @@ footer {
         <li>Same A+ team every visit</li>
         <li>Priority booking slot</li>
         <li>Skip or pause anytime</li>
-        <li>Full 100-point checklist</li>
+        <li>Full 47-point checklist</li>
         <li>Post-clean quality report</li>
       </ul>
     </div>
@@ -1306,14 +1396,14 @@ footer {
     <a href="/quality-reporting" class="system-card">
       <div class="system-card-label">The deliverable</div>
       <h3 class="system-card-title">Quality <em>reporting.</em></h3>
-      <p class="system-card-text">A written report after every clean — 100-point checklist with scores, photo evidence per room, the Elite Score, and a note from the team lead. In your inbox within an hour.</p>
+      <p class="system-card-text">A written report after every clean — 47-point checklist with scores, photo evidence per room, the Elite Score, and a note from the team lead. In your inbox within an hour.</p>
       <div class="system-card-link">See a sample report <span class="arrow">→</span></div>
     </a>
 
     <a href="/promise" class="system-card">
       <div class="system-card-label">The contract</div>
       <h3 class="system-card-title">The <em>Promise.</em></h3>
-      <p class="system-card-text">$2M insurance. Damage process with three published outcomes. Cancellation rights with no fees on recurring service. 24-hour response SLA. The full list of written commitments.</p>
+      <p class="system-card-text">. Damage process with three published outcomes. Cancellation rights with no fees on recurring service. 24-hour response SLA. The full list of written commitments.</p>
       <div class="system-card-link">Read the Promise <span class="arrow">→</span></div>
     </a>
   </div>
@@ -1352,7 +1442,7 @@ footer {
 
 <!-- ════════ CTA ════════ -->
 <section class="cta">
-  <div class="cta-eyebrow">100 checkpoints · 1 report · <span style="color:var(--teal)">$0</span> cancellation</div>
+  <div class="cta-eyebrow">47s · 1 report · <span style="color:var(--teal)">$0</span> cancellation</div>
   <h2 class="cta-title">Book the clean. <em>Read the report.</em></h2>
   <p class="cta-sub">Get an instant quote in 30 seconds. Same-week availability across most of Calgary. Your first report lands in your inbox within an hour of the team leaving.</p>
   <div class="cta-actions">
@@ -1366,7 +1456,7 @@ footer {
   <div class="footer-top">
     <div>
       <div class="footer-mark">Elite<em>Clean</em> Pro</div>
-      <p class="footer-bio">Calgary's system-driven residential cleaning. 100 checkpoints, named A+ team, post-clean quality report. The Standard is what we do. The Promise is what we owe you.</p>
+      <p class="footer-bio">Calgary's system-driven residential cleaning. 47s, named A+ team, post-clean quality report. The Standard is what we do. The Promise is what we owe you.</p>
       <p style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal)">Mon–Sun · 7am–8pm</p>
     </div>
     <div class="footer-col">
@@ -1377,7 +1467,6 @@ footer {
         <li><a href="/the-standard">The Standard</a></li>
         <li><a href="/quality-reporting">Quality Reporting</a></li>
         <li><a href="/promise">The Promise</a></li>
-        <li><a href="/customers">Customers</a></li>
         <li><a href="/biosmart">BioSmart</a></li>
         <li><a href="/move-out-cleaning">Move-Out</a></li>
         <li><a href="/about">About</a></li>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BioSmart Cleaning Calgary | Elite Clean Pro</title>
+<title>BioSmart Technology Calgary | Enzyme & Electro Cleaning | Elite Clean Pro</title>
 <meta name="description" content="Four-component eco-cleaning behind every Elite Clean Pro Calgary visit: hypochlorous acid, enzymes, microfibre, HEPA. Pet-safe and kid-safe.">
 <meta name="keywords" content="eco-friendly cleaning Calgary, green cleaning Calgary, non-toxic cleaning Calgary, pet-safe cleaning Calgary, kid-safe cleaning Calgary, hypochlorous acid cleaning, enzyme cleaning Calgary, HEPA cleaning Calgary">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -733,8 +733,69 @@ footer {
 }
 
 /* ════════ MOBILE ════════ */
+/* Mobile nav hamburger — hidden on desktop, shown <=1024px */
+.nav-toggle-input { display: none; }
+.nav-toggle { display: none; }
+
 @media (max-width: 1024px) {
-  .nav-list { display: none; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-toggle-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 0 auto;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(241,241,241,0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1.75rem 1.25rem;
+    margin-right: 0;
+    gap: 0;
+  }
+  .nav-list li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+  }
+  .nav-toggle-input:checked ~ .nav-list {
+    display: flex;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
   .hero { grid-template-columns: 1fr; gap: 3rem; }
   .hero-content { padding-right: 0; }
   .section-head-2col { grid-template-columns: 1fr; gap: 1rem; }
@@ -782,6 +843,28 @@ footer {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "BioSmart Technology Calgary", "item": "https://elitecleanpro.ca/biosmart"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "BioSmart Technology Calgary | Elite Clean Pro Calgary",
+  "url": "https://elitecleanpro.ca/biosmart",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -799,12 +882,19 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
     <li><a href="/the-standard">The Standard</a></li>
     <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
 </nav>
@@ -1111,7 +1201,7 @@ footer {
     <a href="/residential" class="usage-card">
       <div class="usage-card-label">Service 01</div>
       <h3 class="usage-card-title">Residential <em>cleaning.</em></h3>
-      <p class="usage-card-text">All four components deployed across the 100-point checklist. Fragrance-free home means you can use the space immediately after we leave — no waiting for fumes to clear.</p>
+      <p class="usage-card-text">All four components deployed across the 47-point checklist. Fragrance-free home means you can use the space immediately after we leave — no waiting for fumes to clear.</p>
       <div class="usage-card-link">See residential <span class="arrow">→</span></div>
     </a>
 
@@ -1159,7 +1249,6 @@ footer {
         <li><a href="/the-standard">The Standard</a></li>
         <li><a href="/quality-reporting">Quality Reporting</a></li>
         <li><a href="/promise">The Promise</a></li>
-        <li><a href="/customers">Customers</a></li>
         <li><a href="/biosmart">BioSmart</a></li>
         <li><a href="/move-out-cleaning">Move-Out</a></li>
         <li><a href="/about">About</a></li>

@@ -4,11 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quality Reporting | Elite Clean Pro · Calgary, AB</title>
-<meta name="description" content="See the post-clean quality report we send after every visit in Calgary. 100-point checklist, photo evidence, Elite Score, named team lead note. Delivered within an hour.">
+<meta name="description" content="The post-clean quality report Elite Clean Pro sends after every Calgary visit: 47-point checklist scores, photo evidence, Elite Score, named lead note.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Elite Clean Pro">
 <meta name="theme-color" content="#F1F1F1">
 <link rel="canonical" href="https://elitecleanpro.ca/quality-reporting">
+
+<!-- Service Schema — the deliverable -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://elitecleanpro.ca/quality-reporting#service",
+      "serviceType": "Post-Clean Quality Reporting",
+      "name": "Elite Clean Pro Quality Reporting",
+      "description": "After every Elite Clean Pro visit in Calgary, customers receive a written quality report within an hour of the team's departure: 47-point checklist with room-by-room scores, photo evidence, Elite Score composite, action items, and a note from the team lead.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Elite Clean Pro",
+        "url": "https://elitecleanpro.ca/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Calgary",
+          "addressRegion": "AB",
+          "addressCountry": "CA"
+        }
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Calgary" },
+        { "@type": "City", "name": "Airdrie" },
+        { "@type": "City", "name": "Cochrane" },
+        { "@type": "City", "name": "Chestermere" },
+        { "@type": "City", "name": "Okotoks" }
+      ],
+      "category": "Cleaning Service Reporting"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://elitecleanpro.ca/quality-reporting#webpage",
+      "url": "https://elitecleanpro.ca/quality-reporting",
+      "name": "Quality Reporting · Elite Clean Pro Calgary",
+      "description": "The post-clean quality report Elite Clean Pro delivers after every Calgary visit — including a sample report and the methodology for generating it.",
+      "inLanguage": "en-CA"
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -713,8 +756,69 @@ footer {
 }
 
 /* ════════ MOBILE ════════ */
+/* Mobile nav hamburger — hidden on desktop, shown <=1024px */
+.nav-toggle-input { display: none; }
+.nav-toggle { display: none; }
+
 @media (max-width: 1024px) {
-  .nav-list { display: none; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-toggle-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 0 auto;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(241,241,241,0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1.75rem 1.25rem;
+    margin-right: 0;
+    gap: 0;
+  }
+  .nav-list li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+  }
+  .nav-toggle-input:checked ~ .nav-list {
+    display: flex;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
   .section-head-2col { grid-template-columns: 1fr; gap: 1rem; }
   .section-num { padding-top: 0; }
   .anatomy-item { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.5rem 0; }
@@ -762,6 +866,28 @@ footer {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "Quality Reporting Calgary", "item": "https://elitecleanpro.ca/quality-reporting"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Quality Reporting Calgary | Elite Clean Pro Calgary",
+  "url": "https://elitecleanpro.ca/quality-reporting",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -779,12 +905,19 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
     <li><a href="/the-standard">The Standard</a></li>
     <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/quality-reporting" class="active">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
 </nav>
@@ -793,7 +926,7 @@ footer {
 <section class="hero">
   <div class="hero-eyebrow"><span class="teal">Quality Reporting</span> · The product</div>
   <h1 class="hero-title">Cleaning, on the <em>record.</em></h1>
-  <p class="hero-lede">After every clean, you receive a written report — 100-point checklist, photo evidence, the Elite Score, and a note from the team lead. In your inbox within an hour. Below is a sample.</p>
+  <p class="hero-lede">After every clean, you receive a written report — 47-point checklist, photo evidence, the Elite Score, and a note from the team lead. In your inbox within an hour. Below is a sample.</p>
   <div class="hero-actions">
     <a href="#sample" class="btn btn-primary">See the sample report ↓</a>
     <a href="/the-standard" class="btn btn-ghost">Read the methodology</a>
@@ -849,7 +982,7 @@ footer {
     </div>
 
     <div class="report-rooms">
-      <div class="report-section-label">Room-by-room · 100 checkpoints each</div>
+      <div class="report-section-label">Room-by-room · 47s each</div>
 
       <div class="report-room-row">
         <div class="report-room-name">Kitchen</div>
@@ -930,7 +1063,7 @@ footer {
     <div class="anatomy-item">
       <div class="anatomy-left">
         <div class="anatomy-num">Element 01</div>
-        <h3 class="anatomy-name">The 100-point <em>checklist.</em></h3>
+        <h3 class="anatomy-name">The 47-point checklist <em>checklist.</em></h3>
       </div>
       <div class="anatomy-body">
         Forty-seven discrete checkpoints per room, scored as the team works. Not a sampling, not an audit, not a generated summary. The full list, every visit, on every room. Read the full system in <a href="/the-standard">The Standard</a>.
@@ -953,7 +1086,7 @@ footer {
         <h3 class="anatomy-name">The Elite <em>Score.</em></h3>
       </div>
       <div class="anatomy-body">
-        A composite out of 100, calculated from five components: checklist completion (60%), surface inspection (15%), time-on-task efficiency (10%), supply utilization (5%), client confirmation (10%). System average across audited cleans: 97.3%.
+        A composite out of 100, calculated from five components: checklist completion (60%), surface inspection (15%), time-on-task efficiency (10%), supply utilization (5%), client confirmation (10%). Any room scoring under 95 triggers an automatic re-clean.
       </div>
     </div>
 
@@ -1015,7 +1148,7 @@ footer {
       <div class="timeline-step-time">0:05 – 2:00<span class="label">Work</span></div>
       <div class="timeline-step-body">
         <h3 class="timeline-step-title">Clean and score, in <em>parallel.</em></h3>
-        <p class="timeline-step-text">Team works the 100-point checklist room by room, scoring as they go. Photo evidence captured at the completion of each room — not the end of the visit.</p>
+        <p class="timeline-step-text">Team works the 47-point checklist room by room, scoring as they go. Photo evidence captured at the completion of each room — not the end of the visit.</p>
       </div>
     </div>
 
@@ -1074,7 +1207,6 @@ footer {
         <li><a href="/the-standard">The Standard</a></li>
         <li><a href="/quality-reporting">Quality Reporting</a></li>
         <li><a href="/promise">The Promise</a></li>
-        <li><a href="/customers">Customers</a></li>
         <li><a href="/biosmart">BioSmart</a></li>
         <li><a href="/move-out-cleaning">Move-Out</a></li>
         <li><a href="/about">About</a></li>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Move-Out Cleaning Calgary | Elite Clean Pro</title>
-<meta name="description" content="Calgary move-out cleaning with a 150-point checklist, photo report for deposit disputes, same-week booking. From $279. For tenants and property managers.">
+<meta name="description" content="Calgary move-out cleaning with a extended 47-point checklist, photo report for deposit disputes, same-week booking. From $279. For tenants and property managers.">
 <meta name="keywords" content="move-out cleaning Calgary, move-in cleaning Calgary, end of tenancy cleaning Calgary, deposit return cleaning Calgary, condo move-out cleaning Calgary, rental cleaning Calgary, landlord cleaning Calgary, Airbnb turnover Calgary">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Elite Clean Pro">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://elitecleanpro.ca/move-out-cleaning">
 <meta property="og:title" content="Move-Out Cleaning Calgary | Elite Clean Pro">
-<meta property="og:description" content="Calgary move-out cleaning with a 150-point checklist and photo report for deposit disputes. From $279. Same-week availability.">
+<meta property="og:description" content="Calgary move-out cleaning with a extended 47-point checklist and photo report for deposit disputes. From $279. Same-week availability.">
 <meta property="og:locale" content="en_CA">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
       "@id": "https://elitecleanpro.ca/move-out-cleaning#service",
       "serviceType": "Move-Out Cleaning",
       "name": "Move-Out Cleaning Calgary",
-      "description": "Calgary move-out and move-in cleaning service with a 150-point vacancy checklist, photo evidence report for deposit disputes, same-week availability, and pricing from $279. For tenants ending tenancy and for property managers preparing units for new occupants.",
+      "description": "Calgary move-out and move-in cleaning service with a extended 47-point checklistvacancy checklist, photo evidence report for deposit disputes, same-week availability, and pricing from $279. For tenants ending tenancy and for property managers preparing units for new occupants.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Elite Clean Pro",
@@ -880,8 +880,69 @@ footer {
 }
 
 /* ════════ MOBILE ════════ */
+/* Mobile nav hamburger — hidden on desktop, shown <=1024px */
+.nav-toggle-input { display: none; }
+.nav-toggle { display: none; }
+
 @media (max-width: 1024px) {
-  .nav-list { display: none; }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-toggle-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 0 auto;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(241,241,241,0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1.75rem 1.25rem;
+    margin-right: 0;
+    gap: 0;
+  }
+  .nav-list li {
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-list li:last-child {
+    border-bottom: none;
+  }
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+  }
+  .nav-toggle-input:checked ~ .nav-list {
+    display: flex;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
   .hero { grid-template-columns: 1fr; gap: 3rem; }
   .hero-content { padding-right: 0; }
   .section-head-2col { grid-template-columns: 1fr; gap: 1rem; }
@@ -925,6 +986,28 @@ footer {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elitecleanpro.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "Move-Out Cleaning Calgary", "item": "https://elitecleanpro.ca/move-out-cleaning"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Move-Out Cleaning Calgary | Elite Clean Pro Calgary",
+  "url": "https://elitecleanpro.ca/move-out-cleaning",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-lede", ".faq-a", ".faq-a-inner"]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -932,7 +1015,7 @@ footer {
 <div class="status-top">
   <span class="teal">Move-out cleaning · Calgary, AB</span>
   <div class="right">
-    <span>150 checkpoints · Photo report · From $279</span>
+    <span>47s · Photo report · From $279</span>
   </div>
 </div>
 
@@ -942,12 +1025,19 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
     <li><a href="/the-standard">The Standard</a></li>
     <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
 </nav>
@@ -957,7 +1047,7 @@ footer {
   <div class="hero-content">
     <div class="hero-eyebrow"><span class="teal">Move-out cleaning</span> · Calgary, AB</div>
     <h1 class="hero-title">Move-out, <em>measured.</em></h1>
-    <p class="hero-lede">150 checkpoints. Photo evidence of every room. A written report you can forward to your landlord, condo board, or property manager. Same-week availability across Calgary, from $279.</p>
+    <p class="hero-lede">47s. Photo evidence of every room. A written report you can forward to your landlord, condo board, or property manager. Same-week availability across Calgary, from $279.</p>
     <div class="hero-actions">
       <a href="/#quote" class="btn btn-primary">Get instant quote →</a>
       <a href="#checklist" class="btn btn-ghost">See what's included ↓</a>
@@ -1003,8 +1093,8 @@ footer {
   <div class="section-head-2col">
     <div class="section-num">01 / <span class="teal">The checklist</span></div>
     <div>
-      <h2 class="section-title">100 + 50 = <em>150 checkpoints.</em></h2>
-      <p class="section-lede">A move-out isn't a deeper version of a regular clean. It's a different scope. The recurring 100-point system still applies — but vacant units need fifty more items that aren't part of a maintenance clean. Inside appliances. Inside cabinets. Wall and trim detail. We publish both lists.</p>
+      <h2 class="section-title">100 + 50 = <em>47s.</em></h2>
+      <p class="section-lede">A move-out isn't a deeper version of a regular clean. It's a different scope. The recurring 47-point checklist system still applies — but vacant units need fifty more items that aren't part of a maintenance clean. Inside appliances. Inside cabinets. Wall and trim detail. We publish both lists.</p>
     </div>
   </div>
 
@@ -1016,7 +1106,7 @@ footer {
       <div class="compare-head-label teal">Move-out</div>
     </div>
     <div class="compare-row">
-      <div class="compare-category">100-point checklist</div>
+      <div class="compare-category">47-point checklist</div>
       <div class="compare-mark">✓</div>
       <div class="compare-mark">✓</div>
     </div>
@@ -1145,7 +1235,7 @@ footer {
       </div>
       <div class="price-rule"></div>
       <ul class="price-features">
-        <li>150-point full scope</li>
+        <li>extended 47-point checklistfull scope</li>
         <li>Inside appliances + cabinets</li>
         <li>Photo report (40+ images)</li>
         <li>Typically 4–5 hours on site</li>
@@ -1162,7 +1252,7 @@ footer {
       </div>
       <div class="price-rule"></div>
       <ul class="price-features">
-        <li>150-point full scope</li>
+        <li>extended 47-point checklistfull scope</li>
         <li>Inside appliances + cabinets</li>
         <li>Photo report (40+ images)</li>
         <li>Typically 5–6 hours on site</li>
@@ -1178,7 +1268,7 @@ footer {
       </div>
       <div class="price-rule"></div>
       <ul class="price-features">
-        <li>150-point full scope</li>
+        <li>extended 47-point checklistfull scope</li>
         <li>Inside appliances + cabinets</li>
         <li>Photo report (40+ images)</li>
         <li>Typically 6–7 hours on site</li>
@@ -1194,7 +1284,7 @@ footer {
       </div>
       <div class="price-rule"></div>
       <ul class="price-features">
-        <li>150-point full scope</li>
+        <li>extended 47-point checklistfull scope</li>
         <li>Inside appliances + cabinets</li>
         <li>Photo report (40+ images)</li>
         <li>Typically 7–9 hours on site</li>
@@ -1251,7 +1341,7 @@ footer {
       <h3 class="audience-title">Get the unit to a <em>defensible</em> standard.</h3>
       <p class="audience-body">Alberta's Residential Tenancies Act says you owe "ordinary cleanliness" when you vacate. The hard part isn't the cleaning — it's proving you did it. Our photo report is the evidence. Forward it to your landlord with your forwarding address.</p>
       <ul class="audience-points">
-        <li>150-point scope brings every surface to baseline</li>
+        <li>extended 47-point checklistscope brings every surface to baseline</li>
         <li>40+ timestamped photos, geotagged to the unit</li>
         <li>Written report sent to your email + downloadable PDF</li>
         <li>Common in tenancy disputes — judges accept dated photo evidence</li>
@@ -1309,7 +1399,7 @@ footer {
     <div class="process-step">
       <div class="process-when">Visit<span class="label">Clean + score</span></div>
       <div class="process-body">
-        <h3 class="process-title">150-point clean, <em>photographed.</em></h3>
+        <h3 class="process-title">extended 47-point checklistclean, <em>photographed.</em></h3>
         <p class="process-text">Team arrives, works the full move-out scope room by room. Photo evidence captured at completion of each space — not the end of the day. Lead walkthrough against the checklist before departure.</p>
       </div>
     </div>
@@ -1318,7 +1408,7 @@ footer {
       <div class="process-when">+1 hour<span class="label">Report</span></div>
       <div class="process-body">
         <h3 class="process-title">Report in your <em>inbox.</em></h3>
-        <p class="process-text">Full quality report within an hour of departure: the 150-point checklist with scores, all 40+ photos, the Elite Score, and the team lead note. Email + downloadable PDF. Forward to your landlord, condo board, or incoming tenant.</p>
+        <p class="process-text">Full quality report within an hour of departure: the extended 47-point checklist with scores, all 40+ photos, the Elite Score, and the team lead note. Email + downloadable PDF. Forward to your landlord, condo board, or incoming tenant.</p>
       </div>
     </div>
   </div>
@@ -1326,7 +1416,7 @@ footer {
 
 <!-- ════════ CTA ════════ -->
 <section class="cta">
-  <div class="cta-eyebrow">150 checkpoints · 40+ photos · <span style="color:var(--teal)">same week</span></div>
+  <div class="cta-eyebrow">47s · 40+ photos · <span style="color:var(--teal)">same week</span></div>
   <h2 class="cta-title">Book the move-out. <em>Forward the report.</em></h2>
   <p class="cta-sub">Get an instant quote in 30 seconds. Same-week availability across most of Calgary. The full report — checklist, photos, score — lands in your inbox within an hour of the team leaving.</p>
   <div class="cta-actions">
@@ -1351,7 +1441,6 @@ footer {
         <li><a href="/the-standard">The Standard</a></li>
         <li><a href="/quality-reporting">Quality Reporting</a></li>
         <li><a href="/promise">The Promise</a></li>
-        <li><a href="/customers">Customers</a></li>
         <li><a href="/biosmart">BioSmart</a></li>
         <li><a href="/move-out-cleaning">Move-Out</a></li>
         <li><a href="/about">About</a></li>
