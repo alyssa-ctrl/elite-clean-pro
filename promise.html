@@ -706,69 +706,8 @@ footer {
 }
 
 /* ════════ MOBILE ════════ */
-/* Mobile nav hamburger — hidden on desktop, shown <=1024px */
-.nav-toggle-input { display: none; }
-.nav-toggle { display: none; }
-
 @media (max-width: 1024px) {
-  .nav-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 44px;
-    height: 44px;
-    cursor: pointer;
-    margin-right: 0.5rem;
-    flex-shrink: 0;
-  }
-  .nav-toggle-line {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--ink);
-    margin: 0 auto;
-    transition: transform 0.22s ease, opacity 0.18s ease;
-  }
-  .nav-list {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(241,241,241,0.98);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--rule);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.5rem 1.75rem 1.25rem;
-    margin-right: 0;
-    gap: 0;
-  }
-  .nav-list li {
-    border-bottom: 1px solid var(--rule);
-  }
-  .nav-list li:last-child {
-    border-bottom: none;
-  }
-  .nav-list a {
-    display: block;
-    padding: 1rem 0;
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-  }
-  .nav-toggle-input:checked ~ .nav-list {
-    display: flex;
-  }
-  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(1) {
-    transform: translateY(6.5px) rotate(45deg);
-  }
-  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(2) {
-    opacity: 0;
-  }
-  .nav-toggle-input:checked + .nav-toggle .nav-toggle-line:nth-child(3) {
-    transform: translateY(-6.5px) rotate(-45deg);
-  }
+  .nav-list { display: none; }
   .section-head-2col, .detail-grid { grid-template-columns: 1fr; gap: 1rem; }
   .section-num { padding-top: 0; }
   .commit-grid { grid-template-columns: 1fr 1fr; }
@@ -817,12 +756,6 @@ footer {
     Elite<em>Clean</em> Pro
     <span class="small">Calgary, AB</span>
   </a>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation">
-  <label for="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-    <span class="nav-toggle-line"></span>
-  </label>
   <ul class="nav-list">
     <li><a href="/#quote">Quote</a></li>
     <li><a href="/residential">Residential</a></li>
@@ -1115,6 +1048,7 @@ footer {
         <li><a href="/the-standard">The Standard</a></li>
         <li><a href="/quality-reporting">Quality Reporting</a></li>
         <li><a href="/promise">The Promise</a></li>
+        <li><a href="/customers">Customers</a></li>
         <li><a href="/biosmart">BioSmart</a></li>
         <li><a href="/move-out-cleaning">Move-Out</a></li>
         <li><a href="/about">About</a></li>
