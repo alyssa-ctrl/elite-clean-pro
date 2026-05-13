@@ -2379,8 +2379,7 @@ footer {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  mix-blend-mode: multiply;
+  object-fit: contain;
 }
 
 /* ── Photo placeholders — honest about gaps ── */
@@ -3116,14 +3115,18 @@ footer {
   </div>
 
   <div class="hero-image-area" aria-hidden="true">
-    <img
-      class="hero-image"
-      src="vacuum-hero.jpg"
-      alt="Elite Clean Pro BioSmart kit — luxury vacuum, microfibre mop, enzyme sprays and cleaning tools arranged on white surface"
-      loading="eager"
-      decoding="async"
-      width="1024"
-      height="1024">
+    <picture>
+        <source srcset="vacuum-hero.webp" type="image/webp">
+        <img
+          class="hero-image"
+          src="vacuum-hero.jpg"
+          alt="Elite Clean Pro BioSmart cleaning kit — luxury vacuum, microfibre mop and enzyme spray tools, Calgary AB"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="960"
+          height="960">
+      </picture>
   </div>
 </section>
 
@@ -3300,14 +3303,17 @@ footer {
   </div>
 
   <div style="margin-top:3rem;line-height:0">
-    <img
-      src="biosmart-products.jpg"
-      alt="Elite Clean Pro BioSmart kit — luxury eco spray bottle, concentrate jar, nano-fibre microfibre cloth and gold measuring tools on marble tray"
-      style="width:100%;height:auto;display:block;border-radius:12px;mix-blend-mode:multiply"
-      loading="lazy"
-      decoding="async"
-      width="1400"
-      height="933">
+    <picture>
+        <source srcset="biosmart-products.webp" type="image/webp">
+        <img
+          src="biosmart-products.jpg"
+          alt="Elite Clean Pro BioSmart eco cleaning kit — glass spray bottle, concentrate jar, nano-fibre microfibre cloth and gold tools on marble tray, Calgary"
+          style="width:100%;height:auto;display:block"
+          loading="lazy"
+          decoding="async"
+          width="960"
+          height="542">
+      </picture>
   </div>
 </section>
 
@@ -3466,14 +3472,18 @@ footer {
   <p class="testimonial-disclaimer">Name changed for privacy. Verifiable reviews on Google Business Profile.</p>
 
   <div class="testimonial-photo-wrap" style="margin-top:2.5rem;border-radius:12px;overflow:hidden;line-height:0">
-    <img
-      src="mount-royal-home.jpg"
-      alt="Bright, freshly cleaned living room in a Mount Royal Calgary home — hardwood floors, white sofa, built-in shelving and natural light after an Elite Clean Pro visit"
-      style="width:100%;height:auto;display:block;border-radius:12px"
-      loading="lazy"
-      width="1280"
-      height="854"
-    >
+    <picture>
+      <source srcset="mount-royal-home.webp" type="image/webp">
+      <img
+        src="mount-royal-home.jpg"
+        alt="Freshly cleaned living room in a Mount Royal Calgary home — hardwood floors, white sofa, natural light after Elite Clean Pro bi-weekly clean"
+        style="width:100%;height:auto;display:block;border-radius:12px"
+        loading="lazy"
+        decoding="async"
+        width="1200"
+        height="675"
+      >
+    </picture>
     <p style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.75rem;line-height:1.4">Mount Royal, Calgary · After Elite Clean Pro visit · Photo: client-provided</p>
   </div>
 </section>
