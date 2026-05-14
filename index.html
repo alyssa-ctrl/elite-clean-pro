@@ -1692,6 +1692,27 @@ footer {
   .footer-top { grid-template-columns: 1fr 1fr; }
   .nav-list { display: none; }
   .hamburger { display: block; }
+
+  /* Mobile menu — opens on hamburger click */
+  nav.main.nav-open { flex-wrap: wrap; }
+  nav.main.nav-open .nav-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    order: 3;
+    padding: 1.25rem 0 0.5rem;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+  nav.main.nav-open .nav-list a {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--rule-soft);
+    width: 100%;
+  }
+  nav.main.nav-open .nav-list li:last-child a { border-bottom: none; }
   .section-head { grid-template-columns: 1fr; gap: 1rem; }
   .section-num { padding-top: 0.4rem; }
   .section-lede { grid-column: 1; margin-top: 0.5rem; }
@@ -3080,8 +3101,7 @@ footer {
 <section class="hero">
   <div class="hero-content">
     <h1 class="hero-title">
-      <span class="word">Calgary</span>
-      <span class="word">cleaning,</span>
+      <span class="word">Calgary cleaning,</span>
       <span class="word">measured.</span>
     </h1>
 
@@ -3090,7 +3110,7 @@ footer {
     </p>
 
     <div class="hero-actions">
-      <a href="#quote" class="btn btn-primary">Get instant quote →</a>
+      <a href="#quote" class="btn btn-primary">Book in 60 seconds →</a>
       <a href="#book" class="btn btn-ghost">Talk to a human</a>
     </div>
 
@@ -3756,6 +3776,40 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     }
   });
 });
+
+// — Mobile menu toggle —
+(function() {
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.querySelector('nav.main');
+  if (!hamburger || !nav) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    hamburger.textContent = isOpen ? 'Close' : 'Menu';
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  // Close menu when a nav link is tapped
+  nav.querySelectorAll('.nav-list a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      hamburger.textContent = 'Menu';
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
+    });
+  });
+
+  // Close menu when viewport returns to desktop width
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024 && nav.classList.contains('nav-open')) {
+      nav.classList.remove('nav-open');
+      hamburger.textContent = 'Menu';
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
+    }
+  });
+})();
 </script>
 
 </body>
