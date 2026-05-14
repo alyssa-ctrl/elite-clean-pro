@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Bricolage+Grotesque:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Bricolage+Grotesque:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
 <!-- Service Schema for B2B SEO -->
 <script type="application/ld+json">
@@ -67,8 +67,8 @@
 <style>
 :root {
   --paper:      #F1F1F1;
-  --paper-deep: #EAEAEA;
-  --bone:       #FFFFFF;
+  --paper-deep: #E8E6E2;
+  --bone:       #FAFAF8;
   --ink:        #0A0E12;
   --ink-soft:   #2A3640;
   --muted:      #6B7680;
@@ -77,11 +77,91 @@
   --teal:       #00A88B;
   --teal-bright:#00D4AA;
   --teal-soft:  rgba(0,168,139,0.08);
-  --teal-line:  rgba(0,168,139,0.40);
-  --serif: 'Cormorant', 'Times New Roman', Georgia, serif;
-  --sans:  'Bricolage Grotesque', system-ui, sans-serif;
-  --mono:  'JetBrains Mono', ui-monospace, monospace;
+  --teal-line:  rgba(0,168,139,0.35);
+  --gold:       #C8860A;
+  --gold-bright:#F0C060;
+  --gold-soft:  rgba(200,134,10,0.09);
+  --vermilion:  #00A88B;
+  --serif:  'Cormorant', Georgia, serif;
+  --sans:   'Bricolage Grotesque', system-ui, sans-serif;
+  --mono:   'JetBrains Mono', ui-monospace, monospace;
 }
+
+
+/* ════════ TICKER STRIP (unified with pricing) ════════ */
+.ticker-strip {
+  background: var(--ink); color: rgba(242,246,248,0.75);
+  padding: 0.65rem 1.75rem;
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+  display: flex; align-items: center; gap: 0.85rem; white-space: nowrap; overflow: hidden;
+}
+.ticker-live { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--teal-bright); }
+.ticker-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal-bright);
+  box-shadow: 0 0 8px rgba(0,212,170,0.7);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.85)} }
+.ticker-div { opacity: 0.35; }
+
+/* SKIP LINK */
+.skip-link {
+  position: absolute; top: -40px; left: 0;
+  background: var(--teal); color: #fff;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  z-index: 1000; transition: top 0.2s ease;
+}
+.skip-link:focus { top: 0; }
+*:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+/* ════════ NAV (unified with pricing) ════════ */
+nav.main {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 1.75rem;
+  background: rgba(241,241,241,0.94);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
+  transition: padding 0.3s ease;
+}
+nav.main.scrolled { padding: 0.85rem 1.75rem; }
+.workmark {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 500;
+  letter-spacing: -0.015em; color: var(--ink);
+  display: flex; align-items: baseline; gap: 0.45rem;
+}
+.workmark em { font-style: italic; font-weight: 300; color: var(--teal); }
+.workmark .small {
+  font-family: var(--mono); font-size: 0.65rem; font-style: normal;
+  font-weight: 500; letter-spacing: 0.12em; color: var(--muted);
+  text-transform: uppercase; margin-left: 0.5rem; align-self: center;
+}
+.nav-list { list-style: none; display: flex; gap: 2rem; align-items: center; }
+.nav-list a {
+  font-family: var(--sans); font-size: 0.95rem; font-weight: 400;
+  letter-spacing: -0.005em; color: var(--ink-soft);
+  position: relative; padding: 0.25rem 0; transition: color 0.2s ease;
+}
+.nav-list a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--teal); transition: width 0.3s ease;
+}
+.nav-list a:hover { color: var(--ink); }
+.nav-list a:hover::after, .nav-list a.active::after { width: 100%; }
+.nav-list a.active { color: var(--ink); }
+.btn-book {
+  font-family: var(--sans); font-size: 0.9rem; font-weight: 500;
+  background: var(--ink); color: var(--paper); border: 1px solid var(--ink);
+  padding: 0.7rem 1.4rem; cursor: pointer; display: inline-flex;
+  align-items: center; gap: 0.5rem; transition: all 0.25s ease; border-radius: 999px;
+}
+.btn-book:hover { background: var(--teal); border-color: var(--teal); color: var(--ink); transform: translateY(-1px); }
+.btn-book .arrow { transition: transform 0.25s ease; }
+.btn-book:hover .arrow { transform: translateX(2px); }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
 body {
@@ -97,80 +177,9 @@ a { color: inherit; }
 ::selection { background: var(--teal); color: var(--ink); }
 [id] { scroll-margin-top: 90px; }
 
-/* ════════ STATUS TOP ════════ */
-.status-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.85rem 1.75rem;
-  border-bottom: 1px solid var(--rule);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.status-top .teal { color: var(--teal); }
-.status-top .right { display: flex; gap: 1.75rem; }
+
 
 /* ════════ NAV ════════ */
-nav.main {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem 1.75rem;
-  border-bottom: 1px solid var(--rule);
-  background: rgba(241,241,241,0.92);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(8px);
-}
-.workmark {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-  color: var(--ink);
-  margin-right: auto;
-  display: flex;
-  align-items: baseline;
-  gap: 0.85rem;
-}
-.workmark em { font-style: italic; color: var(--teal); font-weight: 400; margin: 0 0.1rem; }
-.workmark .small {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  font-style: normal;
-  color: var(--muted);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.nav-list { display: flex; gap: 2.25rem; list-style: none; margin-right: 2rem; }
-.nav-list a {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--ink-soft);
-  transition: color 0.18s ease;
-}
-.nav-list a:hover, .nav-list a.active { color: var(--teal); }
-.btn-book {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  padding: 0.65rem 1.1rem;
-  transition: all 0.18s ease;
-}
-.btn-book:hover { background: var(--ink); color: var(--paper); }
-.btn-book .arrow { margin-left: 0.3rem; }
 
 /* ════════ HERO ════════ */
 .hero {
@@ -720,64 +729,7 @@ nav.main {
 .cta-actions { display: inline-flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center; }
 
 /* ════════ FOOTER ════════ */
-footer {
-  background: var(--paper-deep);
-  padding: 4rem 1.75rem 1.5rem;
-  border-top: 1px solid var(--rule);
-}
-.footer-top {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid var(--rule);
-}
-.footer-mark {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-.footer-mark em { font-style: italic; color: var(--teal); font-weight: 400; margin: 0 0.1rem; }
-.footer-bio {
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
-  max-width: 22rem;
-}
-.footer-col h4 {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-.footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: 0.5rem; }
-.footer-col a {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.18s ease;
-}
-.footer-col a:hover { color: var(--teal); }
-.footer-col p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.4rem; }
-.footer-bottom {
-  max-width: 1400px;
-  margin: 1.5rem auto 0;
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+
 
 /* ════════ MOBILE ════════ */
 /* Mobile nav hamburger — hidden on desktop, shown <=1024px */
@@ -938,6 +890,20 @@ body.menu-open { overflow: hidden; }
 }
 /* ═══════════════════════════════════════════════════════════ */
 
+
+/* ════════ FOOTER (unified with pricing) ════════ */
+footer { padding: 4rem 1.75rem 2rem; background: var(--paper-deep); border-top: 1px solid var(--rule); }
+.footer-top { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); }
+.footer-mark { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 1rem; }
+.footer-mark em { font-style: italic; font-weight: 300; color: var(--teal); }
+.footer-bio { font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; color: var(--ink-soft); font-style: italic; font-weight: 300; margin-bottom: 1.25rem; max-width: 36ch; }
+.footer-col h4 { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; }
+.footer-col a { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-soft); transition: color 0.2s ease; }
+.footer-col a:hover { color: var(--teal); }
+.footer-col p { font-family: var(--sans); font-size: 0.9rem; color: var(--ink-soft); line-height: 1.55; margin-bottom: 0.4rem; }
+.footer-bottom { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -965,12 +931,17 @@ body.menu-open { overflow: hidden; }
 </head>
 <body>
 
-<!-- ════════ STATUS TOP ════════ -->
-<div class="status-top">
-  <span class="teal">Commercial cleaning · Calgary, AB</span>
-  <div class="right">
-    <span> · WCB Alberta · 24h SLA</span>
-  </div>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- TICKER -->
+<div class="ticker-strip">
+  <span class="ticker-live"><span class="ticker-dot"></span>Now booking</span>
+  <span class="ticker-div">·</span>
+  <span>Same-week availability across Calgary, AB</span>
+  <span class="ticker-div">·</span>
+  <span>hello@elitecleanpro.ca</span>
+  <span class="ticker-div">·</span>
+  <span id="now-time">—</span>
 </div>
 
 <!-- ════════ NAV ════════ -->
@@ -1423,40 +1394,40 @@ body.menu-open { overflow: hidden; }
   <div class="footer-top">
     <div>
       <div class="footer-mark">Elite<em>Clean</em> Pro</div>
-      <p class="footer-bio">Calgary's system-driven commercial cleaning. Documented quality control, , named account contact, 24-hour SLA. Office, medical, retail, fitness, post-construction, multi-tenant.</p>
+      <p class="footer-bio">System-driven cleaning across Calgary, Airdrie, Cochrane, Okotoks, and Chestermere. 100-point inspection on every visit. Written Elite Score report after every clean.</p>
       <p style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal)">Mon–Sun · 7am–8pm</p>
     </div>
     <div class="footer-col">
       <h4>Pages</h4>
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="/residential">Residential Cleaning</a></li>
+        <li><a href="/commercial">Commercial Cleaning</a></li>
         <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/move-out-cleaning">Move-Out Cleaning</a></li>
+        <li><a href="/biosmart">BioSmart Technology</a></li>
         <li><a href="/the-standard">The Standard</a></li>
-        <li><a href="/quality-reporting">Quality Reporting</a></li>
-        <li><a href="/promise">The Promise</a></li>
-        <li><a href="/biosmart">BioSmart</a></li>
-        <li><a href="/move-out-cleaning">Move-Out</a></li>
-        <li><a href="/about">About</a></li>
         <li><a href="/faq">FAQ</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Areas Served</h4>
       <ul>
-        <li><a href="/#areas">Calgary NW · SW · NE · SE</a></li>
-        <li><a href="/#areas">Airdrie</a></li>
-        <li><a href="/#areas">Cochrane</a></li>
-        <li><a href="/#areas">Okotoks · Chestermere</a></li>
+        <li><a href="/">Calgary NW · SW · NE · SE</a></li>
+        <li><a href="/">Beltline · Kensington · Mission</a></li>
+        <li><a href="/">Airdrie</a></li>
+        <li><a href="/">Cochrane</a></li>
+        <li><a href="/">Chestermere · Okotoks</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>hello@elitecleanpro.ca</p>
+      <p><a href="mailto:hello@elitecleanpro.ca">hello@elitecleanpro.ca</a></p>
       <p style="margin-top:1rem">Calgary, Alberta<br>T2P 1J9</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Elite Clean Pro · The Elite Standard</span>
+    <span id="copyright-year">© 2026</span><span> · Elite Clean Pro · The Elite Standard</span>
     <span>Calgary, AB · 51.04°N · 114.07°W</span>
   </div>
 </footer>
@@ -1488,6 +1459,33 @@ body.menu-open { overflow: hidden; }
   mobileOverlay && mobileOverlay.addEventListener('click', closeMenu);
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+})();
+// Live time in ticker
+(function(){
+  function update(){
+    var el = document.getElementById('now-time');
+    if(!el) return;
+    var d = new Date();
+    var h = d.getHours(), m = d.getMinutes();
+    var hh = (h < 10 ? '0' : '') + h;
+    var mm = (m < 10 ? '0' : '') + m;
+    el.textContent = hh + ':' + mm + ' MT';
+  }
+  update();
+  setInterval(update, 30000);
+})();
+
+// Copyright year
+(function(){
+  var el = document.getElementById('copyright-year');
+  if(el) el.textContent = '© ' + new Date().getFullYear();
+})();
+
+// Nav scroll state
+(function(){
+  var nav=document.querySelector('nav.main');
+  if(!nav)return;
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
 })();
 (function(){
   var nav=document.querySelector('nav.main');

@@ -3375,10 +3375,146 @@ body.menu-open { overflow: hidden; }
   </div>
 </section>
 
+<!-- ════════ REPLY GUARANTEE — live counter, real human ════════ -->
+<section class="reply-section" id="reply">
+  <div class="section-head">
+    <div class="section-num">04 / The reply</div>
+    <h2 class="section-title">A real person, <em>under two hours.</em></h2>
+    <p class="section-lede">AI acknowledges in seconds. A human writes the quote in under 2 hours.</p>
+  </div>
+
+  <div class="reply-animation-wrap" style="margin-top:0">
+    <style>
+      .reply-animation-wrap { margin-top: 2.5rem; }
+      .ew { background: #0A0E12; border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; padding: 32px 36px 28px; font-family: 'Bricolage Grotesque', var(--sans), sans-serif; position: relative; overflow: hidden; }
+      .ew-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+      .ew-brand { display: flex; align-items: center; gap: 10px; }
+      .ew-logo { width: 34px; height: 34px; border-radius: 8px; background: rgba(0,168,139,0.12); border: 1px solid rgba(0,168,139,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 18px; font-style: italic; color: #00A88B; }
+      .ew-name { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); }
+      .ew-sub { font-size: 11px; color: #00A88B; letter-spacing: 0.06em; }
+      .ew-status { display: flex; align-items: center; gap: 7px; font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; text-transform: uppercase; }
+      .ew-dot { width: 6px; height: 6px; border-radius: 50%; background: #00A88B; animation: ewp 2s ease-in-out infinite; flex-shrink: 0; }
+      @keyframes ewp { 0%,100%{opacity:1} 50%{opacity:.4} }
+      .ew-divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 22px; }
+      .ew-msgs { display: flex; flex-direction: column; gap: 12px; min-height: 220px; }
+      .ew-row { display: flex; gap: 11px; align-items: flex-end; }
+      .ew-row.r { flex-direction: row-reverse; }
+      .ew-av { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; }
+      .ew-av.ewcl { background: rgba(0,168,139,0.12); border: 1px solid rgba(0,168,139,0.25); color: #00A88B; }
+      .ew-av.ewai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.45); font-family: var(--serif); font-size: 16px; font-style: italic; }
+      .ew-col { display: flex; flex-direction: column; }
+      .ew-row.r .ew-col { align-items: flex-end; }
+      .ew-bub { max-width: 340px; padding: 11px 15px; font-size: 13.5px; line-height: 1.6; animation: ewslide .35s ease both; }
+      @keyframes ewslide { from{opacity:0;transform:translateY(7px)} to{opacity:1;transform:translateY(0)} }
+      .ew-bub.ewcl { background: rgba(0,168,139,0.1); border: 1px solid rgba(0,168,139,0.22); color: #b8f0e3; border-radius: 14px; border-bottom-right-radius: 3px; }
+      .ew-bub.ewai { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); color: rgba(255,255,255,0.78); border-radius: 14px; border-bottom-left-radius: 3px; }
+      .ew-bub strong { color: #00A88B; font-weight: 500; }
+      .ew-t { font-size: 10px; color: rgba(255,255,255,0.18); margin-top: 4px; padding: 0 3px; }
+      .ew-typing { display: flex; align-items: center; gap: 5px; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; border-bottom-left-radius: 3px; width: 58px; animation: ewslide .35s ease both; }
+      .ew-typing span { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.3); animation: ewb 1.2s ease-in-out infinite; }
+      .ew-typing span:nth-child(2){animation-delay:.2s} .ew-typing span:nth-child(3){animation-delay:.4s}
+      @keyframes ewb { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+      .ew-confirm { margin-top: 6px; background: rgba(0,168,139,0.07); border: 1px solid rgba(0,168,139,0.2); border-radius: 12px; padding: 14px 16px; max-width: 340px; animation: ewslide .35s ease both; }
+      .ew-confirm-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #00A88B; margin-bottom: 8px; font-weight: 500; }
+      .ew-confirm-row { display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,0.55); padding: 3px 0; }
+      .ew-confirm-row span:last-child { color: rgba(255,255,255,0.8); font-weight: 500; }
+      .ew-confirm-price { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid rgba(0,168,139,0.15); margin-top: 8px; padding-top: 9px; }
+      .ew-confirm-price-label { font-size: 11px; color: #00A88B; letter-spacing: 0.06em; text-transform: uppercase; }
+      .ew-confirm-price-sub { font-size: 10px; color: rgba(255,255,255,0.3); }
+      .ew-confirm-price-val { font-family: var(--serif); font-size: 26px; font-weight: 500; color: #fff; letter-spacing: -0.02em; }
+      .ew-badge { display: inline-block; background: rgba(0,168,139,0.15); border: 1px solid rgba(0,168,139,0.3); color: #00A88B; font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; margin-bottom: 6px; }
+      .ew-bar { margin-top: 20px; display: flex; align-items: center; gap: 10px; padding: 11px 16px; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; background: rgba(255,255,255,0.02); }
+      .ew-bar-text { flex: 1; font-size: 12.5px; color: rgba(255,255,255,0.25); }
+      .ew-bar-btn { width: 30px; height: 30px; border-radius: 50%; background: #00A88B; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+      .ew-bar-btn svg { width: 13px; height: 13px; fill: none; stroke: #000; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+
+    <div class="ew">
+      <div class="ew-head">
+        <div class="ew-brand">
+          <div class="ew-logo">e</div>
+          <div>
+            <div class="ew-name">Elite Clean Pro</div>
+            <div class="ew-sub">Calgary, AB · Responding now</div>
+          </div>
+        </div>
+        <div class="ew-status"><div class="ew-dot"></div>Online</div>
+      </div>
+      <div class="ew-divider"></div>
+      <div class="ew-msgs" id="ew-msgs"></div>
+      <div class="ew-bar">
+        <div class="ew-bar-text" id="ew-inp">Message Elite Clean Pro…</div>
+        <div class="ew-bar-btn"><svg viewBox="0 0 14 14"><path d="M2 12 L12 7 L2 2 L2 6 L9 7 L2 8 Z"/></svg></div>
+      </div>
+    </div>
+
+    <script>
+    (function(){
+      var msgs = document.getElementById('ew-msgs');
+      var inp = document.getElementById('ew-inp');
+      function cl(text,time){var d=document.createElement('div');d.className='ew-row r';d.innerHTML='<div class="ew-col"><div class="ew-bub ewcl">'+text+'</div><div class="ew-t">'+time+'</div></div><div class="ew-av ewcl">JC</div>';return d}
+      function ai(text,time){var d=document.createElement('div');d.className='ew-row';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-col"><div class="ew-bub ewai">'+text+'</div><div class="ew-t">'+time+'</div></div>';return d}
+      function typing(){var d=document.createElement('div');d.className='ew-row';d.id='ew-typ';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-typing"><span></span><span></span><span></span></div>';return d}
+      function confirm(){var d=document.createElement('div');d.className='ew-row';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-col"><div class="ew-bub ewai">Here\'s your booking summary — locked in at our bi-weekly rate. <strong>$125 saved</strong> per year vs one-time.</div><div class="ew-confirm"><div class="ew-badge">Booking confirmed</div><div class="ew-confirm-label">Bi-Weekly Recurring Clean</div><div class="ew-confirm-row"><span>Home</span><span>2 bedroom · Calgary</span></div><div class="ew-confirm-row"><span>Schedule</span><span>Every 2 weeks · your day</span></div><div class="ew-confirm-row"><span>Standard</span><span>100-point + BioSmart</span></div><div class="ew-confirm-row"><span>Contract</span><span>None — cancel anytime</span></div><div class="ew-confirm-price"><div><div class="ew-confirm-price-label">Your rate</div><div class="ew-confirm-price-sub">10% recurring discount applied</div></div><div style="text-align:right"><div class="ew-confirm-price-val">$135<span style="font-size:14px;color:rgba(255,255,255,0.4)">/visit</span></div></div></div></div><div class="ew-t">3:44 pm</div></div>';return d}
+      function rmTyping(){var t=document.getElementById('ew-typ');if(t)t.remove()}
+      var seq=[
+        {d:0,   fn:function(){msgs.appendChild(cl('Hi — I\'d like to set up a recurring clean for my 2 bedroom place in Calgary.','3:42 pm'))}},
+        {d:700, fn:function(){msgs.appendChild(typing())}},
+        {d:1600,fn:function(){rmTyping();msgs.appendChild(ai('Great choice — most popular plan. Are you thinking weekly or bi-weekly?','3:42 pm'))}},
+        {d:2900,fn:function(){inp.textContent='Bi-weekly works…'}},
+        {d:3400,fn:function(){inp.textContent='Message Elite Clean Pro…';msgs.appendChild(cl('Bi-weekly works perfectly.','3:43 pm'))}},
+        {d:4100,fn:function(){msgs.appendChild(typing())}},
+        {d:5200,fn:function(){rmTyping();msgs.appendChild(ai('Our bi-weekly rate for a 2 bedroom is <strong>$135/visit</strong> — 10% off the one-time rate, locked in. No contract, cancel anytime.','3:43 pm'))}},
+        {d:6500,fn:function(){inp.textContent='Yes, let\'s book it…'}},
+        {d:7000,fn:function(){inp.textContent='Message Elite Clean Pro…';msgs.appendChild(cl('Yes — let\'s book it.','3:44 pm'))}},
+        {d:7600,fn:function(){msgs.appendChild(typing())}},
+        {d:8700,fn:function(){rmTyping();msgs.appendChild(confirm());msgs.scrollTop=msgs.scrollHeight}},
+      ];
+      var started = false;
+      var timers = [];
+
+      function run(){
+        msgs.innerHTML='';
+        inp.textContent='Message Elite Clean Pro…';
+        timers.forEach(clearTimeout);
+        timers=[];
+        seq.forEach(function(s){timers.push(setTimeout(s.fn,s.d))});
+        timers.push(setTimeout(run,12000));
+      }
+
+      function stop(){
+        timers.forEach(clearTimeout);
+        timers=[];
+        msgs.innerHTML='';
+        inp.textContent='Message Elite Clean Pro…';
+        started=false;
+      }
+
+      var animWrap = document.querySelector('.reply-animation-wrap');
+      if(animWrap && 'IntersectionObserver' in window){
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting && !started){
+              started=true;
+              run();
+            } else if(!e.isIntersecting && started){
+              stop();
+            }
+          });
+        }, {threshold: 0.4});
+        io.observe(animWrap);
+      } else {
+        run();
+      }
+    })();
+    </script>
+  </div>
+</section>
+
 <!-- ════════ TESTIMONIAL — One, specific, sourced ════════ -->
 <section class="testimonial-section" id="testimonial">
   <div class="section-head">
-    <div class="section-num">04 / Proof</div>
+    <div class="section-num">05 / Proof</div>
     <h2 class="section-title">One <em>client.</em></h2>
   </div>
   <blockquote class="testimonial-card">
