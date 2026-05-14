@@ -45,5 +45,5 @@
 
 [[redirects]]
   from = "/pricing"
-  to = "/index.html"
+  to = "/pricing.html"
   status = 200

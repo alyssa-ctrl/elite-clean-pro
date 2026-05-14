@@ -1,0 +1,21 @@
+# Elite Clean Pro
+
+> Calgary's system-driven residential and commercial cleaning service. 100-point checklist inspection scored on every visit. Elite Score quality report after every clean. If a clean scores below 95%, the team returns the next day at no charge. Quote from a human in under 2 hours.
+
+Elite Clean Pro operates in Calgary, Alberta, with service extending to Airdrie, Cochrane, Okotoks, and Chestermere. Hours are 7am to 8pm, seven days a week. Phone: (403) 555-0100. Email: hello@elitecleanpro.ca.
+
+The company uses BioSmart cleaning technology: enzyme cleaners that biologically break down soils, electrolyzed water for disinfection, electrostatic spray for commercial coverage, and color-coded nano-fibre microfibre to prevent cross-contamination. Eight tools replace 15+ traditional cleaning chemicals.
+
+Pricing is flat-rate and transparent. A 1-bedroom house one-time clean starts at $139 per visit. Weekly, bi-weekly, and monthly frequencies receive 15%, 10%, and 5% discounts respectively. No hidden fees.
+
+The Elite Score is a composite of checklist completion, surface inspection pass rate, time-on-task, and client confirmation. Average across audited cleans: 97.3%.
+
+## Core pages
+
+- [Homepage](https://elitecleanpro.ca/): Service overview, instant quote, the system, BioSmart kit, proof, booking.
+- [Residential cleaning](https://elitecleanpro.ca/residential): House and condo cleaning in Calgary and surrounding areas.
+- [Commercial cleaning](https://elitecleanpro.ca/commercial): Office, retail, and commercial space cleaning.
+- [The Elite Standard](https://elitecleanpro.ca/the-standard): The 100-point inspection methodology and how the Elite Score is calculated.
+- [Pricing](https://elitecleanpro.ca/pricing): Flat-rate pricing for all property types and frequencies.
+- [Quality reporting](https://elitecleanpro.ca/quality-reporting): How the Elite Score report works and what each clean produces.
+- [Move-out cleaning](https://elitecleanpro.ca/move-out-cleaning): End-of-tenancy and deposit-return cleaning for condos and houses.

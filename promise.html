@@ -794,6 +794,61 @@ footer {
   .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   UNIFIED MOBILE MENU — standardized across all pages
+═══════════════════════════════════════════════════════════ */
+.hamburger {
+  display: none; background: none; border: 1px solid var(--ink);
+  padding: 0.55rem 0.85rem; font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); cursor: pointer;
+  border-radius: 999px;
+}
+.hamburger:hover { background: var(--ink); color: var(--paper); }
+
+.mobile-menu {
+  position: fixed; top: 0; right: 0;
+  width: min(86%, 360px); height: 100vh;
+  background: var(--paper-deep); border-left: 1px solid var(--rule);
+  z-index: 200; padding: 6rem 2rem 2rem;
+  transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  display: flex; flex-direction: column; gap: 0.5rem; overflow-y: auto;
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a {
+  font-family: var(--mono); font-size: 0.9rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-soft); text-decoration: none;
+  padding: 1rem 0; border-bottom: 1px solid var(--rule); transition: color 0.2s ease;
+}
+.mobile-menu a:hover, .mobile-menu a.active { color: var(--teal); }
+.mobile-menu .mobile-book {
+  margin-top: 1.5rem; padding: 1rem 1.5rem;
+  background: var(--ink); color: var(--paper);
+  text-align: center; font-weight: 500; border-radius: 999px;
+  border-bottom: none; letter-spacing: 0.1em;
+}
+.mobile-menu-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: transparent; border: 1px solid var(--rule);
+  color: var(--ink); width: 40px; height: 40px;
+  font-family: var(--mono); font-size: 1.2rem; cursor: pointer; line-height: 1;
+  border-radius: 50%;
+}
+.mobile-menu-close:hover { border-color: var(--teal); color: var(--teal); }
+.mobile-menu-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); z-index: 199;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+.mobile-menu-overlay.open { opacity: 1; pointer-events: auto; }
+body.menu-open { overflow: hidden; }
+
+@media (max-width: 1024px) {
+  .nav-list { display: none !important; }
+  .hamburger { display: block; }
+}
+/* ═══════════════════════════════════════════════════════════ */
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -836,7 +891,7 @@ footer {
     <span class="small">Calgary, AB</span>
   </a>
   <ul class="nav-list">
-    <li><a href="/#quote">Quote</a></li>
+    <li><a href="/">Home</a></li>
     <li><a href="/residential">Residential</a></li>
     <li><a href="/commercial">Commercial</a></li>
     <li><a href="/the-standard">The Standard</a></li>
@@ -844,23 +899,23 @@ footer {
     <li><a href="/quality-reporting">Reports</a></li>
   </ul>
   <a href="/#book" class="btn-book">Book Now <span class="arrow">→</span></a>
-  <button class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-drawer">Menu</button>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
 </nav>
-<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
-<nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
-  <button class="mobile-drawer-close" type="button" aria-label="Close menu">×</button>
-  <a href="/#quote">Quote</a>
+<!-- UNIFIED MOBILE MENU -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">×</button>
+  <a href="/">Home</a>
   <a href="/residential">Residential</a>
   <a href="/commercial">Commercial</a>
   <a href="/the-standard">The Standard</a>
   <a href="/pricing">Pricing</a>
-  <a href="/quality-reporting">Reports</a>
   <a href="/move-out-cleaning">Move-Out</a>
   <a href="/biosmart">BioSmart</a>
   <a href="/faq">FAQ</a>
   <a href="/about">About</a>
-  <a href="/#book" class="drawer-book">Book Now →</a>
-</nav>
+  <a href="/#book" class="mobile-book">Book Now →</a>
+</aside>
 
 <!-- ════════ HERO ════════ -->
 <section class="hero">
@@ -1139,7 +1194,7 @@ footer {
     <div class="footer-col">
       <h4>Pages</h4>
       <ul>
-        <li><a href="/#quote">Quote</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/the-standard">The Standard</a></li>
         <li><a href="/quality-reporting">Quality Reporting</a></li>
@@ -1172,19 +1227,32 @@ footer {
 </footer>
 
 <script>
+// ─────────────── Unified mobile menu ───────────────
 (function(){
-  var ham=document.querySelector('.hamburger');
-  var drawer=document.getElementById('mobile-drawer');
-  var overlay=document.getElementById('mobile-overlay');
-  var close=document.querySelector('.mobile-drawer-close');
-  if(!ham||!drawer)return;
-  function openMenu(){drawer.classList.add('open');overlay&&overlay.classList.add('open');document.body.classList.add('nav-open');ham.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false')}
-  function closeMenu(){drawer.classList.remove('open');overlay&&overlay.classList.remove('open');document.body.classList.remove('nav-open');ham.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true')}
-  ham.addEventListener('click',openMenu);
-  close&&close.addEventListener('click',closeMenu);
-  overlay&&overlay.addEventListener('click',closeMenu);
-  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileOverlay = document.getElementById('mobile-menu-overlay');
+  if (!hamburger || !mobileMenu) return;
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileOverlay && mobileOverlay.classList.add('open');
+    document.body.classList.add('menu-open');
+    hamburger.setAttribute('aria-expanded','true');
+    mobileMenu.setAttribute('aria-hidden','false');
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    mobileOverlay && mobileOverlay.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileMenu.setAttribute('aria-hidden','true');
+  }
+  hamburger.addEventListener('click', openMenu);
+  mobileMenuClose && mobileMenuClose.addEventListener('click', closeMenu);
+  mobileOverlay && mobileOverlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 })();
 (function(){
   var nav=document.querySelector('nav.main');

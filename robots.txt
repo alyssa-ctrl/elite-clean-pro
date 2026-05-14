@@ -1,8 +1,7 @@
+# Elite Clean Pro · Calgary, AB
+# https://elitecleanpro.ca/
+
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://elitecleanpro.ca/sitemap.xml
-
-# Crawl-delay (optional — remove if causing issues)
-Crawl-delay: 1
