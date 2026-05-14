@@ -9,7 +9,7 @@
 <meta name="keywords" content="cleaning service Calgary, residential cleaning Calgary, commercial cleaning Calgary AB, system-driven cleaning Calgary, BioSmart cleaning Calgary, Elite Clean Pro">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Elite Clean Pro">
-<meta name="theme-color" content="var(--paper)">
+<meta name="theme-color" content="#F1F1F1">
 <meta name="google-site-verification" content="UthKvoB_p1KiASXwLMbWV5avxJqEdwCOIJRWRX9AjZg" />
 
 <!-- Geo / local — -->
@@ -3600,17 +3600,6 @@ body.menu-open { overflow: hidden; }
 /* ═══════════════════════════════════════════════════════════
    INTERACTIONS
 ═══════════════════════════════════════════════════════════ */
-
-// — Live time in masthead —
-function updateTime() {
-  const now = new Date();
-  const opts = { timeZone: 'America/Edmonton', hour: '2-digit', minute: '2-digit', hour12: false };
-  const time = now.toLocaleTimeString('en-CA', opts);
-  const el = document.getElementById('now-time');
-  if (el) el.textContent = time + ' MT';
-}
-updateTime();
-setInterval(updateTime, 30000);
 
 // — Hero is now a static image; video-related JS removed —
 
