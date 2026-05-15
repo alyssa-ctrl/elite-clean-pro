@@ -31,7 +31,15 @@ extraHead: |
           { "@type": "City", "name": "Okotoks", "addressRegion": "AB" }
         ],
         "address": { "@type": "PostalAddress", "addressLocality": "Calgary", "addressRegion": "AB", "addressCountry": "CA" },
-        "serviceType": ["Residential Cleaning", "Commercial Cleaning", "Move-Out Cleaning"]
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Cleaning services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Cleaning", "serviceType": "Residential Cleaning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Cleaning", "serviceType": "Commercial Cleaning" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Move-Out Cleaning", "serviceType": "Move-Out Cleaning" } }
+          ]
+        }
       },
       {
         "@type": "BreadcrumbList",
