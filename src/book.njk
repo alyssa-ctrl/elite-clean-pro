@@ -1,0 +1,203 @@
+---
+layout: base.njk
+title: Book Your Cleaning · Elite Clean Pro
+description: Book residential, commercial, or move-out cleaning in Calgary. Pick your service, pick a time, get a written quote in 2 hours.
+ogTitle: Book Your Cleaning · Elite Clean Pro
+ogDescription: Book residential, commercial, or move-out cleaning in Calgary. Same-week availability.
+permalink: /book/
+---
+
+<style>
+.book-hero {
+  padding: 5rem 1.75rem 2rem;
+  text-align: center;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.book-hero-eyebrow {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 1.25rem;
+}
+.book-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  font-weight: 500; line-height: 1; letter-spacing: -0.025em;
+  color: var(--ink); margin-bottom: 1.25rem;
+}
+.book-hero-title em { font-style: italic; color: var(--teal); font-weight: 400; }
+.book-hero-sub {
+  font-family: var(--serif); font-size: 1.25rem;
+  font-style: italic; font-weight: 300;
+  color: var(--ink-soft); max-width: 52ch;
+  margin: 0 auto 1rem;
+}
+.book-hero-detail {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.book-grid-section {
+  padding: 4rem 1.75rem 6rem;
+  background: var(--paper);
+}
+.book-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+}
+.book-card {
+  background: var(--bone);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  text-decoration: none;
+  color: var(--ink);
+}
+.book-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+}
+.book-card-num {
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.25rem;
+}
+.book-card-title {
+  font-family: var(--serif); font-size: 2rem;
+  font-weight: 500; line-height: 1.05;
+  letter-spacing: -0.02em; margin-bottom: 0.75rem;
+}
+.book-card-title em { font-style: italic; color: var(--teal); font-weight: 400; }
+.book-card-desc {
+  font-family: var(--sans); font-size: 0.95rem;
+  line-height: 1.55; color: var(--ink-soft);
+  margin-bottom: 1.5rem; flex-grow: 1;
+}
+.book-card-meta {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  font-family: var(--mono); font-size: 0.68rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem; border-bottom: 1px solid var(--rule);
+}
+.book-card-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--sans); font-size: 0.95rem; font-weight: 500;
+  color: var(--ink);
+}
+.book-card-cta .arrow {
+  transition: transform 0.25s ease;
+  color: var(--teal);
+}
+.book-card:hover .book-card-cta .arrow { transform: translateX(4px); }
+
+.book-meta-band {
+  background: var(--paper-deep);
+  padding: 3rem 1.75rem;
+  text-align: center;
+  border-top: 1px solid var(--rule);
+}
+.book-meta-grid {
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+}
+.book-meta-item h3 {
+  font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.75rem; font-weight: 500;
+}
+.book-meta-item p {
+  font-family: var(--serif); font-size: 1.05rem;
+  line-height: 1.5; color: var(--ink); font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .book-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .book-card { padding: 2rem 1.5rem; }
+  .book-card-title { font-size: 1.65rem; }
+  .book-meta-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .book-hero { padding: 3.5rem 1rem 1.5rem; }
+  .book-grid-section { padding: 2.5rem 1rem 4rem; }
+}
+</style>
+
+<section class="book-hero">
+  <div class="book-hero-eyebrow">Book Your Cleaning</div>
+  <h1 class="book-hero-title">Pick your <em>service.</em></h1>
+  <p class="book-hero-sub">Choose the type of clean. Pick a time. We'll send a written quote in under 2 hours.</p>
+  <div class="book-hero-detail">Same-week availability · Calgary · Airdrie · Cochrane · Okotoks · Chestermere</div>
+</section>
+
+<section class="book-grid-section">
+  <div class="book-grid">
+
+    <a href="{{ site.bookingLinks.residential }}" class="book-card">
+      <div class="book-card-num">01 / For homes</div>
+      <h2 class="book-card-title">Residential <em>cleaning.</em></h2>
+      <p class="book-card-desc">House, condo, or townhouse. One-time, weekly, bi-weekly, or monthly. Includes the 100-point checklist, BioSmart kit, and Elite Score report.</p>
+      <div class="book-card-meta">
+        <span>From $139/visit</span>
+        <span>· 1–5+ Bedrooms</span>
+        <span>· No contract</span>
+      </div>
+      <span class="book-card-cta">Book residential <span class="arrow">→</span></span>
+    </a>
+
+    <a href="{{ site.bookingLinks.moveOut }}" class="book-card">
+      <div class="book-card-num">02 / End of lease</div>
+      <h2 class="book-card-title">Move-out <em>cleaning.</em></h2>
+      <p class="book-card-desc">For tenants defending a deposit or owners preparing a unit for handover. 150-point inspection report with photos — built to be forwarded.</p>
+      <div class="book-card-meta">
+        <span>From $278</span>
+        <span>· 150-point report</span>
+        <span>· Same-week</span>
+      </div>
+      <span class="book-card-cta">Book move-out <span class="arrow">→</span></span>
+    </a>
+
+    <a href="{{ site.bookingLinks.commercial }}" class="book-card">
+      <div class="book-card-num">03 / For businesses</div>
+      <h2 class="book-card-title">Commercial <em>cleaning.</em></h2>
+      <p class="book-card-desc">Office, retail, medical, or multi-tenant. Monthly flat rate. Electrostatic disinfection, after-hours scheduling, monthly Elite Score reports.</p>
+      <div class="book-card-meta">
+        <span>From $800/mo</span>
+        <span>· Up to 2,000 sqft</span>
+        <span>· Walkthrough first</span>
+      </div>
+      <span class="book-card-cta">Book commercial <span class="arrow">→</span></span>
+    </a>
+
+    <a href="{{ site.bookingLinks.consult }}" class="book-card">
+      <div class="book-card-num">04 / Not sure yet</div>
+      <h2 class="book-card-title">Recurring <em>consult.</em></h2>
+      <p class="book-card-desc">15-minute call to scope a recurring plan. We'll walk through frequency, scope, and pricing — no obligation, no in-home consultation.</p>
+      <div class="book-card-meta">
+        <span>15 minutes</span>
+        <span>· Phone or video</span>
+        <span>· Free</span>
+      </div>
+      <span class="book-card-cta">Book a consult <span class="arrow">→</span></span>
+    </a>
+
+  </div>
+</section>
+
+<section class="book-meta-band">
+  <div class="book-meta-grid">
+    <div class="book-meta-item">
+      <h3>Quote</h3>
+      <p>Written in under 2 hours. Flat-rate, no hourly billing.</p>
+    </div>
+    <div class="book-meta-item">
+      <h3>Confirmation</h3>
+      <p>Time confirmed by email. Calendar invite attached.</p>
+    </div>
+    <div class="book-meta-item">
+      <h3>Reschedule</h3>
+      <p>Free up to 24 hours before. No cancellation fee, ever.</p>
+    </div>
+  </div>
+</section>

@@ -4,7 +4,14 @@
   "url": "https://elitecleanpro.ca",
   "email": "hello@elitecleanpro.ca",
   "location": "Calgary, AB",
-  "hours": "Mon–Sun · 7am–8pm",
-  "coords": "51.04°N · 114.07°W",
-  "areas": "Calgary, Airdrie, Cochrane, Okotoks, and Chestermere"
+  "hours": "Mon\u2013Sun \u00b7 7am\u20138pm",
+  "coords": "51.04\u00b0N \u00b7 114.07\u00b0W",
+  "areas": "Calgary, Airdrie, Cochrane, Okotoks, and Chestermere",
+  "bookingLinks": {
+    "chooser": "/book/",
+    "residential": "https://calendar.app.google/REPLACE_RESIDENTIAL_LINK",
+    "commercial": "https://calendar.app.google/REPLACE_COMMERCIAL_LINK",
+    "moveOut": "https://calendar.app.google/REPLACE_MOVEOUT_LINK",
+    "consult": "https://calendar.app.google/REPLACE_CONSULT_LINK"
+  }
 }
