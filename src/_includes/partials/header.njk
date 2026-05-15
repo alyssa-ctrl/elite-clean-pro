@@ -1,0 +1,53 @@
+{# Header — edit this one file and every page on the site updates. #}
+
+<nav class="main" aria-label="Primary navigation">
+  <a href="/" class="workmark">
+    Elite<em>Clean</em> Pro
+    <span class="small">Calgary, AB</span>
+  </a>
+
+  <ul class="nav-list">
+    {% for item in nav.primary %}
+      {% set active = item.url | isActive(page.url) %}
+      <li>
+        <a href="{{ item.url }}"
+           {% if active %}class="active" aria-current="page"{% endif %}>
+          {{ item.label }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="#book" class="btn-book">
+    Book Now <span class="arrow">→</span>
+  </a>
+
+  <button type="button" class="hamburger" id="hamburger"
+          aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    Menu
+  </button>
+</nav>
+
+{# Mobile menu — same nav items + extras, all in one place #}
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">×</button>
+
+  {% for item in nav.primary %}
+    {% set active = item.url | isActive(page.url) %}
+    <a href="{{ item.url }}"
+       {% if active %}class="active" aria-current="page"{% endif %}>
+      {{ item.label }}
+    </a>
+  {% endfor %}
+
+  {% for item in nav.mobileExtras %}
+    {% set active = item.url | isActive(page.url) %}
+    <a href="{{ item.url }}"
+       {% if active %}class="active" aria-current="page"{% endif %}>
+      {{ item.label }}
+    </a>
+  {% endfor %}
+
+  <a href="#book" class="mobile-book">Book Now →</a>
+</aside>

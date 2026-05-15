@@ -1,0 +1,28 @@
+{
+  "primary": [
+    { "url": "/", "label": "Home" },
+    { "url": "/residential/", "label": "Residential" },
+    { "url": "/commercial/", "label": "Commercial" },
+    { "url": "/the-standard/", "label": "The Standard" },
+    { "url": "/pricing/", "label": "Pricing" },
+    { "url": "/quality-reporting/", "label": "Reports" }
+  ],
+  "mobileExtras": [
+    { "url": "/move-out-cleaning/", "label": "Move-Out" },
+    { "url": "/biosmart/", "label": "BioSmart" },
+    { "url": "/faq/", "label": "FAQ" },
+    { "url": "/about/", "label": "About" }
+  ],
+  "footer": [
+    { "url": "/residential/", "label": "Residential Cleaning" },
+    { "url": "/commercial/", "label": "Commercial Cleaning" },
+    { "url": "/pricing/", "label": "Pricing" },
+    { "url": "/move-out-cleaning/", "label": "Move-Out Cleaning" },
+    { "url": "/biosmart/", "label": "BioSmart Technology" },
+    { "url": "/the-standard/", "label": "The Standard" },
+    { "url": "/quality-reporting/", "label": "Reports" },
+    { "url": "/faq/", "label": "FAQ" },
+    { "url": "/about/", "label": "About" },
+    { "url": "/promise/", "label": "Our Promise" }
+  ]
+}

@@ -1,326 +1,271 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Calgary Cleaning Service · 100-Point Inspection · Elite Clean Pro</title>
-<meta name="description" content="Calgary cleaning service with a 100-point checklist on every visit, a written Elite Score report after, and same-week availability. Instant quote.">
-<meta name="keywords" content="cleaning service Calgary, residential cleaning Calgary, commercial cleaning Calgary AB, system-driven cleaning Calgary, BioSmart cleaning Calgary, Elite Clean Pro">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Elite Clean Pro">
-<meta name="theme-color" content="#F1F1F1">
-<meta name="google-site-verification" content="UthKvoB_p1KiASXwLMbWV5avxJqEdwCOIJRWRX9AjZg" />
-
-<!-- Geo / local — -->
-<meta name="geo.region" content="CA-AB">
-<meta name="geo.placename" content="Calgary">
-<meta name="geo.position" content="51.0447;-114.0719">
-<meta name="ICBM" content="51.0447, -114.0719">
-
-<!-- Canonical — -->
-<link rel="canonical" href="https://elitecleanpro.ca/">
-
-<!-- Open Graph (Facebook, LinkedIn) — -->
-
-<!-- Twitter / X — -->
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://elitecleanpro.ca/#business",
-      "name": "Elite Clean Pro",
-      "alternateName": "Elite Clean",
-      "description": "Calgary's system-driven residential and commercial cleaning service. Technology-powered. Human-delivered. The 100-point checklist System, A+ Trained Teams, and BioSmart Technology.",
-      "slogan": "Not Just Clean. Elite.",
-      "url": "https://elitecleanpro.ca/",
-      "telephone": "+1-780-965-1779",
-      "email": "hello@elitecleanpro.ca",
-      "image": "https://elitecleanpro.ca/og-image.jpg",
-      "logo": "https://elitecleanpro.ca/logo.png",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Calgary",
-        "addressRegion": "AB",
-        "postalCode": "T2P",
-        "addressCountry": "CA"
+---
+layout: base.njk
+title: Calgary Cleaning Service · 100-Point Inspection · Elite Clean Pro
+description: Calgary cleaning service with a 100-point checklist on every visit, a written Elite Score report after, and same-week availability. Instant quote.
+ogTitle: Calgary Cleaning Service · 100-Point Inspection · Elite Clean Pro
+ogDescription: Calgary cleaning service with a 100-point checklist on every visit, a written Elite Score report after, and same-week availability. Instant quote.
+ogImage: /og-image.jpg
+ogType: website
+extraHead: |
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://elitecleanpro.ca/#business",
+        "name": "Elite Clean Pro",
+        "alternateName": "Elite Clean",
+        "description": "Calgary's system-driven residential and commercial cleaning service. Technology-powered. Human-delivered. The 100-point checklist System, A+ Trained Teams, and BioSmart Technology.",
+        "slogan": "Not Just Clean. Elite.",
+        "url": "https://elitecleanpro.ca/",
+        "telephone": "+1-780-965-1779",
+        "email": "hello@elitecleanpro.ca",
+        "image": "https://elitecleanpro.ca/og-image.jpg",
+        "logo": "https://elitecleanpro.ca/logo.png",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Calgary",
+          "addressRegion": "AB",
+          "postalCode": "T2P",
+          "addressCountry": "CA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.0447,
+          "longitude": -114.0719
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Calgary" },
+          { "@type": "City", "name": "Airdrie" },
+          { "@type": "City", "name": "Cochrane" },
+          { "@type": "City", "name": "Chestermere" },
+          { "@type": "City", "name": "Okotoks" }
+        ],
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "07:00",
+          "closes": "20:00"
+        }],
+        "knowsAbout": [
+          "Residential cleaning",
+          "Commercial cleaning",
+          "BioSmart Technology",
+          "Enzyme-based cleaning",
+          "Electrolyzed water disinfection",
+          "100-point checklist System",
+          "Elite Score methodology"
+        ]
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.0447,
-        "longitude": -114.0719
+      {
+        "@type": "Service",
+        "@id": "https://elitecleanpro.ca/#residential-service",
+        "serviceType": "Residential House Cleaning",
+        "name": "Residential House Cleaning Calgary",
+        "description": "Recurring weekly, bi-weekly, and monthly residential cleaning across Calgary. 100-point checklist room-by-room checklist, A+ trained teams assigned consistently, and BioSmart enzyme-based cleaners. From $139 per visit.",
+        "provider": { "@id": "https://elitecleanpro.ca/#business" },
+        "areaServed": [
+          { "@type": "City", "name": "Calgary" },
+          { "@type": "City", "name": "Airdrie" },
+          { "@type": "City", "name": "Cochrane" }
+        ],
+        "category": "House Cleaning Service",
+        "offers": {
+          "@type": "Offer",
+          "price": "139.00",
+          "priceCurrency": "CAD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://elitecleanpro.ca/#services"
+        }
       },
-      "areaServed": [
-        { "@type": "City", "name": "Calgary" },
-        { "@type": "City", "name": "Airdrie" },
-        { "@type": "City", "name": "Cochrane" },
-        { "@type": "City", "name": "Chestermere" },
-        { "@type": "City", "name": "Okotoks" }
-      ],
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "07:00",
-        "closes": "20:00"
-      }],
-      "knowsAbout": [
-        "Residential cleaning",
-        "Commercial cleaning",
-        "BioSmart Technology",
-        "Enzyme-based cleaning",
-        "Electrolyzed water disinfection",
-        "100-point checklist System",
-        "Elite Score methodology"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://elitecleanpro.ca/#residential-service",
-      "serviceType": "Residential House Cleaning",
-      "name": "Residential House Cleaning Calgary",
-      "description": "Recurring weekly, bi-weekly, and monthly residential cleaning across Calgary. 100-point checklist room-by-room checklist, A+ trained teams assigned consistently, and BioSmart enzyme-based cleaners. From $139 per visit.",
-      "provider": { "@id": "https://elitecleanpro.ca/#business" },
-      "areaServed": [
-        { "@type": "City", "name": "Calgary" },
-        { "@type": "City", "name": "Airdrie" },
-        { "@type": "City", "name": "Cochrane" }
-      ],
-      "category": "House Cleaning Service",
-      "offers": {
-        "@type": "Offer",
-        "price": "139.00",
-        "priceCurrency": "CAD",
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
-        "url": "https://elitecleanpro.ca/#services"
+      {
+        "@type": "Service",
+        "@id": "https://elitecleanpro.ca/#commercial-service",
+        "serviceType": "Commercial Office Cleaning",
+        "name": "Commercial Office Cleaning Calgary",
+        "description": "Recurring commercial cleaning for Calgary offices, medical clinics, gyms, and retail spaces. Electrostatic disinfection, hospital-grade BioSmart kit, and dedicated A+ team with on-site supervisor. From $800 per month.",
+        "provider": { "@id": "https://elitecleanpro.ca/#business" },
+        "areaServed": [
+          { "@type": "City", "name": "Calgary" },
+          { "@type": "City", "name": "Airdrie" },
+          { "@type": "City", "name": "Cochrane" },
+          { "@type": "City", "name": "Chestermere" },
+          { "@type": "City", "name": "Okotoks" }
+        ],
+        "category": "Janitorial Service",
+        "offers": {
+          "@type": "Offer",
+          "price": "800.00",
+          "priceCurrency": "CAD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://elitecleanpro.ca/#services"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://elitecleanpro.ca/#website",
+        "url": "https://elitecleanpro.ca/",
+        "name": "Elite Clean Pro",
+        "description": "Calgary's system-driven cleaning service",
+        "publisher": { "@id": "https://elitecleanpro.ca/#business" },
+        "inLanguage": "en-CA"
+      },
+      {
+        "@type": "DefinedTermSet",
+        "@id": "https://elitecleanpro.ca/#glossary",
+        "name": "Elite Clean Pro — Owned Terminology",
+        "description": "Proprietary methodology and terminology used by Elite Clean Pro, Calgary's system-driven cleaning service.",
+        "publisher": { "@id": "https://elitecleanpro.ca/#business" },
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "@id": "https://elitecleanpro.ca/#term-biosmart",
+            "name": "BioSmart Technology",
+            "termCode": "BIOSMART",
+            "description": "Elite Clean Pro's proprietary cleaning technology system, built around four science-backed components: enzyme-based cleaners that biologically break down soils, electrolyzed water for hospital-grade disinfection, nano-fibre microfibre that traps particles 100x smaller than a human hair, and electrostatic sprayers for charged-particle disinfectant coverage. The kit replaces fifteen-plus traditional cleaning chemicals with eight focused, low-toxicity tools.",
+            "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
+            "url": "https://elitecleanpro.ca/#biosmart"
+          },
+          {
+            "@type": "DefinedTerm",
+            "@id": "https://elitecleanpro.ca/#term-elite-standard",
+            "name": "The Elite Standard",
+            "termCode": "ELITE-STANDARD",
+            "description": "Elite Clean Pro's proprietary quality benchmark — the level of completeness, consistency, and care every clean must meet before the team leaves the space. Defined by the 100-point checklist System, scored by the Elite Score, and trained into every A+ team member before their first job.",
+            "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
+            "url": "https://elitecleanpro.ca/"
+          },
+          {
+            "@type": "DefinedTerm",
+            "@id": "https://elitecleanpro.ca/#term-elite-score",
+            "name": "Elite Score",
+            "termCode": "ELITE-SCORE",
+            "description": "Elite Clean Pro's proprietary post-clean quality metric, calculated on a 100-point checklist scale from five components: 100-point checklist completion (60% weight), surface inspection pass rate (15%), time-on-task efficiency against spec (10%), supply utilization (5%), and client confirmation (10%). System average: A+ ratedacross audited cleans. Spaces scoring under 95% trigger a no-charge return visit the next day.",
+            "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
+            "url": "https://elitecleanpro.ca/#faq"
+          },
+          {
+            "@type": "DefinedTerm",
+            "@id": "https://elitecleanpro.ca/#term-100-point checklist-system",
+            "name": "The 100-point checklist System",
+            "termCode": "100-point checklist",
+            "description": "Elite Clean Pro's proprietary room-by-room cleaning checklist. Forty-seven discrete checkpoints, completed on every visit, in every room — not a suggestion, a requirement. The 100-point checklist System forms the core of every Elite Score calculation and is the operational backbone of the Elite Standard.",
+            "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
+            "url": "https://elitecleanpro.ca/#biosmart"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://elitecleanpro.ca/#methodology",
+        "name": "How Elite Clean Pro delivers an elite clean",
+        "description": "The methodology Elite Clean Pro applies to every residential and commercial clean across Calgary — engineered, not improvised. Three pillars, executed in order, on every visit.",
+        "totalTime": "PT2H",
+        "supply": [
+          { "@type": "HowToSupply", "name": "BioSmart Technology cleaning kit" },
+          { "@type": "HowToSupply", "name": "100-point checklist System checklist" },
+          { "@type": "HowToSupply", "name": "Nano-fibre microfibre system" }
+        ],
+        "tool": [
+          { "@type": "HowToTool", "name": "Electrostatic sprayer" },
+          { "@type": "HowToTool", "name": "Electric spin scrubber" }
+        ],
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Apply the 100-point checklist System",
+            "text": "The A+ trained team works the proprietary 100-point checklist, room by room, in a fixed order. Every checkpoint is completed before the team moves to the next room. Not a suggestion — a requirement.",
+            "url": "https://elitecleanpro.ca/#biosmart"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Deploy BioSmart Technology",
+            "text": "Apply the BioSmart kit room by room: enzyme-based cleaners on biological soils, electrolyzed water for disinfection, nano-fibre microfibre for particle capture, electrostatic sprayers for commercial coverage. Eight focused, low-toxicity tools — calibrated for Calgary's hard water (200-250 mg/L).",
+            "url": "https://elitecleanpro.ca/#biosmart"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Score against the Elite Standard",
+            "text": "Lead reviews the space against the 100-point checklist. The Elite Score is calculated, logged, and reported to the client. Spaces scoring under 95% trigger a no-charge return visit the next day. No questions, no negotiation.",
+            "url": "https://elitecleanpro.ca/#faq"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://elitecleanpro.ca/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What makes Elite Clean Pro different from other Calgary cleaning services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elite Clean Pro is Calgary's only system-driven cleaning service. Three pillars set us apart from typical Calgary cleaners. The 100-point checklist System — a proprietary room-by-room checklist completed on every visit, not a suggestion. The A+ Team — hand-selected contractors trained to the Elite Standard before their first job, and assigned consistently to your space. BioSmart Technology — our enzyme-based, electrolyzed-water cleaning kit that replaces fifteen-plus traditional chemicals with eight focused, low-toxicity tools. We don't compete on price or credentials. We compete on systems, technology, and consistency."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does house cleaning cost in Calgary in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "House cleaning in Calgary in 2026 typically runs $130 to $250 per visit depending on home size and frequency. Elite Clean Pro residential pricing is flat — no hidden fees, no hourly rates: standard 1–2 bedroom from $139, 3 bedroom from $169, 4 bedroom from $199. Recurring weekly clients pay from $118 per visit, bi-weekly from $125. Commercial cleaning starts at $800/month for offices up to 2,000 sq ft; mid-size facilities (2,000–5,000 sq ft) from $1,800/month. Every quote is written, flat, and delivered within 24 hours. Never verbal. Never hourly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is BioSmart technology in cleaning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BioSmart Technology is Elite Clean Pro's proprietary cleaning system, built around four science-backed components. Enzyme-based cleaners biologically break down soils instead of dissolving them with harsh chemicals. Electrolyzed water generates hospital-grade disinfection from salt and water — safer than bleach, and surface-safe for natural stone, hardwood, and screens. Nano-fibre microfibre traps particles 100x smaller than a human hair. Electrostatic sprayers deliver charged-particle disinfectant coverage on commercial spaces. The kit replaces fifteen-plus traditional cleaning chemicals with eight focused, low-toxicity tools — better for Calgary homes with kids, pets, allergies, and asthma, and dramatically more effective on the hard-water deposits common to Calgary's 200-250 mg/L water."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Elite Score work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Elite Score is Elite Clean Pro's proprietary post-clean quality metric, calculated on a 100-point checklist scale from five components: 100-point checklist completion (60% weight), surface inspection pass rate (15%), time-on-task efficiency against spec (10%), supply utilization (5%), and client confirmation (10%). Our system average is A+ ratedacross audited cleans. Every visit is scored, logged, and reviewed before the team leaves your space. If your space scores under 95%, we return the next day at no charge — no questions, no negotiation. The Elite Score is reported to clients after each clean, so you see exactly what was completed and where the team flagged anything for follow-up."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to be home for my Elite Clean Pro visit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Most Calgary clients give us a key code, garage code, or buzzer access for their first visit and let us work undisturbed. Every team member is hand-selected, trained to the Elite Standard, and assigned consistently to your space — same A+ team, every visit. We send arrival and completion notifications by text and email so you always know where things stand, and the post-clean Elite Score report gives you a full breakdown without needing to inspect anything yourself. Pets and kids are welcome — our BioSmart cleaning kit is plant-based and low-VOC, and our team is briefed on every household's pets, allergies, and access notes before the first visit."
+            }
+          }
+        ]
       }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://elitecleanpro.ca/#commercial-service",
-      "serviceType": "Commercial Office Cleaning",
-      "name": "Commercial Office Cleaning Calgary",
-      "description": "Recurring commercial cleaning for Calgary offices, medical clinics, gyms, and retail spaces. Electrostatic disinfection, hospital-grade BioSmart kit, and dedicated A+ team with on-site supervisor. From $800 per month.",
-      "provider": { "@id": "https://elitecleanpro.ca/#business" },
-      "areaServed": [
-        { "@type": "City", "name": "Calgary" },
-        { "@type": "City", "name": "Airdrie" },
-        { "@type": "City", "name": "Cochrane" },
-        { "@type": "City", "name": "Chestermere" },
-        { "@type": "City", "name": "Okotoks" }
-      ],
-      "category": "Janitorial Service",
-      "offers": {
-        "@type": "Offer",
-        "price": "800.00",
-        "priceCurrency": "CAD",
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
-        "url": "https://elitecleanpro.ca/#services"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://elitecleanpro.ca/#website",
-      "url": "https://elitecleanpro.ca/",
-      "name": "Elite Clean Pro",
-      "description": "Calgary's system-driven cleaning service",
-      "publisher": { "@id": "https://elitecleanpro.ca/#business" },
-      "inLanguage": "en-CA"
-    },
-    {
-      "@type": "DefinedTermSet",
-      "@id": "https://elitecleanpro.ca/#glossary",
-      "name": "Elite Clean Pro — Owned Terminology",
-      "description": "Proprietary methodology and terminology used by Elite Clean Pro, Calgary's system-driven cleaning service.",
-      "publisher": { "@id": "https://elitecleanpro.ca/#business" },
-      "hasDefinedTerm": [
-        {
-          "@type": "DefinedTerm",
-          "@id": "https://elitecleanpro.ca/#term-biosmart",
-          "name": "BioSmart Technology",
-          "termCode": "BIOSMART",
-          "description": "Elite Clean Pro's proprietary cleaning technology system, built around four science-backed components: enzyme-based cleaners that biologically break down soils, electrolyzed water for hospital-grade disinfection, nano-fibre microfibre that traps particles 100x smaller than a human hair, and electrostatic sprayers for charged-particle disinfectant coverage. The kit replaces fifteen-plus traditional cleaning chemicals with eight focused, low-toxicity tools.",
-          "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
-          "url": "https://elitecleanpro.ca/#biosmart"
-        },
-        {
-          "@type": "DefinedTerm",
-          "@id": "https://elitecleanpro.ca/#term-elite-standard",
-          "name": "The Elite Standard",
-          "termCode": "ELITE-STANDARD",
-          "description": "Elite Clean Pro's proprietary quality benchmark — the level of completeness, consistency, and care every clean must meet before the team leaves the space. Defined by the 100-point checklist System, scored by the Elite Score, and trained into every A+ team member before their first job.",
-          "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
-          "url": "https://elitecleanpro.ca/"
-        },
-        {
-          "@type": "DefinedTerm",
-          "@id": "https://elitecleanpro.ca/#term-elite-score",
-          "name": "Elite Score",
-          "termCode": "ELITE-SCORE",
-          "description": "Elite Clean Pro's proprietary post-clean quality metric, calculated on a 100-point checklist scale from five components: 100-point checklist completion (60% weight), surface inspection pass rate (15%), time-on-task efficiency against spec (10%), supply utilization (5%), and client confirmation (10%). System average: A+ ratedacross audited cleans. Spaces scoring under 95% trigger a no-charge return visit the next day.",
-          "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
-          "url": "https://elitecleanpro.ca/#faq"
-        },
-        {
-          "@type": "DefinedTerm",
-          "@id": "https://elitecleanpro.ca/#term-100-point checklist-system",
-          "name": "The 100-point checklist System",
-          "termCode": "100-point checklist",
-          "description": "Elite Clean Pro's proprietary room-by-room cleaning checklist. Forty-seven discrete checkpoints, completed on every visit, in every room — not a suggestion, a requirement. The 100-point checklist System forms the core of every Elite Score calculation and is the operational backbone of the Elite Standard.",
-          "inDefinedTermSet": { "@id": "https://elitecleanpro.ca/#glossary" },
-          "url": "https://elitecleanpro.ca/#biosmart"
-        }
-      ]
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://elitecleanpro.ca/#methodology",
-      "name": "How Elite Clean Pro delivers an elite clean",
-      "description": "The methodology Elite Clean Pro applies to every residential and commercial clean across Calgary — engineered, not improvised. Three pillars, executed in order, on every visit.",
-      "totalTime": "PT2H",
-      "supply": [
-        { "@type": "HowToSupply", "name": "BioSmart Technology cleaning kit" },
-        { "@type": "HowToSupply", "name": "100-point checklist System checklist" },
-        { "@type": "HowToSupply", "name": "Nano-fibre microfibre system" }
-      ],
-      "tool": [
-        { "@type": "HowToTool", "name": "Electrostatic sprayer" },
-        { "@type": "HowToTool", "name": "Electric spin scrubber" }
-      ],
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Apply the 100-point checklist System",
-          "text": "The A+ trained team works the proprietary 100-point checklist, room by room, in a fixed order. Every checkpoint is completed before the team moves to the next room. Not a suggestion — a requirement.",
-          "url": "https://elitecleanpro.ca/#biosmart"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Deploy BioSmart Technology",
-          "text": "Apply the BioSmart kit room by room: enzyme-based cleaners on biological soils, electrolyzed water for disinfection, nano-fibre microfibre for particle capture, electrostatic sprayers for commercial coverage. Eight focused, low-toxicity tools — calibrated for Calgary's hard water (200-250 mg/L).",
-          "url": "https://elitecleanpro.ca/#biosmart"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Score against the Elite Standard",
-          "text": "Lead reviews the space against the 100-point checklist. The Elite Score is calculated, logged, and reported to the client. Spaces scoring under 95% trigger a no-charge return visit the next day. No questions, no negotiation.",
-          "url": "https://elitecleanpro.ca/#faq"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://elitecleanpro.ca/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What makes Elite Clean Pro different from other Calgary cleaning services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Elite Clean Pro is Calgary's only system-driven cleaning service. Three pillars set us apart from typical Calgary cleaners. The 100-point checklist System — a proprietary room-by-room checklist completed on every visit, not a suggestion. The A+ Team — hand-selected contractors trained to the Elite Standard before their first job, and assigned consistently to your space. BioSmart Technology — our enzyme-based, electrolyzed-water cleaning kit that replaces fifteen-plus traditional chemicals with eight focused, low-toxicity tools. We don't compete on price or credentials. We compete on systems, technology, and consistency."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does house cleaning cost in Calgary in 2026?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "House cleaning in Calgary in 2026 typically runs $130 to $250 per visit depending on home size and frequency. Elite Clean Pro residential pricing is flat — no hidden fees, no hourly rates: standard 1–2 bedroom from $139, 3 bedroom from $169, 4 bedroom from $199. Recurring weekly clients pay from $118 per visit, bi-weekly from $125. Commercial cleaning starts at $800/month for offices up to 2,000 sq ft; mid-size facilities (2,000–5,000 sq ft) from $1,800/month. Every quote is written, flat, and delivered within 24 hours. Never verbal. Never hourly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is BioSmart technology in cleaning?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "BioSmart Technology is Elite Clean Pro's proprietary cleaning system, built around four science-backed components. Enzyme-based cleaners biologically break down soils instead of dissolving them with harsh chemicals. Electrolyzed water generates hospital-grade disinfection from salt and water — safer than bleach, and surface-safe for natural stone, hardwood, and screens. Nano-fibre microfibre traps particles 100x smaller than a human hair. Electrostatic sprayers deliver charged-particle disinfectant coverage on commercial spaces. The kit replaces fifteen-plus traditional cleaning chemicals with eight focused, low-toxicity tools — better for Calgary homes with kids, pets, allergies, and asthma, and dramatically more effective on the hard-water deposits common to Calgary's 200-250 mg/L water."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does the Elite Score work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Elite Score is Elite Clean Pro's proprietary post-clean quality metric, calculated on a 100-point checklist scale from five components: 100-point checklist completion (60% weight), surface inspection pass rate (15%), time-on-task efficiency against spec (10%), supply utilization (5%), and client confirmation (10%). Our system average is A+ ratedacross audited cleans. Every visit is scored, logged, and reviewed before the team leaves your space. If your space scores under 95%, we return the next day at no charge — no questions, no negotiation. The Elite Score is reported to clients after each clean, so you see exactly what was completed and where the team flagged anything for follow-up."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to be home for my Elite Clean Pro visit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Most Calgary clients give us a key code, garage code, or buzzer access for their first visit and let us work undisturbed. Every team member is hand-selected, trained to the Elite Standard, and assigned consistently to your space — same A+ team, every visit. We send arrival and completion notifications by text and email so you always know where things stand, and the post-clean Elite Score report gives you a full breakdown without needing to inspect anything yourself. Pets and kids are welcome — our BioSmart cleaning kit is plant-based and low-VOC, and our team is briefed on every household's pets, allergies, and access notes before the first visit."
-          }
-        }
-      ]
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Calgary Cleaning Service · 100-Point Inspection · Elite Clean Pro",
+    "url": "https://elitecleanpro.ca/",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-lede", ".direct-answer", ".faq-a-inner", ".hero-eyebrow"]
     }
-  ]
-}
-</script>
-
-<!-- Brand stack: Cormorant (display serif), Bricolage Grotesque (body), JetBrains Mono (editorial labels) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  }
+  </script>
+---
 
 <style>
 /* ═══════════════════════════════════════════════════════════
    ELITE CLEAN — EDITORIAL ATELIER
    A considered cleaning service · Calgary, AB
 ═══════════════════════════════════════════════════════════ */
-
-:root {
-  /* — Palette: warm cream editorial, deep teal accent, ink-black text — */
-  --paper:      #F1F1F1;   /* primary background — warm cream */
-  --paper-deep: #EAEAEA;   /* alternating sections — slightly deeper cream */
-  --bone:       #FFFFFF;   /* card / surface — pure white */
-  --ink:        #0A0E12;   /* primary text — near-black */
-  --ink-soft:   #2A3640;   /* secondary text — deep slate */
-  --muted:      #6B7680;   /* muted / labels — warm gray */
-  --rule:       rgba(10,14,18,0.10);
-  --rule-soft:  rgba(10,14,18,0.06);
-
-  /* — Accents — deeper teal for light bg contrast, kept gold for commercial — */
-  --teal:       #00A88B;
-  --teal-soft:  rgba(0,168,139,0.10);
-  --teal-line:  rgba(0,168,139,0.40);
-  --blue:       #0077A3;
-  --gold:       #C89635;
-  --gold-soft:  rgba(200,150,53,0.12);
-
-  /* — Legacy alias kept so component rules still resolve to the new accent — */
-  --vermilion:  var(--teal);
-
-  --shadow:     0 1px 0 rgba(0,0,0,0.4), 0 24px 60px -28px rgba(0,0,0,0.6);
-
-  --serif: 'Cormorant', 'Times New Roman', Georgia, serif;
-  --sans:  'Bricolage Grotesque', system-ui, sans-serif;
-  --mono:  'JetBrains Mono', ui-monospace, monospace;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 17px;
-  font-weight: 400;
-  font-feature-settings: "ss01", "ss02";
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-  line-height: 1.65;
-}
 
 /* — Subtle noise: lifts the dark ground from feeling flat — */
 body::before {
@@ -347,7 +292,6 @@ body::after {
 }
 
 /* — Selection — */
-::selection { background: var(--teal); color: var(--ink); }
 
 /* — Scrollbar — */
 ::-webkit-scrollbar { width: 6px; }
@@ -388,122 +332,6 @@ body::after {
 /* ───────────────────────────────────────────
    2. NAV — minimal, editorial
 ─────────────────────────────────────────── */
-nav.main {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: var(--paper);
-  padding: 1.25rem 1.75rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--rule);
-  transition: padding 0.3s ease;
-}
-nav.main.scrolled { padding: 0.85rem 1.75rem; }
-
-.workmark {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 1.5rem;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  text-decoration: none;
-  display: flex;
-  align-items: baseline;
-  gap: 0.45rem;
-}
-.workmark em {
-  font-style: italic;
-  font-weight: 300;
-  color: var(--vermilion);
-}
-.workmark .small {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-left: 0.5rem;
-  align-self: center;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-.nav-list a {
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: -0.005em;
-  color: var(--ink-soft);
-  text-decoration: none;
-  position: relative;
-  padding: 0.25rem 0;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-.nav-list a:hover { color: var(--ink); }
-.nav-list a::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0; height: 1px;
-  background: var(--vermilion);
-  transition: width 0.3s ease;
-}
-.nav-list a:hover::after, .nav-list a.active::after { width: 100%; }
-.nav-list a.active { color: var(--ink); }
-
-.btn-book {
-  font-family: var(--sans);
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  background: var(--ink);
-  color: var(--paper);
-  border: 1px solid var(--ink);
-  padding: 0.7rem 1.4rem;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.25s ease;
-  border-radius: 999px;
-}
-.btn-book:hover {
-  background: var(--teal);
-  border-color: var(--teal);
-  color: var(--ink);
-  transform: translateY(-1px);
-}
-.btn-book:hover {
-  background: #00EFC2;
-  border-color: #00EFC2;
-  color: var(--ink);
-  gap: 0.75rem;
-}
-.btn-book .arrow { transition: transform 0.25s ease; display: inline-block; }
-.btn-book:hover .arrow { transform: translateX(2px); }
-
-.hamburger {
-  display: none;
-  background: none;
-  border: 1px solid var(--ink);
-  padding: 0.55rem 0.85rem;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink);
-  cursor: pointer;
-}
 
 /* ───────────────────────────────────────────
    3. HERO — magazine cover typography
@@ -1585,81 +1413,13 @@ section {
 /* ───────────────────────────────────────────
    12. FOOTER — colophon-style
 ─────────────────────────────────────────── */
-footer {
-  background: var(--paper-deep);
-  color: var(--ink);
-  padding: 5rem 1.75rem 2rem;
-  border-top: 1px solid var(--rule);
-}
-.footer-top {
-  max-width: 1200px;
-  margin: 0 auto 4rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 4rem;
-}
-.footer-mark {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 1;
-  margin-bottom: 1rem;
-  color: var(--ink);
-}
-.footer-mark em { font-style: italic; font-weight: 300; color: var(--teal); }
-.footer-bio {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-style: italic;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: 32ch;
-  margin-bottom: 1.5rem;
-}
-.footer-col h4 {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 1.25rem;
-}
-.footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: 0.6rem; }
-.footer-col a {
-  font-family: var(--sans);
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.2s ease;
-  cursor: pointer;
-}
-.footer-col a:hover { color: var(--teal); }
+
 .footer-col p {
   font-family: var(--sans);
   font-size: 0.9rem;
   color: var(--ink-soft);
   margin-bottom: 0.4rem;
   line-height: 1.5;
-}
-
-.footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  text-transform: uppercase;
 }
 
 /* ───────────────────────────────────────────
@@ -1689,9 +1449,6 @@ footer {
   .step { border-right: none; border-bottom: 1px solid var(--rule); padding: 2.5rem 0; }
   .step:not(:first-child) { padding-left: 0; }
   .step:last-child { border-bottom: none; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
-  .nav-list { display: none; }
-  .hamburger { display: block; }
 
   .section-head { grid-template-columns: 1fr; gap: 1rem; }
   .section-num { padding-top: 0.4rem; }
@@ -1704,9 +1461,7 @@ footer {
 @media (max-width: 640px) {
   .masthead-strip { padding: 0.5rem 1rem; font-size: 0.62rem; }
   .masthead-strip .hide-sm { display: none; }
-  nav.main { padding: 1rem; }
-  .workmark { font-size: 1.2rem; }
-  .workmark .small { display: none; }
+
   section { padding: 4.5rem 1rem; }
   .hero { padding: 2.5rem 1rem 4rem; min-height: auto; gap: 2rem; }
   .hero-title { font-size: clamp(3rem, 14vw, 5.5rem); line-height: 0.94; }
@@ -1729,9 +1484,7 @@ footer {
   .faq-q-toggle { width: 32px; height: 32px; }
   .faq-a-inner { grid-template-columns: 1fr; padding: 0 0 1.5rem; }
   .faq-a-text { grid-column: 1; font-size: 0.98rem; }
-  .footer-top { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 2.5rem; }
-  footer { padding: 3.5rem 1rem 1.5rem; }
-  .footer-bottom { font-size: 0.62rem; }
+
   .areas-track { font-size: 1.4rem; gap: 2rem; }
   .areas-track span { gap: 2rem; }
   .compare { aspect-ratio: 4/3; }
@@ -1752,46 +1505,6 @@ footer {
    ═════════════════════════════════════════════════════ */
 
 /* ── Live status ticker (replaces masthead) ── */
-.ticker-strip {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 0.65rem 1.75rem;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.ticker-strip a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.ticker-strip a:hover {
-  color: var(--teal-bright);
-}
-.ticker-live {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--teal);
-}
-.ticker-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #00D4AA;
-  box-shadow: 0 0 8px rgba(0,212,170,0.7);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
-}
-.ticker-div { opacity: 0.4; }
 
 /* ── Pricing teaser ── */
 .pricing-teaser {
@@ -2038,7 +1751,7 @@ footer {
   .pricing-teaser-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .ticker-strip { font-size: 0.62rem; padding: 0.5rem 1rem; gap: 0.5rem; }
+  
   .pricing-teaser, .report-section { padding: 4rem 1rem; }
   .pricing-teaser-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .pt-card { padding: 1.1rem; min-height: 150px; }
@@ -3018,145 +2731,30 @@ footer {
   .testimonial-text { font-size: 1.25rem; }
 }
 
-
 /* ═══════════════════════════════════════════════════════════
    UNIFIED MOBILE MENU — standardized across all pages
 ═══════════════════════════════════════════════════════════ */
-.hamburger {
-  display: none; background: none; border: 1px solid var(--ink);
-  padding: 0.55rem 0.85rem; font-family: var(--mono); font-size: 0.7rem;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); cursor: pointer;
-  border-radius: 999px;
-}
-.hamburger:hover { background: var(--ink); color: var(--paper); }
-
-.mobile-menu {
-  position: fixed; top: 0; right: 0;
-  width: min(86%, 360px); height: 100vh;
-  background: var(--paper-deep); border-left: 1px solid var(--rule);
-  z-index: 200; padding: 6rem 2rem 2rem;
-  transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  display: flex; flex-direction: column; gap: 0.5rem; overflow-y: auto;
-}
-.mobile-menu.open { transform: translateX(0); }
-.mobile-menu a {
-  font-family: var(--mono); font-size: 0.9rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--ink-soft); text-decoration: none;
-  padding: 1rem 0; border-bottom: 1px solid var(--rule); transition: color 0.2s ease;
-}
-.mobile-menu a:hover, .mobile-menu a.active { color: var(--teal); }
-.mobile-menu .mobile-book {
-  margin-top: 1.5rem; padding: 1rem 1.5rem;
-  background: var(--ink); color: var(--paper);
-  text-align: center; font-weight: 500; border-radius: 999px;
-  border-bottom: none; letter-spacing: 0.1em;
-}
-.mobile-menu-close {
-  position: absolute; top: 1.5rem; right: 1.5rem;
-  background: transparent; border: 1px solid var(--rule);
-  color: var(--ink); width: 40px; height: 40px;
-  font-family: var(--mono); font-size: 1.2rem; cursor: pointer; line-height: 1;
-  border-radius: 50%;
-}
-.mobile-menu-close:hover { border-color: var(--teal); color: var(--teal); }
-.mobile-menu-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.5); z-index: 199;
-  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-}
-.mobile-menu-overlay.open { opacity: 1; pointer-events: auto; }
-body.menu-open { overflow: hidden; }
 
 @media (max-width: 1024px) {
-  .nav-list { display: none !important; }
-  .hamburger { display: block; }
+
 }
 /* ═══════════════════════════════════════════════════════════ */
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Calgary Cleaning Service · 100-Point Inspection · Elite Clean Pro",
-  "url": "https://elitecleanpro.ca/",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero-lede", ".direct-answer", ".faq-a-inner", ".hero-eyebrow"]
-  }
-}
-</script>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230A0E12'/><text y='24' x='4' font-size='22' font-family='Georgia,serif' fill='%2300A88B'>e</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230A0E12'/><text y='24' x='4' font-size='22' font-family='Georgia,serif' fill='%2300A88B'>e</text></svg>">
-<meta property="og:title" content="Calgary Cleaning Service · 100-Point Inspection · Elite Clean Pro">
-<meta property="og:description" content="Calgary cleaning service with a 100-point checklist on every visit, a written Elite Score report after, and same-week availability. Instant quote.">
-<meta property="og:url" content="https://elitecleanpro.ca/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://elitecleanpro.ca/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Elite Clean Pro">
-<meta property="og:locale" content="en_CA">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Calgary Cleaning Service · 100-Point Inspection · Elite Clean Pro">
-<meta name="twitter:image" content="https://elitecleanpro.ca/og-image.jpg">
-<meta name="twitter:description" content="Calgary cleaning service with a 100-point checklist on every visit, a written Elite Score report after, and same-week availability. Instant quote.">
-</head>
-<body>
 
 <!-- ════════ TICKER — Now Booking, same as all subpages ════════ -->
-<div class="ticker-strip" id="ticker">
-  <span class="ticker-live"><span class="ticker-dot"></span>Now booking</span>
-  <span class="ticker-div">·</span>
-  <span>Same-week availability across Calgary, AB</span>
-  <span class="ticker-div">·</span>
-  <span><a href="mailto:hello@elitecleanpro.ca">hello@elitecleanpro.ca</a></span>
-  <span class="ticker-div">·</span>
-  <span id="ticker-clock">--:-- MT</span>
-</div>
-
-
 <!-- ════════ NAV ════════ -->
-<nav class="main">
-  <a href="/" class="workmark">
-    Elite<em>Clean</em> Pro
-    <span class="small">Calgary, AB</span>
-  </a>
-  <ul class="nav-list">
-    <li><a href="/">Home</a></li>
-    <li><a href="/residential">Residential</a></li>
-    <li><a href="/commercial">Commercial</a></li>
-    <li><a href="/the-standard">The Standard</a></li>
-    <li><a href="/pricing">Pricing</a></li>
-    <li><a href="/quality-reporting">Reports</a></li>
-  </ul>
-  <a href="#book" class="btn-book">
-    Book Now <span class="arrow">→</span>
-  </a>
-  <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
-</nav>
+
 
 <!-- UNIFIED MOBILE MENU -->
-<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
-<aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
-  <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">×</button>
-  <a href="/" class="active" aria-current="page">Home</a>
-  <a href="/residential">Residential</a>
-  <a href="/commercial">Commercial</a>
-  <a href="/the-standard">The Standard</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/move-out-cleaning">Move-Out</a>
-  <a href="/biosmart">BioSmart</a>
-  <a href="/faq">FAQ</a>
-  <a href="/about">About</a>
-  <a href="#book" class="mobile-book">Book Now →</a>
-</aside>
+
+
 
 <!-- ════════ HERO — One claim, one sub, one CTA. Live data strip. ════════ -->
 <section class="hero">
   <div class="hero-content">
     <h1 class="hero-title">
       <span class="word">Calgary cleaning,</span>
-      <span class="word">measured.</span>
+      <span class="word" style="color: var(--teal);">measured.</span>
     </h1>
 
     <p class="hero-lede">
@@ -3185,7 +2783,7 @@ body.menu-open { overflow: hidden; }
   <div class="hero-image-area" aria-hidden="true">
     <img
       class="hero-image"
-      src="vacuum-hero.jpg"
+      src="/assets/img/vacuum-hero.jpg"
       alt="Elite Clean Pro BioSmart cleaning kit — luxury vacuum, microfibre mop, enzyme spray bottles and tools on neutral background, Calgary AB"
       loading="eager"
       fetchpriority="high"
@@ -3369,7 +2967,7 @@ body.menu-open { overflow: hidden; }
 
   <div style="margin-top:3rem;line-height:0;border-radius:12px;overflow:hidden">
     <img
-      src="biosmart-products.jpg"
+      src="/assets/img/biosmart-products.jpg"
       alt="Elite Clean Pro BioSmart eco cleaning kit — glass spray bottle, concentrate jar, nano-fibre microfibre cloth and gold measuring tools on marble tray, Calgary AB"
       style="width:100%;height:auto;display:block"
       loading="lazy"
@@ -3452,386 +3050,43 @@ body.menu-open { overflow: hidden; }
       </div>
     </div>
 
-    <script>
-    (function(){
-      var msgs = document.getElementById('ew-msgs');
-      var inp = document.getElementById('ew-inp');
-      function cl(text,time){var d=document.createElement('div');d.className='ew-row r';d.innerHTML='<div class="ew-col"><div class="ew-bub ewcl">'+text+'</div><div class="ew-t">'+time+'</div></div><div class="ew-av ewcl">JC</div>';return d}
-      function ai(text,time){var d=document.createElement('div');d.className='ew-row';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-col"><div class="ew-bub ewai">'+text+'</div><div class="ew-t">'+time+'</div></div>';return d}
-      function typing(){var d=document.createElement('div');d.className='ew-row';d.id='ew-typ';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-typing"><span></span><span></span><span></span></div>';return d}
-      function confirm(){var d=document.createElement('div');d.className='ew-row';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-col"><div class="ew-bub ewai">Here\'s your booking summary — locked in at our bi-weekly rate. <strong>$125 saved</strong> per year vs one-time.</div><div class="ew-confirm"><div class="ew-badge">Booking confirmed</div><div class="ew-confirm-label">Bi-Weekly Recurring Clean</div><div class="ew-confirm-row"><span>Home</span><span>2 bedroom · Calgary</span></div><div class="ew-confirm-row"><span>Schedule</span><span>Every 2 weeks · your day</span></div><div class="ew-confirm-row"><span>Standard</span><span>100-point + BioSmart</span></div><div class="ew-confirm-row"><span>Contract</span><span>None — cancel anytime</span></div><div class="ew-confirm-price"><div><div class="ew-confirm-price-label">Your rate</div><div class="ew-confirm-price-sub">10% recurring discount applied</div></div><div style="text-align:right"><div class="ew-confirm-price-val">$135<span style="font-size:14px;color:rgba(255,255,255,0.4)">/visit</span></div></div></div></div><div class="ew-t">3:44 pm</div></div>';return d}
-      function rmTyping(){var t=document.getElementById('ew-typ');if(t)t.remove()}
-      var seq=[
-        {d:0,   fn:function(){msgs.appendChild(cl('Hi — I\'d like to set up a recurring clean for my 2 bedroom place in Calgary.','3:42 pm'))}},
-        {d:700, fn:function(){msgs.appendChild(typing())}},
-        {d:1600,fn:function(){rmTyping();msgs.appendChild(ai('Great choice — most popular plan. Are you thinking weekly or bi-weekly?','3:42 pm'))}},
-        {d:2900,fn:function(){inp.textContent='Bi-weekly works…'}},
-        {d:3400,fn:function(){inp.textContent='Message Elite Clean Pro…';msgs.appendChild(cl('Bi-weekly works perfectly.','3:43 pm'))}},
-        {d:4100,fn:function(){msgs.appendChild(typing())}},
-        {d:5200,fn:function(){rmTyping();msgs.appendChild(ai('Our bi-weekly rate for a 2 bedroom is <strong>$135/visit</strong> — 10% off the one-time rate, locked in. No contract, cancel anytime.','3:43 pm'))}},
-        {d:6500,fn:function(){inp.textContent='Yes, let\'s book it…'}},
-        {d:7000,fn:function(){inp.textContent='Message Elite Clean Pro…';msgs.appendChild(cl('Yes — let\'s book it.','3:44 pm'))}},
-        {d:7600,fn:function(){msgs.appendChild(typing())}},
-        {d:8700,fn:function(){rmTyping();msgs.appendChild(confirm());msgs.scrollTop=msgs.scrollHeight}},
-      ];
-      var started = false;
-      var timers = [];
-
-      function run(){
-        msgs.innerHTML='';
-        inp.textContent='Message Elite Clean Pro…';
-        timers.forEach(clearTimeout);
-        timers=[];
-        seq.forEach(function(s){timers.push(setTimeout(s.fn,s.d))});
-        timers.push(setTimeout(run,12000));
-      }
-
-      function stop(){
-        timers.forEach(clearTimeout);
-        timers=[];
-        msgs.innerHTML='';
-        inp.textContent='Message Elite Clean Pro…';
-        started=false;
-      }
-
-      var animWrap = document.querySelector('.reply-animation-wrap');
-      if(animWrap && 'IntersectionObserver' in window){
-        var io = new IntersectionObserver(function(entries){
-          entries.forEach(function(e){
-            if(e.isIntersecting && !started){
-              started=true;
-              run();
-            } else if(!e.isIntersecting && started){
-              stop();
-            }
-          });
-        }, {threshold: 0.4});
-        io.observe(animWrap);
-      } else {
-        run();
-      }
-    })();
-    </script>
-  </div>
-</section>
-
-<!-- ════════ TESTIMONIAL — One, specific, sourced ════════ -->
-<section class="testimonial-section" id="testimonial">
-  <div class="section-head">
-    <div class="section-num">05 / Proof</div>
-    <h2 class="section-title">One <em>client.</em></h2>
-  </div>
-  <blockquote class="testimonial-card">
-    <div class="testimonial-mark" aria-hidden="true">"</div>
-    <p class="testimonial-text">
-      The Elite Score report after every clean is the difference. I used to wonder if they actually wiped behind the toilet. Now I see it scored.
-    </p>
-    <footer class="testimonial-foot">
-      <div class="testimonial-name">Sarah K.</div>
-      <div class="testimonial-meta">Mount Royal · 4-bedroom home · Bi-weekly · 8 months</div>
-    </footer>
-  </blockquote>
-  <p class="testimonial-disclaimer">Name changed for privacy. Verifiable reviews on Google Business Profile.</p>
-</section>
-
-<!-- ════════ CTA ════════ -->
-<section class="cta" id="book">
-  <div class="cta-inner">
-    <div class="cta-eyebrow">Now Booking · Calgary, AB</div>
-    <h2 class="cta-title">Get a clean <em>today.</em></h2>
-    <p class="cta-sub">Instant quote. Same-week availability.</p>
-    <div class="cta-actions">
-      <a href="/" class="btn btn-primary">Book Your Clean →</a>
-      <a href="tel:+17809651779" class="btn btn-ghost">Call (780) 965-1779</a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ FOOTER ════════ -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-mark">Elite<em>Clean</em> Pro</div>
-      <p class="footer-bio">System-driven cleaning across Calgary, Airdrie, Cochrane, Okotoks, and Chestermere. 100-point inspection on every visit. Written Elite Score report after every clean.</p>
-      <p style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal)">Mon–Sun · 7am–8pm</p>
-    </div>
-    <div class="footer-col">
-      <h4>Pages</h4>
-      <ul>
-        <li><a href="/residential">Residential</a></li>
-        <li><a href="/commercial">Commercial</a></li>
-        <li><a href="/the-standard">The Standard</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/move-out-cleaning">Move-Out Cleaning</a></li>
-        <li><a href="/quality-reporting">Reports</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Areas Served</h4>
-      <ul>
-        <li>Calgary NW · SW · NE · SE</li>
-        <li>Airdrie</li>
-        <li>Cochrane</li>
-        <li>Okotoks · Chestermere</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <p>(780) 965-1779</p>
-      <p>hello@elitecleanpro.ca</p>
-      <p style="margin-top:1rem">Calgary, Alberta<br>T2P 1J9</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Elite Clean Pro · The Elite Standard</span>
-    <span>Calgary, AB · 51.04°N · 114.07°W</span>
-  </div>
-</footer>
-<!-- ════════ STATUS STRIP — SaaS dashboard vibe ════════ -->
-<div class="status-strip">
-  <span>System status · <span class="status-op">● Operational</span></span>
-  <span class="hide-sm">Deploy · v.2026.05.12</span>
-  <span class="hide-sm">Latency · 47ms</span>
-  <span>Response · &lt;24h</span>
-</div>
-
-
 <script>
-/* ═══════════════════════════════════════════════════════════
-   INTERACTIONS
-═══════════════════════════════════════════════════════════ */
-
-// — Hero is now a static image; video-related JS removed —
-
-// — Sticky nav scroll state —
-const nav = document.querySelector('nav.main');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-
-// — Count-up on scroll —
-function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-
-const countIO = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    countIO.unobserve(e.target);
-    const el = e.target;
-    const target = parseFloat(el.dataset.to);
-    const dec = parseInt(el.dataset.dec || '0');
-    const duration = 2000;
-    const startTime = performance.now();
-
-    (function tick(now) {
-      const t = Math.min((now - startTime) / duration, 1);
-      const val = easeOutCubic(t) * target;
-      el.textContent = dec > 0 ? val.toFixed(dec) : Math.round(val).toString();
-      if (t < 1) requestAnimationFrame(tick);
-      else el.textContent = dec > 0 ? target.toFixed(dec) : target.toString();
-    })(startTime);
-  });
-}, { threshold: 0.6 });
-document.querySelectorAll('.cn').forEach(el => countIO.observe(el));
-
-// — Instant quote calculator —
-(function() {
-  const priceEl = document.getElementById('quote-price');
-  const detailEl = document.getElementById('quote-detail');
-  if (!priceEl) return;
-
-  // Base prices by property type
-  const basePrices = {
-    house: { 1: 139, 2: 159, 3: 179, 4: 199, 5: 219 },
-    condo: { 1: 119, 2: 139, 3: 159, 4: 179, 5: 199 },
-    office: { 1: 800, 2: 1100, 3: 1400, 4: 1700, 5: 2000 }
-  };
-
-  // Frequency multipliers
-  const freqMult = {
-    onetime: 1.0,
-    weekly: 0.85,
-    biweekly: 0.90,
-    monthly: 0.95
-  };
-
-  const freqLabel = {
-    onetime: 'one-time',
-    weekly: 'weekly',
-    biweekly: 'bi-weekly',
-    monthly: 'monthly'
-  };
-
-  function update() {
-    const prop = document.querySelector('input[name="property"]:checked').value;
-    const bed = document.querySelector('input[name="bedrooms"]:checked').value;
-    const freq = document.querySelector('input[name="frequency"]:checked').value;
-
-    const base = basePrices[prop][bed];
-    const price = Math.round(base * freqMult[freq]);
-
-    priceEl.textContent = price;
-
-    const propLabel = prop === 'office' ? 'office' : (prop === 'condo' ? 'condo' : 'home');
-    const bedLabel = bed === '5' ? '5+ bedroom' : bed + '-bedroom';
-    const period = prop === 'office' ? '/month' : '/visit';
-
-    // Update period suffix
-    const periodEl = document.querySelector('.quote-period');
-    if (periodEl) periodEl.textContent = period;
-
-    detailEl.textContent = `${bedLabel} ${propLabel} · ${freqLabel[freq]} · includes 100-point checklist inspection`;
-  }
-
-  // Listen to all radio inputs
-  document.querySelectorAll('.quote-tool input[type="radio"]').forEach(input => {
-    input.addEventListener('change', update);
-  });
-
-  update();
-})();
-
-
-// — Live clock ticker (Mountain Time) —
-function tickClock() {
-  const el = document.getElementById('ticker-clock');
-  if (!el) return;
-  const now = new Date();
-  const mt = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Edmonton',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
-  }).format(now);
-  el.textContent = mt + ' MT';
-}
-tickClock();
-setInterval(tickClock, 30000); // update every 30s
-
-// — Reveal on scroll —
-const revealIO = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      revealIO.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
-document.querySelectorAll('.figure, .service, .step').forEach(el => {
-  el.classList.add('reveal');
-  revealIO.observe(el);
-});
-
-// — Before/after slider —
-(function () {
-  const slider = document.getElementById('compare');
-  const after = document.getElementById('compare-after');
-  const handle = document.getElementById('compare-handle');
-  if (!slider || !after || !handle) return;
-
-  let dragging = false;
-
-  function setPos(clientX) {
-    const r = slider.getBoundingClientRect();
-    const pct = Math.max(2, Math.min(98, ((clientX - r.left) / r.width) * 100));
-    after.style.clipPath = `inset(0 0 0 ${pct}%)`;
-    handle.style.left = `${pct}%`;
-  }
-
-  slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
-  window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-  window.addEventListener('mouseup', () => { dragging = false; });
-
-  slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-  window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-  window.addEventListener('touchend', () => { dragging = false; });
-
-  // Hint animation on first view
-  const hintIO = new IntersectionObserver(entries => {
-    if (!entries[0].isIntersecting) return;
-    hintIO.disconnect();
-    const duration = 2400;
-    const startTime = performance.now();
-
-    function hintTick(now) {
-      const t = (now - startTime) / duration;
-      if (t >= 1) {
-        after.style.clipPath = 'inset(0 0 0 50%)';
-        handle.style.left = '50%';
-        return;
-      }
-      const phase = t < 0.5
-        ? 50 - (easeOutCubic(t * 2) * 24)
-        : 26 + (easeOutCubic((t - 0.5) * 2) * 24);
-      after.style.clipPath = `inset(0 0 0 ${phase}%)`;
-      handle.style.left = `${phase}%`;
-      requestAnimationFrame(hintTick);
-    }
-    setTimeout(() => requestAnimationFrame(hintTick), 500);
-  }, { threshold: 0.4 });
-  hintIO.observe(slider);
-})();
-
-// — Smooth-scroll nav links + active state —
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const target = link.getAttribute('href');
-    if (target === '#' || target.length < 2) return;
-    const el = document.querySelector(target);
-    if (el) {
-      e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-// — FAQ accordion — single-open, toggleable, ARIA-aware —
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const willOpen = !item.classList.contains('open');
-
-    // Close all open items
-    document.querySelectorAll('.faq-item.open').forEach(o => {
-      o.classList.remove('open');
-      o.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
-    });
-
-    if (willOpen) {
-      item.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-  });
-});
-
-// — Unified mobile menu —
 (function(){
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
-  const mobileOverlay = document.getElementById('mobile-menu-overlay');
-  if (!hamburger || !mobileMenu) return;
-  function openMenu() {
-    mobileMenu.classList.add('open');
-    mobileOverlay && mobileOverlay.classList.add('open');
-    document.body.classList.add('menu-open');
-    hamburger.setAttribute('aria-expanded','true');
-    mobileMenu.setAttribute('aria-hidden','false');
-  }
-  function closeMenu() {
-    mobileMenu.classList.remove('open');
-    mobileOverlay && mobileOverlay.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    hamburger.setAttribute('aria-expanded','false');
-    mobileMenu.setAttribute('aria-hidden','true');
-  }
-  hamburger.addEventListener('click', openMenu);
-  mobileMenuClose && mobileMenuClose.addEventListener('click', closeMenu);
-  mobileOverlay && mobileOverlay.addEventListener('click', closeMenu);
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  var msgs = document.getElementById('ew-msgs');
+  var inp = document.getElementById('ew-inp');
+  if (!msgs || !inp) return;
+  function cl(text,time){var d=document.createElement('div');d.className='ew-row r';d.innerHTML='<div class="ew-col"><div class="ew-bub ewcl">'+text+'</div><div class="ew-t">'+time+'</div></div><div class="ew-av ewcl">JC</div>';return d}
+  function ai(text,time){var d=document.createElement('div');d.className='ew-row';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-col"><div class="ew-bub ewai">'+text+'</div><div class="ew-t">'+time+'</div></div>';return d}
+  function typing(){var d=document.createElement('div');d.className='ew-row';d.id='ew-typ';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-typing"><span></span><span></span><span></span></div>';return d}
+  function confirmMsg(){var d=document.createElement('div');d.className='ew-row';d.innerHTML='<div class="ew-av ewai">e</div><div class="ew-col"><div class="ew-bub ewai">Here\u2019s your booking summary \u2014 locked in at our bi-weekly rate. <strong>$125 saved</strong> per year vs one-time.</div><div class="ew-confirm"><div class="ew-badge">Booking confirmed</div><div class="ew-confirm-label">Bi-Weekly Recurring Clean</div><div class="ew-confirm-row"><span>Home</span><span>2 bedroom \u00b7 Calgary</span></div><div class="ew-confirm-row"><span>Schedule</span><span>Every 2 weeks \u00b7 your day</span></div><div class="ew-confirm-row"><span>Standard</span><span>100-point + BioSmart</span></div><div class="ew-confirm-row"><span>Contract</span><span>None \u2014 cancel anytime</span></div><div class="ew-confirm-price"><div><div class="ew-confirm-price-label">Your rate</div><div class="ew-confirm-price-sub">10% recurring discount applied</div></div><div style="text-align:right"><div class="ew-confirm-price-val">$135<span style="font-size:14px;color:rgba(255,255,255,0.4)">/visit</span></div></div></div></div><div class="ew-t">3:44 pm</div></div>';return d}
+  function rmTyping(){var t=document.getElementById('ew-typ');if(t)t.remove()}
+  var seq=[
+    {d:0,   fn:function(){msgs.appendChild(cl('Hi \u2014 I\u2019d like to set up a recurring clean for my 2 bedroom place in Calgary.','3:42 pm'))}},
+    {d:700, fn:function(){msgs.appendChild(typing())}},
+    {d:1600,fn:function(){rmTyping();msgs.appendChild(ai('Great choice \u2014 most popular plan. Are you thinking weekly or bi-weekly?','3:42 pm'))}},
+    {d:2900,fn:function(){inp.textContent='Bi-weekly works\u2026'}},
+    {d:3400,fn:function(){inp.textContent='Message Elite Clean Pro\u2026';msgs.appendChild(cl('Bi-weekly works perfectly.','3:43 pm'))}},
+    {d:4100,fn:function(){msgs.appendChild(typing())}},
+    {d:5200,fn:function(){rmTyping();msgs.appendChild(ai('Our bi-weekly rate for a 2 bedroom is <strong>$135/visit</strong> \u2014 10% off the one-time rate, locked in. No contract, cancel anytime.','3:43 pm'))}},
+    {d:6500,fn:function(){inp.textContent='Yes, let\u2019s book it\u2026'}},
+    {d:7000,fn:function(){inp.textContent='Message Elite Clean Pro\u2026';msgs.appendChild(cl('Yes \u2014 let\u2019s book it.','3:44 pm'))}},
+    {d:7600,fn:function(){msgs.appendChild(typing())}},
+    {d:8700,fn:function(){rmTyping();msgs.appendChild(confirmMsg());msgs.scrollTop=msgs.scrollHeight}}
+  ];
+  var started=false, timers=[];
+  function run(){msgs.innerHTML='';inp.textContent='Message Elite Clean Pro\u2026';timers.forEach(clearTimeout);timers=[];seq.forEach(function(s){timers.push(setTimeout(s.fn,s.d))});timers.push(setTimeout(run,12000))}
+  function stop(){timers.forEach(clearTimeout);timers=[];msgs.innerHTML='';inp.textContent='Message Elite Clean Pro\u2026';started=false}
+  var animWrap = document.querySelector('.reply-animation-wrap');
+  if(animWrap && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && !started){started=true;run()}
+        else if(!e.isIntersecting && started){stop()}
+      });
+    }, {threshold: 0.4});
+    io.observe(animWrap);
+  } else { run() }
 })();
 </script>
 
-</body>
-</html>
+{% include "partials/book-cta.njk" %}

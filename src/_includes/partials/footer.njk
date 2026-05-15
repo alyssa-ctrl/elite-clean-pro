@@ -1,0 +1,46 @@
+{# Footer — single source of truth. Links pull from nav.footer in _data/nav.json #}
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-mark">Elite<em>Clean</em> Pro</div>
+      <p class="footer-bio">
+        System-driven cleaning across {{ site.areas }}.
+        100-point inspection on every visit.
+        Written Elite Score report after every clean.
+      </p>
+      <p class="footer-hours">{{ site.hours }}</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        {% for item in nav.footer %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Areas Served</h4>
+      <ul>
+        <li>Calgary NW · SW · NE · SE</li>
+        <li>Beltline · Kensington · Mission</li>
+        <li>Airdrie</li>
+        <li>Cochrane</li>
+        <li>Chestermere · Okotoks</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p class="footer-address">{{ site.location }}<br>T2P 1J9</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span id="copyright-year">© 2026</span><span> · {{ site.name }} · The Elite Standard</span>
+    <span>{{ site.location }} · {{ site.coords }}</span>
+  </div>
+</footer>
