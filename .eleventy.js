@@ -5,7 +5,6 @@ module.exports = function(eleventyConfig) {
   // Copy root files Netlify needs
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/llms.txt");
-  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
 
   // Watch CSS and JS so dev server auto-refreshes when they change
   eleventyConfig.addWatchTarget("src/assets/site.css");

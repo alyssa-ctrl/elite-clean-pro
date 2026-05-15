@@ -1,0 +1,31 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set today = "2026-05-14" %}
+{%- set priorities = {
+  "/": "1.0",
+  "/residential/": "0.9",
+  "/commercial/": "0.9",
+  "/pricing/": "0.9",
+  "/move-out-cleaning/": "0.8",
+  "/the-standard/": "0.8",
+  "/quality-reporting/": "0.8",
+  "/biosmart/": "0.8",
+  "/faq/": "0.7",
+  "/about/": "0.6",
+  "/promise/": "0.6"
+} %}
+{%- for page in collections.all %}
+  {%- if page.url and not page.data.eleventyExcludeFromCollections %}
+  <url>
+    <loc>https://elitecleanpro.ca{{ page.url }}</loc>
+    <lastmod>{{ today }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>{{ priorities[page.url] or "0.5" }}</priority>
+  </url>
+  {%- endif %}
+{%- endfor %}
+</urlset>
