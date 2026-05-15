@@ -9,9 +9,9 @@
   "areas": "Calgary, Airdrie, Cochrane, Okotoks, and Chestermere",
   "bookingLinks": {
     "chooser": "/book/",
-    "residential": "https://calendar.app.google/REPLACE_RESIDENTIAL_LINK",
-    "commercial": "https://calendar.app.google/REPLACE_COMMERCIAL_LINK",
-    "moveOut": "https://calendar.app.google/REPLACE_MOVEOUT_LINK",
-    "consult": "https://calendar.app.google/REPLACE_CONSULT_LINK"
+    "residential": "https://docs.google.com/forms/d/e/1FAIpQLSepNyQNkd0A6jy-2BXweuPrSbM22hxbe_MOLrwSF1w8vTxNog/viewform",
+    "commercial": "https://docs.google.com/forms/d/e/1FAIpQLScYsGsvltD8Vj2s3G0uQZO-Xfhf85DT55BM450ztcrtquqOlQ/viewform",
+    "moveOut": "https://docs.google.com/forms/d/e/1FAIpQLSck6rNw6srAD1IYp74IuTEuDrtmgOZa3ROn-QFzecd-SP4nzA/viewform",
+    "consult": "https://docs.google.com/forms/d/e/1FAIpQLSepNyQNkd0A6jy-2BXweuPrSbM22hxbe_MOLrwSF1w8vTxNog/viewform"
   }
 }
