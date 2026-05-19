@@ -1,9 +1,9 @@
 ---
 layout: base.njk
 title: Calgary Cleaning Prices 2026 | Elite Clean Pro
-description: Transparent flat-rate cleaning prices in Calgary, AB. Residential from $139/visit, commercial from $800/month. Full price list, competitor comparison, and in...
+description: Transparent flat-rate cleaning prices in Calgary, AB. Residential from $139/visit (1-bed weekly), move-out from $359, commercial from $800/month. Full price list per bedroom, competitor comparison, and in...
 ogTitle: Calgary Cleaning Prices 2026 | Elite Clean Pro
-ogDescription: Transparent flat-rate cleaning prices in Calgary. Residential from $139/visit, commercial from $800/month. Full price list posted online.
+ogDescription: Transparent flat-rate cleaning prices in Calgary. Residential from $139/visit (1-bed weekly), move-out from $359, commercial from $800/month. Per-bedroom pricing posted online.
 ogImage: /og-image.jpg
 ogType: website
 extraHead: |
@@ -54,7 +54,7 @@ extraHead: |
         "@id": "https://elitecleanpro.ca/pricing#webpage",
         "url": "https://elitecleanpro.ca/pricing",
         "name": "Calgary Cleaning Prices 2026 | Elite Clean Pro — From $139/visit",
-        "description": "Transparent flat-rate cleaning prices in Calgary. Residential from $139/visit, commercial from $800/month. Full price list, competitor comparison, and FAQ.",
+        "description": "Transparent flat-rate cleaning prices in Calgary. Per-bedroom pricing: residential from $139/visit (1-bed weekly), move-out from $359, commercial from $800/month.",
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": "https://elitecleanpro.ca/pricing#breadcrumbs" },
         "speakable": {
@@ -81,7 +81,7 @@ extraHead: |
         "@type": "FAQPage",
         "@id": "https://elitecleanpro.ca/pricing#faq",
         "mainEntity": [
-          { "@type": "Question", "name": "How much does house cleaning cost in Calgary in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "House cleaning in Calgary in 2026 costs between $120 and $300 per visit depending on home size and provider. Elite Clean Pro charges flat rates starting at $139 per visit for a 1–2 bedroom home (one-time) or $118 per visit on a weekly recurring plan. A 3–4 bedroom home starts at $179 one-time or $152 recurring weekly. These are all-in prices with no supply fee, no fuel surcharge, and no hourly minimum." } },
+          { "@type": "Question", "name": "How much does house cleaning cost in Calgary in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "House cleaning in Calgary in 2026 ranges from $130 to $400 per visit depending on home size, frequency, and provider. Elite Clean Pro charges flat rates per bedroom: weekly starts at $139 (1-bed), $155 (2-bed), $172 (3-bed), $205 (4-bed). One-time cleans start at $205 (1-bed) up to $369 (4-bed). 5+ bedroom homes are custom-quoted. All prices include BioSmart Technology, the 100-point system, and the Elite Score quality report — no supply fee, no fuel surcharge, no hourly minimum." } },
           { "@type": "Question", "name": "How much does commercial office cleaning cost in Calgary?", "acceptedAnswer": { "@type": "Answer", "text": "Commercial office cleaning in Calgary typically costs $800–$2,500 per month depending on size and frequency. Elite Clean Pro charges $800/month for offices up to 2,000 sqft (3 visits per week) and $1,800/month for mid-size offices of 2,000–5,000 sqft (5 visits per week). Larger facilities are quoted individually within 48 hours." } },
           { "@type": "Question", "name": "Why does Elite Clean Pro charge flat rate instead of hourly?", "acceptedAnswer": { "@type": "Answer", "text": "Hourly billing creates an incentive to clean slowly. Flat-rate billing creates an incentive to clean to a defined standard as efficiently as possible. Elite Clean Pro uses a 100-point system checklist that defines exactly what 'done' means for every room. The flat rate covers the entire scope — not the time it takes." } },
           { "@type": "Question", "name": "What is included in every Elite Clean Pro price?", "acceptedAnswer": { "@type": "Answer", "text": "Every visit at any price includes: the full BioSmart Technology cleaning kit (enzyme-based cleaners, electrolyzed water disinfection, nano-fibre microfibre), the 100-point system room-by-room checklist, an Elite Score post-clean quality report, and the same A+ team assigned to your space on recurring visits. There is no supply fee, no fuel charge, and no hidden extras." } },
@@ -332,6 +332,14 @@ extraHead: |
   .direct-answer-strip { padding: 1.25rem 1.25rem; }
 }
 @media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; } }
+
+/* Per-bedroom price compact display */
+.price-col .px-bed { display: block; font-family: var(--mono); font-size: 0.78rem; line-height: 1.6; color: var(--ink); text-align: right; }
+.price-col .px-bed em { font-style: normal; color: var(--muted); font-size: 0.72rem; }
+@media (max-width: 640px) {
+  .price-col { min-width: 110px; }
+  .price-col .px-bed { font-size: 0.7rem; }
+}
 </style>
 
 <!-- TICKER -->
@@ -354,7 +362,7 @@ extraHead: |
   <div class="direct-answer-strip">
     <div class="da-label">Direct Answer</div>
     <p class="pricing-direct-answer">
-      House cleaning in Calgary costs <strong>from $139 per visit</strong> for a 1–2 bedroom home (one-time) or <strong>from $118 per visit</strong> on a weekly recurring plan. A 3–4 bedroom home starts at <strong>$179 one-time</strong>. Commercial office cleaning starts at <strong>$800/month</strong> for offices up to 2,000 sqft. All Elite Clean Pro prices are flat-rate, posted online, and include BioSmart Technology, the 100-point system, and an Elite Score quality report — no supply fee, no fuel surcharge, no hourly minimum.
+      House cleaning in Calgary is priced per bedroom, flat-rate. Elite Clean Pro residential weekly starts at <strong>$139/visit for a 1-bedroom</strong> ($155 for 2-bed, $172 for 3-bed, $205 for 4-bed). One-time cleans start at <strong>$205 for a 1-bedroom</strong>. Move-out cleans (150-point checklist with photo report) start at <strong>$359 for a 1-bedroom</strong>. Commercial office cleaning starts at <strong>$800/month</strong> for offices up to 2,000 sqft. All prices include BioSmart Technology, the 100-point system, and an Elite Score quality report — no supply fee, no fuel surcharge, no hourly minimum.
     </p>
   </div>
 </section>
@@ -397,7 +405,7 @@ extraHead: |
       <div class="pc-popular">Best Value</div>
       <div class="pc-name">Recurring <em>Plan</em></div>
       <p class="pc-desc">Weekly schedule · 1–2 bedroom · Save 15% per visit</p>
-      <span class="pc-savings">Save $1,092 / year vs one-time</span>
+      <span class="pc-savings">Save $2,600+ / year vs one-time</span>
       <div class="pc-price"><sup>$</sup>118<sub>/visit</sub></div>
       <ul class="pc-features">
         <li>Everything in Standard Clean</li>
@@ -434,7 +442,7 @@ extraHead: |
       <div class="pc-popular">Most Popular</div>
       <div class="pc-name">Mid-Size <em>Office</em></div>
       <p class="pc-desc">2,000–5,000 sqft · 5× per week · Full service</p>
-      <span class="pc-savings">~$2,400 / year vs hourly providers</span>
+      <span class="pc-savings">~$1,800 / year vs hourly providers</span>
       <div class="pc-price"><sup>$</sup>1,800<sub>/mo</sub></div>
       <ul class="pc-features">
         <li>Everything in Small Office</li>
@@ -499,23 +507,17 @@ extraHead: |
         </thead>
         <tbody>
           <tr class="section-row"><td colspan="4">Residential Cleaning — Calgary, AB</td></tr>
-          <tr><td>Standard Clean</td><td>Kitchen, bathrooms, floors, dusting, BioSmart kit, Elite Score</td><td>1–2 bed</td><td class="price-col">$139</td></tr>
-          <tr><td>Standard Clean</td><td>Kitchen, bathrooms, floors, dusting, BioSmart kit, Elite Score</td><td>3–4 bed</td><td class="price-col">$179</td></tr>
-          <tr><td>Standard Clean</td><td>Kitchen, bathrooms, floors, dusting, BioSmart kit, Elite Score</td><td>5+ bed</td><td class="price-col">$219+</td></tr>
-          <tr><td>Recurring Weekly</td><td>Standard clean · Save 15% · Same team · Locked rate</td><td>1–2 bed</td><td class="price-col">$118</td></tr>
-          <tr><td>Recurring Weekly</td><td>Standard clean · Save 15% · Same team · Locked rate</td><td>3–4 bed</td><td class="price-col">$152</td></tr>
-          <tr><td>Recurring Bi-Weekly</td><td>Standard clean · Save 10% · Same team</td><td>1–2 bed</td><td class="price-col">$125</td></tr>
-          <tr><td>Recurring Bi-Weekly</td><td>Standard clean · Save 10% · Same team</td><td>3–4 bed</td><td class="price-col">$161</td></tr>
-          <tr><td>Recurring Monthly</td><td>Standard clean · Save 5%</td><td>1–2 bed</td><td class="price-col">$132</td></tr>
-          <tr><td>Recurring Monthly</td><td>Standard clean · Save 5%</td><td>3–4 bed</td><td class="price-col">$170</td></tr>
+          <tr><td>Recurring Weekly</td><td>Save 15% · Same team · Locked rate · 100-point checklist</td><td>Per bedroom</td><td class="price-col"><span class="px-bed">1bd $139</span><span class="px-bed">2bd $155</span><span class="px-bed">3bd $172</span><span class="px-bed">4bd $205</span><span class="px-bed">5+ <em>Custom</em></span></td></tr>
+          <tr><td>Recurring Bi-Weekly</td><td>Save 10% · Same team · Skip or pause anytime</td><td>Per bedroom</td><td class="price-col"><span class="px-bed">1bd $155</span><span class="px-bed">2bd $172</span><span class="px-bed">3bd $189</span><span class="px-bed">4bd $220</span><span class="px-bed">5+ <em>Custom</em></span></td></tr>
+          <tr><td>Recurring Monthly</td><td>Save 5% · Good for low-traffic homes</td><td>Per bedroom</td><td class="price-col"><span class="px-bed">1bd $172</span><span class="px-bed">2bd $205</span><span class="px-bed">3bd $239</span><span class="px-bed">4bd $269</span><span class="px-bed">5+ <em>Custom</em></span></td></tr>
+          <tr><td>One-Time Clean</td><td>Standard 100-point checklist · No commitment</td><td>Per bedroom</td><td class="price-col"><span class="px-bed">1bd $205</span><span class="px-bed">2bd $255</span><span class="px-bed">3bd $299</span><span class="px-bed">4bd $369</span><span class="px-bed">5+ <em>Custom</em></span></td></tr>
+          <tr><td>Deep Clean</td><td>Inside oven, baseboards, walls · Pre-event or seasonal</td><td>Per bedroom</td><td class="price-col"><span class="px-bed">1bd $255</span><span class="px-bed">2bd $299</span><span class="px-bed">3bd $369</span><span class="px-bed">4bd $465</span><span class="px-bed">5+ <em>Custom</em></span></td></tr>
           <tr class="section-row"><td colspan="4">Commercial Cleaning — Calgary, AB</td></tr>
           <tr><td>Small Office</td><td>3× per week · all standard zones · BioSmart Technology</td><td>Up to 2,000 sqft</td><td class="price-col">$800/mo</td></tr>
           <tr><td>Mid-Size Office</td><td>5× per week · full service · quarterly deep-clean</td><td>2,000–5,000 sqft</td><td class="price-col">$1,800/mo</td></tr>
           <tr><td>Large Facility</td><td>Custom scope · written quote within 48 hrs</td><td>5,000+ sqft</td><td class="price-col">Custom</td></tr>
           <tr class="section-row"><td colspan="4">Specialty Cleans — Calgary, AB</td></tr>
-          <tr><td><a href="/move-out-cleaning" style="color:var(--ink);border-bottom:1px solid var(--teal-line)">Move-In / Move-Out Clean</a></td><td>Inside oven, fridge, cabinets, baseboards · Built for deposit return</td><td>1–2 bed</td><td class="price-col">$278</td></tr>
-          <tr><td><a href="/move-out-cleaning" style="color:var(--ink);border-bottom:1px solid var(--teal-line)">Move-In / Move-Out Clean</a></td><td>Inside oven, fridge, cabinets, baseboards · Built for deposit return</td><td>3–4 bed</td><td class="price-col">$358</td></tr>
-          <tr><td><a href="/move-out-cleaning" style="color:var(--ink);border-bottom:1px solid var(--teal-line)">Move-In / Move-Out Clean</a></td><td>Inside oven, fridge, cabinets, baseboards · Built for deposit return</td><td>5+ bed</td><td class="price-col">$438+</td></tr>
+          <tr><td><a href="/move-out-cleaning" style="color:var(--ink);border-bottom:1px solid var(--teal-line)">Move-In / Move-Out Clean</a></td><td>Inside oven, fridge, cabinets, baseboards · 150-point checklist · Photo report</td><td>Per bedroom</td><td class="price-col"><span class="px-bed">1bd $359</span><span class="px-bed">2bd $419</span><span class="px-bed">3bd $519</span><span class="px-bed">4bd $619</span><span class="px-bed">5+ <em>Custom</em></span></td></tr>
           <tr class="section-row"><td colspan="4">Add-Ons</td></tr>
           <tr><td>Inside Oven</td><td>Deep oven clean &amp; degrease</td><td>—</td><td class="price-col">+$45</td></tr>
           <tr><td>Inside Fridge</td><td>Full fridge clean &amp; sanitize</td><td>—</td><td class="price-col">+$35</td></tr>
@@ -577,7 +579,7 @@ extraHead: |
           <span class="indicator" aria-hidden="true">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-wrap"><div class="faq-a-inner">
-          House cleaning in Calgary in 2026 costs between $120 and $300 per visit at most providers. <strong>Elite Clean Pro charges flat rates from $139 per visit</strong> for a 1–2 bedroom home (one-time) or $118 per visit on a weekly recurring plan. A 3–4 bedroom home starts at $179 one-time or $152 recurring weekly. These are all-in prices — no supply fee, no fuel surcharge, no hourly minimum.
+          House cleaning in Calgary in 2026 ranges from $130 to $400 per visit depending on home size, frequency, and provider. <strong>Elite Clean Pro charges per bedroom, flat-rate:</strong> weekly starts at $139 (1-bed), $155 (2-bed), $172 (3-bed), $205 (4-bed). One-time cleans start at $205 (1-bed) up to $369 (4-bed). 5+ bedroom homes are custom-quoted. All prices are all-in — no supply fee, no fuel surcharge, no hourly minimum.
         </div></div></div>
       </div>
 
