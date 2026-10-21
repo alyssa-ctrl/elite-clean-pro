@@ -18,7 +18,7 @@ const cleanerForm=document.querySelector('#cleaner-form');cleanerForm?.addEventL
 // One-time reveals respect the visitor's motion preference.
 if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
  const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}}},{threshold:0.08});
- document.querySelectorAll('.section-head,.service-card,.cards .card,.home-moment,.founder,.closing').forEach((el,i)=>{el.style.setProperty('--reveal-delay',el.matches('.card,.service-card')?'0ms':'0ms');el.classList.add('motion-ready');observer.observe(el)});
+ document.querySelectorAll('.section-head,.service-card,.cards .card,.home-moment,.founder,.closing,.about-story,.standards-block,.about-detail,.route-hero-image .route-image').forEach((el,i)=>{el.style.setProperty('--reveal-delay',el.matches('.card,.service-card')?'0ms':'0ms');el.classList.add('motion-ready');observer.observe(el)});
 }
 
 const serviceSelect=document.querySelector('#service');
