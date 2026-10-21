@@ -12,6 +12,7 @@ const event=(changes={})=>({body:JSON.stringify({payload:{id:'receipt-test-123',
  assert.equal((await handler(event())).statusCode,200);assert.equal(calls.length,1);
  const message=JSON.parse(calls[0].body);assert.deepEqual(message.to,['receipt-test@example.com']);assert.equal(message.reply_to,'hello@elitecleanpro.ca');assert.match(message.subject,/request received/);assert.match(message.text,/appointment is confirmed once/);assert.equal(calls[0].headers['Idempotency-Key'],'cleaning-request-receipt-test-123');
  await handler(event());assert.equal(calls[1].headers['Idempotency-Key'],calls[0].headers['Idempotency-Key']);
+ assert.match(message.html,/Thank you for choosing/);assert.ok(!message.html.includes('$500'));await handler(event({data:{Email:'receipt-test@example.com','Marketing offers':'Yes'}}));const offer=JSON.parse(calls.at(-1).body);assert.match(offer.html,/\$500 total/);assert.match(offer.html,/first completed, paid clean/);assert.match(offer.html,/T2M 1S7/);assert.match(offer.html,/Unsubscribe from offers/);assert.ok(!offer.html.includes('__REFERRAL__'));
  global.fetch=async()=>({ok:false,status:429});assert.equal((await handler(event())).statusCode,502);
  delete process.env.RESEND_API_KEY;assert.equal((await handler(event())).statusCode,503);
  console.log('Customer acknowledgement checks passed: production-only gate, correct form/recipient, spam skip, stable duplicate key, honest message and provider-failure handling. No emails sent.');

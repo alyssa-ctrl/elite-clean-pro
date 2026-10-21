@@ -2,18 +2,9 @@
 // Gmail business notifications remain independent of acknowledgement delivery.
 const FORM_ID = '6ad82b149706cb0d5e22ded0';
 const FORM_NAME = 'elite-cleaning-quote';
-const text = `Thanks for choosing Elite Clean Pro!
-
-Your cleaning request is in. We’ll do our best to accommodate your preferred time and will be in touch to review your quote and confirm availability.
-
-Your appointment is confirmed once we’ve agreed on the details with you.
-
-Questions in the meantime? Reply to this email or contact hello@elitecleanpro.ca. We’re happy to help.
-
-The Elite Clean Pro team
-Calgary, Alberta`;
+const {renderReceipt}=require('../email-template.cjs');
 exports.handler = async function (event) {
-  if (process.env.CONTEXT !== 'production' || process.env.CUSTOMER_EMAILS_ENABLED !== 'true') {
+  if (process.env.CUSTOMER_EMAILS_ENABLED !== 'true' || (process.env.CONTEXT && process.env.CONTEXT !== 'production')) {
     return { statusCode: 200, body: 'Customer acknowledgements are not enabled.' };
   }
   let payload;
@@ -33,6 +24,8 @@ exports.handler = async function (event) {
     console.error('Customer acknowledgement: sending credential missing.');
     return { statusCode: 503, body: 'Email sender is not configured.' };
   }
+  const consent = data['Marketing offers'] === 'Yes';
+  const receipt = renderReceipt(consent);
   try {
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -46,8 +39,9 @@ exports.handler = async function (event) {
         from: 'Elite Clean Pro <hello@elitecleanpro.ca>',
         reply_to: 'hello@elitecleanpro.ca',
         to: [email],
-        subject: 'Thanks for choosing Elite Clean Pro — request received',
-        text
+        subject: 'Thank you for choosing Elite Clean Pro — request received',
+        html: receipt.html,
+        text: receipt.text
       })
     });
     if (!response.ok) {
