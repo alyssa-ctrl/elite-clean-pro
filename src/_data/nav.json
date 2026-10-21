@@ -23,6 +23,7 @@
     { "url": "/quality-reporting/", "label": "Reports" },
     { "url": "/faq/", "label": "FAQ" },
     { "url": "/about/", "label": "About" },
-    { "url": "/promise/", "label": "Our Promise" }
+    { "url": "/promise/", "label": "Our Promise" },
+    { "label": "Work with us", "url": "/work-with-us/" }
   ]
 }
