@@ -18,7 +18,7 @@ const cleanerForm=document.querySelector('#cleaner-form');cleanerForm?.addEventL
 // One-time reveals respect the visitor's motion preference.
 if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
  const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}}},{threshold:0.08});
- document.querySelectorAll('.section-head,.service-card,.cards .card,.home-moment,.founder,.closing').forEach((el,i)=>{el.style.setProperty('--reveal-delay',el.matches('.card,.service-card')?`${i%3*65}ms`:'0ms');el.classList.add('motion-ready');observer.observe(el)});
+ document.querySelectorAll('.section-head,.service-card,.cards .card,.home-moment,.founder,.closing').forEach((el,i)=>{el.style.setProperty('--reveal-delay',el.matches('.card,.service-card')?'0ms':'0ms');el.classList.add('motion-ready');observer.observe(el)});
 }
 
 const serviceSelect=document.querySelector('#service');
@@ -85,4 +85,13 @@ if(form?.dataset.bookingEnabled==='true'){
  status.textContent='Request received. Reference: '+requestId+'. Your preferred time is not a confirmed appointment. We will review your request and cleaner availability, then contact you about the final quote and confirmation.';send.hidden=true;document.querySelector('#edit-request').hidden=true;document.querySelector('.form-success .review-tag').textContent='REQUEST RECEIVED';}
  catch(error){status.textContent=error.message+' Reference: '+requestId+' · hello@elitecleanpro.ca';send.disabled=false;pending=false;}
  });
+}
+
+// Keep the mobile booking action available after the hero, without covering the final CTA.
+const stickyBooking=document.querySelector('.mobile-booking'),bookingHero=document.querySelector('#booking-hero');
+if(stickyBooking&&bookingHero&&'IntersectionObserver' in window){
+ let pastHero=false,atClosing=false;
+ const syncSticky=()=>{stickyBooking.hidden=!pastHero||atClosing;document.body.classList.toggle('has-mobile-booking',!stickyBooking.hidden)};
+ const stickyObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.target===bookingHero)pastHero=!entry.isIntersecting&&entry.boundingClientRect.bottom<=0;else atClosing=entry.isIntersecting;}syncSticky();});
+ stickyObserver.observe(bookingHero);const closing=document.querySelector('.closing');if(closing)stickyObserver.observe(closing);
 }
