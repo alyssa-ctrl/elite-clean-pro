@@ -53,3 +53,7 @@
   from = "/pricing.html"
   to = "/pricing/"
   status = 301
+
+[build.environment]
+  SITE_MODE = "live"
+  BOOKING_ENABLED = "true"
