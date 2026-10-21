@@ -1,9 +1,9 @@
 {
   "name": "elite-clean-pro",
   "version": "1.0.0",
-  "description": "Elite Clean Pro — Calgary cleaning service marketing site",
+  "description": "Elite Clean Pro \u2014 Calgary cleaning service marketing site",
   "scripts": {
-    "build": "NODE_ENV=production eleventy && NODE_ENV=production node scripts/minify-assets.js",
+    "build": "NODE_ENV=production eleventy && NODE_ENV=production node scripts/minify-assets.js && node scripts/finalize-release.js",
     "serve": "eleventy --serve",
     "dev": "eleventy --serve",
     "clean": "rm -rf _site"
