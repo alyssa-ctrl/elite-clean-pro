@@ -8,8 +8,9 @@ if(form){let step=0;const panels=[...form.querySelectorAll('fieldset')],steps=[.
 function show(n){step=n;panels.forEach((p,i)=>p.hidden=i!==n);steps.forEach((p,i)=>{p.classList.toggle('active',i===n);if(i===n)p.setAttribute('aria-current','step');else p.removeAttribute('aria-current')});document.querySelector('#back').hidden=n===0;document.querySelector('#next').textContent=n===panels.length-1?(form.dataset.bookingEnabled==='true'?'Review my request':'Preview my request'):'Continue';error.textContent='';panels[n].querySelector('input,select,textarea')?.focus()}
 document.querySelector('#back').addEventListener('click',()=>show(Math.max(0,step-1)));
 document.querySelector('#service').addEventListener('change',e=>{document.querySelector('#move-date-field').hidden=e.target.value!=='Move-out cleaning'});
-document.querySelector('#next').addEventListener('click',()=>{for(const el of panels[step].querySelectorAll('input,select,textarea')){if(!el.checkValidity()){el.reportValidity();error.textContent='Please complete the required details before continuing.';return}}if(step<panels.length-1){show(step+1);return}const data=new FormData(form),out=document.querySelector('#request-summary');out.replaceChildren();for(const [k,v]of data){if(['form-name','email','website','Request reference'].includes(k)||!v)continue;const row=document.createElement('div');row.className='sample-row';const a=document.createElement('span'),b=document.createElement('span');a.textContent=k;b.textContent=v;row.append(a,b);out.append(row)}document.querySelector('#form-entry').hidden=true;document.querySelector('#form-success').hidden=false;document.querySelector('#success-heading').focus()});
+document.querySelector('#next').addEventListener('click',()=>{for(const el of panels[step].querySelectorAll('input,select,textarea')){if(!el.checkValidity()){el.reportValidity();error.textContent=el.validationMessage||'Please complete the required details before continuing.';return}}if(step<panels.length-1){show(step+1);return}const data=new FormData(form),out=document.querySelector('#request-summary');out.replaceChildren();for(const [k,v]of data){if(['form-name','email','website','Request reference'].includes(k)||!v)continue;const row=document.createElement('div');row.className='sample-row';const a=document.createElement('span'),b=document.createElement('span');a.textContent=k;b.textContent=v;row.append(a,b);out.append(row)}document.querySelector('#form-entry').hidden=true;document.querySelector('#form-success').hidden=false;document.querySelector('#success-heading').focus()});
 document.querySelector('#edit-request').addEventListener('click',()=>{document.querySelector('#form-entry').hidden=false;document.querySelector('#form-success').hidden=true;show(0)});
+form.addEventListener('booking-time-invalid',e=>{document.querySelector('#form-entry').hidden=false;document.querySelector('#form-success').hidden=true;const date=document.querySelector('#preferred-date');show(panels.findIndex(panel=>panel.contains(date)));error.textContent=e.detail;const field=date.validationMessage?date:document.querySelector('#preferred-time');field.focus();});
 form.addEventListener('submit',e=>e.preventDefault());
 }
 
@@ -67,18 +68,33 @@ if(form&&new URLSearchParams(location.search).get('estimate')==='1'){
 }
 
 if(form){
- const dateField=document.querySelector('#preferred-date'),timeField=document.querySelector('#preferred-time');
- function updateNotice(){const now=Date.now(),first=EliteBookingTime.localParts(now+EliteBookingTime.NOTICE);dateField.min=first.date;for(const option of timeField.options){if(option.value)option.disabled=Boolean(dateField.value&&!EliteBookingTime.validate(dateField.value,option.value,now));}if(timeField.selectedOptions[0]?.disabled)timeField.value='';
- const valid=!dateField.value||!timeField.value||EliteBookingTime.validate(dateField.value,timeField.value,now);timeField.setCustomValidity(valid?'':'Please choose a Calgary start time at least 72 hours from now.');}
- dateField.addEventListener('change',updateNotice);timeField.addEventListener('change',updateNotice);
- document.querySelector('#next').addEventListener('click',updateNotice,true);updateNotice();
+ const dateField=document.querySelector('#preferred-date'),timeField=document.querySelector('#preferred-time'),notice=document.querySelector('#booking-notice');
+ function updateNotice(){
+  const now=Date.now(),first=EliteBookingTime.nextStart([...timeField.options].map(option=>option.value),now);
+  const earliest=first?new Intl.DateTimeFormat('en-CA',{timeZone:EliteBookingTime.ZONE,weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}).format(new Date(first.ms)):'';
+  const help='We need at least 72 hours to arrange your cleaner. '+(earliest?'The earliest time you can request is '+earliest+'.':'Please choose a later date and time.');
+  dateField.min=EliteBookingTime.localParts(now+EliteBookingTime.NOTICE).date;
+  // Preserve the chosen time so an invalid selection can be explained, never silently cleared.
+  for(const option of timeField.options)option.disabled=false;
+  const earlyDate=Boolean(dateField.value&&dateField.value<dateField.min);
+  const earlyTime=Boolean(!earlyDate&&dateField.value&&timeField.value&&!EliteBookingTime.validate(dateField.value,timeField.value,now));
+  dateField.setCustomValidity(earlyDate?help:'');timeField.setCustomValidity(earlyTime?help:'');
+  dateField.setAttribute('aria-invalid',String(earlyDate));timeField.setAttribute('aria-invalid',String(earlyTime));
+  notice.textContent=(earlyDate||earlyTime?'That date or time is too soon. ':'')+help+' Your preferred time is subject to availability.';
+  notice.classList.toggle('error',earlyDate||earlyTime);
+  const error=document.querySelector('#form-error');if(error.dataset.bookingNotice==='true'&&!earlyDate&&!earlyTime){error.textContent='';delete error.dataset.bookingNotice;}
+  return {valid:!earlyDate&&!earlyTime,message:help};
+ }
+ dateField.addEventListener('input',updateNotice);timeField.addEventListener('change',updateNotice);dateField.addEventListener('change',updateNotice);
+ document.querySelector('#next').addEventListener('click',()=>{const result=updateNotice();if(!result.valid){const error=document.querySelector('#form-error');error.dataset.bookingNotice='true';}},true);
+ form.addEventListener('refresh-booking-notice',updateNotice);updateNotice();
 }
 
 if(form?.dataset.bookingEnabled==='true'){
  const send=document.querySelector('#send-request'),status=document.querySelector('#send-status');const requestId=crypto.randomUUID();let pending=false;document.querySelector('#request-reference').value=requestId;
  send?.addEventListener('click',async()=>{if(pending)return;
  const date=form.elements.namedItem('Preferred date').value,time=form.elements.namedItem('Preferred time').value;
- if(!EliteBookingTime.validate(date,time)){status.textContent='Please edit your preferred Calgary time so it is at least 72 hours ahead.';return;}
+ if(!EliteBookingTime.validate(date,time)){form.dispatchEvent(new Event('refresh-booking-notice'));form.dispatchEvent(new CustomEvent('booking-time-invalid',{detail:document.querySelector('#booking-notice').textContent}));return;}
  pending=true;send.disabled=true;status.textContent='Sending your request…';document.querySelector('#notification-email').value=form.elements.namedItem('Email').value;
  const data=new FormData(form),extras=data.getAll('Requested extras');data.delete('Requested extras');if(extras.length)data.set('Requested extras',extras.join(', '));
  try{const response=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()});if(!response.ok)throw new Error('We could not confirm delivery. Please contact us before resubmitting.');
